@@ -1,5 +1,5 @@
-title: Thomas C.H. Lux
-author: Thomas C.H. Lux
+title: Thomas C. H. Lux
+author: Thomas C. H. Lux
 email: thomas.ch.lux@gmail.com
 description: > # this means to ignore newlines until "show_excerpts:"
   I work towards useful Artificial Intelligence by developing
@@ -14,12 +14,12 @@ show_excerpts: false # set to true to show excerpts on the homepage
 minima:
   date_format: "%a, %b %d, %y"
 
-  # generate social links in footer
-  social_links:
-    twitter: tchlux
-    github:  tchlux
-    linkedin: thomas-ch-lux
-    facebook: thomas.ch.lux
+# generate social links in footer
+social_links:
+  twitter: tchlux
+  github:  tchlux
+  linkedin: thomas-ch-lux
+  facebook: thomas.ch.lux
     # rss: rss
     # dribbble: jekyll
     # instagram: jekyll
