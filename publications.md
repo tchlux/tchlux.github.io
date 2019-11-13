@@ -2,10 +2,6 @@
 title: Publications
 ---
 
-<style type="text/css">
-  h4 { margin-top: 30px; margin-bottom: 0px; }
-</style>
-
 - ORCID: 0000-0002-1858-4724
 - [Google Scholar](https://scholar.google.com/citations?user=wamfO3sAAAAJ&hl=en)
 - [DBLP](https://dblp.org/pers/hd/l/Lux:Thomas) (imperfect matches)
