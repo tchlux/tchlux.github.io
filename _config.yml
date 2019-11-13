@@ -33,3 +33,7 @@ header_pages:
  - resume.md
 
 theme: minima
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
