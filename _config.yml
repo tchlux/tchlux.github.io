@@ -20,12 +20,13 @@ social_links:
   github:  tchlux
   linkedin: thomas-ch-lux
   facebook: thomas.ch.lux
-    # rss: rss
-    # dribbble: jekyll
-    # instagram: jekyll
-    # youtube: jekyll
-    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-    # youtube_channel_name: CloudCannon
+
+# rss: rss
+# dribbble: jekyll
+# instagram: jekyll
+# youtube: jekyll
+# youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+# youtube_channel_name: CloudCannon
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
