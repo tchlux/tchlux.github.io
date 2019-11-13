@@ -6,7 +6,7 @@ title: Publications
 
 <hr>
 #### A Case Study on a Sustainable Framework for Ethically Aware Predictive Modeling
-*November, 2019* [[pdf](http://people.cs.vt.edu/tchlux/papers/tchlux-2019-ISTAS.pdf)] [[link]()]
+*November, 2019* [[pdf](http://people.cs.vt.edu/tchlux/papers/tchlux-2019-ISTAS.pdf)] [[link](https://attend.ieee.org/istas-2019/wp-content/uploads/sites/133/2019/11/IEEE-ISTAS2019_Program_121119.pdf)]
 
 Many applications of predictive models like criminal activity heatmapping, recidivism estimation, and child safety scoring rely on data that may be incomplete, incorrect, or biased. Many sensitive social and historical issues can unintentionally be incorporated into predictions causing ethical mistreatment. This work proposes a mechanism for continuously mitigating model bias by using algorithms that produce predictions from reasonably small subsets of data, allowing a human-in-the-loop approach to model application. The benefits offered by this framework are twofold: (1) bias can be identified either statistically or by human users on a per-prediction basis; (2) data can be cleaned for bias on a per-prediction basis.
 
