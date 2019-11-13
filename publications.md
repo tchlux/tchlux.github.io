@@ -6,10 +6,7 @@ title: Publications
 - [Google Scholar](https://scholar.google.com/citations?user=wamfO3sAAAAJ&hl=en)
 - [DBLP](https://dblp.org/pers/hd/l/Lux:Thomas) (imperfect matches)
 
-
-
-
-<p style="margin-bottom:100px;"></p>
+<p style="margin-bottom:50px;"></p>
 
 # First Author Publications
 
