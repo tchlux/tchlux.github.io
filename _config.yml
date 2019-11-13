@@ -1,5 +1,5 @@
 title: Thomas C. H. Lux
-author: 
+# author: Thomas C. H. Lux
 email: thomas.ch.lux@gmail.com
 description: > # this means to ignore newlines until "show_excerpts:"
   I work towards useful Artificial Intelligence by developing
@@ -32,6 +32,5 @@ social_links:
 header_pages:
  - publications.md
  - resume.md
-
 
 theme: minima
