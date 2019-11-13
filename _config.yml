@@ -15,7 +15,7 @@ minima:
     twitter: tchlux
     github: tchlux
     linkedin: thomas-ch-lux
-    facebook: thomas.ch.lux
+    # facebook: thomas.ch.lux
 
 header_pages:
  - publications.md
