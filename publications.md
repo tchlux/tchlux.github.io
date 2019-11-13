@@ -2,6 +2,10 @@
 title: Publications
 ---
 
+- ORCID: 0000-0002-1858-4724
+- [Google Scholar](https://scholar.google.com/citations?user=wamfO3sAAAAJ&hl=en)
+- [DBLP](https://dblp.org/pers/hd/l/Lux:Thomas) (imperfect matches)
+
 # First Author Publications
 
 <hr>
