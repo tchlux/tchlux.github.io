@@ -24,7 +24,7 @@ Institute of Electrical and Electronics Engineers Southeastcon. *April, 2018* [[
 
 <hr>
 #### Predictive Modeling of I/O Characteristics in High Performance Computing Systems
-Spring Simulation Multiconference, High Performance Computing Symposium. *April, 2018* [[pdf](https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2018-HPC_SpringSim.pdf)] n[[link](https://dl.acm.org/citation.cfm?id=3213077)]
+Spring Simulation Multiconference, High Performance Computing Symposium. *April, 2018* [[pdf](https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2018-HPC_SpringSim.pdf)] [[link](https://dl.acm.org/citation.cfm?id=3213077)]
 
 <hr>
 #### Novel Meshes for Multivariate Interpolation and Approximation
