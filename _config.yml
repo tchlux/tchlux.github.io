@@ -1,39 +1,24 @@
 title: Thomas C. H. Lux
-# author: Thomas C. H. Lux
+author: Thomas C. H. Lux
 email: thomas.ch.lux@gmail.com
-description: > # this means to ignore newlines until "show_excerpts:"
+description: >
   I work towards useful Artificial Intelligence by developing
   mathematical theory, writing high performance software, and
   rigorously testing the accuracy and quality (of theory and code) in
   application. I frequent tools from approximation theory, numerical
   analysis, and nonparametric statistics.
-show_excerpts: false # set to true to show excerpts on the homepage
 
-# Minima date format
-# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+theme: minima
+
 minima:
-  date_format: "%a, %b %d, %y"
   social_links:
     twitter: tchlux
-    github:  tchlux
+    github: tchlux
     linkedin: thomas-ch-lux
     facebook: thomas.ch.lux
 
-# rss: rss
-# dribbble: jekyll
-# instagram: jekyll
-# youtube: jekyll
-# youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-# youtube_channel_name: CloudCannon
-
-# If you want to link only specific pages in your header, uncomment
-# this and add the path to the pages in order as they should show up
 header_pages:
  - publications.md
  - resume.md
 
-theme: minima
 
-plugins:
- - jekyll-feed
- - jekyll-seo-tag
