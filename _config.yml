@@ -18,6 +18,7 @@ minima:
     facebook: thomas.ch.lux
 
 header_pages:
+ - links.md
  - publications.md
  - resume.md
 
