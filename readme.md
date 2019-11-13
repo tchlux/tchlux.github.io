@@ -1,5 +1,5 @@
 
-<p align="center">
+<p align="left" style="margin-left: min(10vw, 50px)">
   <img src="https://avatars1.githubusercontent.com/u/7769932?s=460&v=4" width="200" style="border-radius:10%">
 </p>
 
