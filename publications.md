@@ -11,10 +11,10 @@ title: Publications
 # First Author Publications
 
 #### A Case Study on a Sustainable Framework for Ethically Aware Predictive Modeling
-IEEE International Symposium on Technology and Society (ISTAS). *November, 2019*. [[pdf](https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2019-ISTAS.pdf)] [[link](https://attend.ieee.org/istas-2019/wp-content/uploads/sites/133/2019/11/IEEE-ISTAS2019_Program_121119.pdf)]
+IEEE International Symposium on Technology and Society (ISTAS). *December, 2019*. [[pdf](https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2019-ISTAS.pdf)] [[link](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8937885)]
 
 #### Least Squares Solutions to Polynomial Systems of Equations with Quantum Annealing
-Quantum Information Processing, Springer. *November, 2019*. [[pdf](https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2019-QIP.pdf)] [[link](https://link.springer.com/article/10.1007%2Fs11128-019-2489-x)]
+Quantum Information Processing, Springer. *October, 2019*. [[pdf](https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2019-QIP.pdf)] [[link](https://link.springer.com/article/10.1007%2Fs11128-019-2489-x)]
 
 #### Nonparametric Distribution Models for Predicting and Managing Computational Performance Variability
 Institute of Electrical and Electronics Engineers Southeastcon. *April, 2018*. [[pdf](https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2018-IEEESE.pdf)] [[link](https://ieeexplore.ieee.org/document/8478814)]
