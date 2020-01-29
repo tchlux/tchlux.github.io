@@ -252,7 +252,7 @@ publications:
     pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2016-ACM_Computing_Frontiers.pdf"
     link: "https://dl.acm.org/citation.cfm?id=2911717"
 
-  - id: ""
+  - id: "example"
     type: "paper/poster/abstract/talk"
     status: "submitted/published"
     title: ""
