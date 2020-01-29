@@ -29,7 +29,7 @@ google_analytics: UA-152383948-1
 publications:
   - id: "lux2020interpolation"
     type: "paper"
-    status: "revised and resubmitted"
+    status: "submitted"
     title: "Interpolation of Sparse High-Dimensional Data"
     authors: "**Thomas C. H. Lux**, Layne T. Watson, Tyler H. Chang, Yili Hong, Kirk Cameron"
     venue: "Numerical Algorithms, Springer Journal"
