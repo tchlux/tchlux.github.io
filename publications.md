@@ -6,6 +6,8 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 
 <p style="margin-bottom:50px;"></p>
 
+# Publications
+
 {% for item in site.publications %} {% if item.status == 'published' or item.status == 'accepted' %}
 #### {{item.title}} {% if item.type != 'paper' %} ({{item.type}}) {% endif %}
 {{item.authors}}.
