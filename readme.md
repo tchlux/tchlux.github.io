@@ -7,5 +7,5 @@ I am a 4th year Ph.D. candidate in Computer Science (CS) at [Virginia Tech](http
 
 My personal research ambitions outside of my dissertation work focus on progress towards artificial general intelligence. My current line of work for this is centered about trying to automatically infer the structure of data in order to build very sample-efficient approximations.
 
-Outside of Computer Science, I like to hike, run, ride motorcycles, and play music. I started learning guitar in the Fall of 2018, and am almost good enough to play in front of other people now. I was originally trained in percussion / drum set for Jazz and I've learned some piano for fun on the side. As many others do, I enjoy trying to take pretty pictures in my free time. [These are some of my favorites](https://www.icloud.com/sharedalbum/#B0JGWZuqDpCayQ).
+Outside of Computer Science, I like to hike, run, ride motorcycles, and play music. I was originally trained in percussion / drum set for Jazz and I've taught myself some guitar and piano for fun on the side. As many others do, I enjoy trying to take pretty pictures in my free time. [These are some of my favorites](https://www.icloud.com/sharedalbum/#B0JGWZuqDpCayQ).
 
