@@ -29,11 +29,11 @@ google_analytics: UA-152383948-1
 publications:
   - id: "lux2020interpolation"
     type: "paper"
-    status: "submitted"
+    status: "revised and resubmitted"
     title: "Interpolation of Sparse High-Dimensional Data"
     authors: "**Thomas C. H. Lux**, Layne T. Watson, Tyler H. Chang, Yili Hong, Kirk Cameron"
     venue: "Numerical Algorithms, Springer Journal"
-    month: "February"
+    month: "September"
     year: "2019"
     pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/submitted/tchlux-2019-NUMA.pdf"
 
@@ -58,7 +58,7 @@ publications:
 
   - id: ""
     type: "paper"
-    status: "submitted"
+    status: "accepted"
     title: "Effective Nonparametric Distribution Modeling for Distribution Approximation Applications"
     authors: "**Thomas C. H. Lux**, Layne T. Watson, Tyler H. Chang, Li Xu, Yueyao Wang, Jon Bernard, Yili Hong, Kirk W. Cameron"
     venue: "Institute of Electrical and Electronics Engineers Southeastcon"
@@ -98,7 +98,7 @@ publications:
 
   - id: "xu2020modeling"
     type: "paper"
-    status: "published"
+    status: "accepted"
     title: "Modeling I/O Performance Variability in High-Performance Computing Systems Using Mixture Distributions"
     authors: "Li Xu, Yueyao Wang, **Thomas C.H. Lux**, Tyler Chang, Bo Li, Kirk Cameron, Layne Watson, Jon Bernard"
     venue: "Journal of Parallel and Distributed Computing"
