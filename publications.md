@@ -15,6 +15,7 @@ title: Publications
 #### {{item.title}}
 
 {{item.authors}}.
+
 {{item.venue}}. *{{item.month}}, {{item.year}}.*
 {% if item.type != 'paper' %} ({{item.type}}) {% endif %} {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %} 
 {% endfor %}
@@ -26,7 +27,9 @@ title: Publications
 {% assign publications=site.publications | where:"status","submitted" %}
 {% for item in publications %}
 #### {{item.title}}
+
 {{item.authors}}.
+
 {{item.venue}}. *{{item.month}}, {{item.year}}.*
 {% if item.type != 'paper' %} ({{item.type}}) {% endif %} {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %}
 {% endfor %}
