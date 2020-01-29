@@ -11,7 +11,7 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 {{item.authors}}.
 <br>{{item.venue}}. {% if item.status != 'published' %} **{{item.status}}** {% endif %} *{{item.month}}, {{item.year}}.*
 {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %} 
-{% endfor %}
+{% endif %} {% endfor %}
 
 {% assign pending = 0 %}
 {% for item in site.publications %} {% if item.status != 'published' and item.id != 'example' %}
