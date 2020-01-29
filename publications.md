@@ -23,7 +23,7 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 
 # Pending
 
-{% for item in site.publications %} {% if item.status != 'published' and item.id != 'example' %}
+{% for item in site.publications %} {% if item.status != 'published' and item.status != 'accepted' and item.id != 'example' %}
 #### {{item.title}} {% if item.type != 'paper' %} ({{item.type}}) {% endif %}
 {{item.authors}}.
 <br>{{item.venue}}. {% if item.status != nil %} **{{item.status}}** {% endif %} *{{item.month}}, {{item.year}}.*
