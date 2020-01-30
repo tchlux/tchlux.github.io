@@ -35,7 +35,7 @@ publications:
     venue: "Numerical Algorithms, Springer Journal"
     month: "September"
     year: "2019"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/submitted/tchlux-2019-NUMA.pdf"
+    pdf: "https://tchlux.github.io/papers/submitted/tchlux-2019-NUMA.pdf"
 
   - id: ""
     type: "paper"
@@ -54,7 +54,7 @@ publications:
     venue: "Institute of Electrical and Electronics Engineers Southeastcon"
     month: "January"
     year: "2020"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/submitted/tchlux-2019-IEEESE-2.pdf"
+    pdf: "https://tchlux.github.io/papers/submitted/tchlux-2019-IEEESE-2.pdf"
 
   - id: ""
     type: "paper"
@@ -64,7 +64,7 @@ publications:
     venue: "Institute of Electrical and Electronics Engineers Southeastcon"
     month: "January"
     year: "2020"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/submitted/tchlux-2019-IEEESE-1.pdf"
+    pdf: "https://tchlux.github.io/papers/submitted/tchlux-2019-IEEESE-1.pdf"
 
   - id: ""
     type: "paper"
@@ -74,7 +74,7 @@ publications:
     venue: "Spring Simulation Multiconference, High Performance Computing Symposium"
     month: "December"
     year: "2019"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/submitted/tchlux-2019-HPC-2.pdf"
+    pdf: "https://tchlux.github.io/papers/submitted/tchlux-2019-HPC-2.pdf"
 
   - id: ""
     type: "paper"
@@ -84,7 +84,7 @@ publications:
     venue: "Spring Simulation Multiconference, High Performance Computing Symposium"
     month: "December"
     year: "2019"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/submitted/tchlux-2019-HPC-1.pdf"
+    pdf: "https://tchlux.github.io/papers/submitted/tchlux-2019-HPC-1.pdf"
 
   - id: ""
     type: "paper"
@@ -113,7 +113,7 @@ publications:
     venue: "IEEE International Symposium on Technology and Society (ISTAS)"
     month: "December"
     year: "2019"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2019-ISTAS.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2019-ISTAS.pdf"
     link: "https://ieeexplore.ieee.org/abstract/document/8937885"
 
   - id: "lux2019quantum"
@@ -124,7 +124,7 @@ publications:
     venue: "Quantum Information Processing, Springer"
     month: "October"
     year: "2019"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2019-QIP.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2019-QIP.pdf"
     link: "https://link.springer.com/article/10.1007%2Fs11128-019-2489-x"
 
   - id: "cameron2019moana"
@@ -165,7 +165,7 @@ publications:
     venue: "Institute of Electrical and Electronics Engineers Southeastcon"
     month: "April"
     year: "2018"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2018-IEEESE.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2018-IEEESE.pdf"
     link: "https://ieeexplore.ieee.org/document/8478814"
 
   - id: "chang2018computing"
@@ -186,7 +186,7 @@ publications:
     venue: "Spring Simulation Multiconference, High Performance Computing Symposium"
     month: "April"
     year: "2018"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2018-HPC_SpringSim.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2018-HPC_SpringSim.pdf"
     link: "https://dl.acm.org/citation.cfm?id=3213077"
 
   - id: "chang2018predicting"
@@ -207,7 +207,7 @@ publications:
     venue: "Association for Computing Machinery Southeast Conference"
     month: "March"
     year: "2018"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2018-ACMSE.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2018-ACMSE.pdf"
     link: "https://dl.acm.org/citation.cfm?id=3190687"
 
   - id: "chang2018polynomial"
@@ -238,7 +238,7 @@ publications:
     venue: "International Workshop on Machine Learning, Optimization, and Big Data (MOD)"
     month: "September"
     year: "2016"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2016-MOD.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2016-MOD.pdf"
     link: "https://link.springer.com/chapter/10.1007/978-3-319-51469-7_21"
 
   - id: "lux2016applications"
@@ -249,7 +249,7 @@ publications:
     venue: "ACM International Conference on Computing Frontiers"
     month: "May"
     year: "2016"
-    pdf: "https://github.com/tchlux/tchlux.github.io/raw/master/papers/tchlux-2016-ACM_Computing_Frontiers.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2016-ACM_Computing_Frontiers.pdf"
     link: "https://dl.acm.org/citation.cfm?id=2911717"
 
   - id: "example"
