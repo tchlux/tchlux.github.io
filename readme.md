@@ -15,7 +15,7 @@
   h4 { margin-top: 10px; }
 </style>
 
-# About Me
+## About Me
 
 I specialize in artificial intelligence / machine learning research and engineering. I write high performance code and develop mathematical theory. My unique skills are in distribution outcome prediction, interpretable models, black box optimization, and models that work well with small amounts of data. I am actively looking for jobs in the San Francisco Bay area.
 
