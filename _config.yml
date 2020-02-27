@@ -16,7 +16,7 @@ minima:
     stoverflow: 6132097/thomas-lux
     # facebook: thomas.ch.lux
 
-# header_pages:
+header_pages:
 #  - publications.md
 #  - resume.md
 
