@@ -40,14 +40,12 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 {% endif %} {% endfor %}
 
 {% if pending > 0 %}
-<p style="margin-bottom:30px;"></p>
-## Pending
-
 {% for item in site.publications %} {% if item.status != 'published' and item.status != 'accepted' and item.id != 'example' %}
-#### {{item.title}} {% if item.type != 'paper' %} ({{item.type}}) {% endif %}
+
+#### {{item.title}} {% if item.type != 'paper' %} ({{item.type}}) {% endif %} {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %}
+
 <span style="font-size: 9pt;"> {{item.authors}}.
 <br>{{item.venue}}. {% if item.status != nil %} **{{item.status}}** {% endif %} *{{item.month}}, {{item.year}}.*
-{% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %}
 </span>
 {% endif %} {% endfor %}
 {% endif %}
@@ -56,10 +54,10 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 ## Published
 
 {% for item in site.publications %} {% if item.status == 'published' or item.status == 'accepted' %}
-#### {{item.title}} {% if item.type != 'paper' %} ({{item.type}}) {% endif %}
-{{item.authors}}.
+#### {{item.title}} {% if item.type != 'paper' %} ({{item.type}}) {% endif %} {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %} 
+<span style="font-size: 9pt;"> {{item.authors}}.
 <br>{{item.venue}}. {% if item.status != 'published' %} **{{item.status}}** {% endif %} *{{item.month}}, {{item.year}}.*
-{% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %} 
+</span>
 {% endif %} {% endfor %}
 
 <p style="margin-bottom:40px;"></p>
