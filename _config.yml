@@ -2,9 +2,8 @@ title: Thomas C. H. Lux
 author: Thomas C. H. Lux
 email: thomas.ch.lux@gmail.com
 description: >
-  I work towards accurate and interpretable AI by developing
-  mathematical theory, writing high performance software, and testing
-  the accuracy and quality (of theory and code) in application.
+  I specialize in AI / ML research and engineering, writing high
+  performance code, and developing mathematical theory.
 
 theme: minima
 
@@ -17,9 +16,15 @@ minima:
     stoverflow: 6132097/thomas-lux
     # facebook: thomas.ch.lux
 
-header_pages:
- - publications.md
- - resume.md
+# header_pages:
+#  - publications.md
+#  - resume.md
+
+header_links:
+ - title: "Publications"
+   url: "#publications"
+ - title: "Resume"
+   url: "https://tchlux.github.io/documents/tchlux-resume.pdf"
 
 google_analytics: UA-152383948-1
 
@@ -96,12 +101,13 @@ publications:
 
   - id: "xu2020modeling"
     type: "paper"
-    status: "accepted"
+    status: "published"
     title: "Modeling I/O Performance Variability in High-Performance Computing Systems Using Mixture Distributions"
     authors: "Li Xu, Yueyao Wang, **Thomas C.H. Lux**, Tyler Chang, Bo Li, Kirk Cameron, Layne Watson, Jon Bernard"
     venue: "Journal of Parallel and Distributed Computing"
     month: "January"
     year: "2020"
+    link: "https://authors.elsevier.com/c/1abkr2f6jz12nQ"
 
   - id: "lux2019sustainable"
     type: "paper"
