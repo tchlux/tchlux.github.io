@@ -3,11 +3,20 @@
   <img src="https://avatars1.githubusercontent.com/u/7769932?s=460&v=4" width="200" style="border-radius:10%">
 </p>
 
+
+I specialize in artificial intelligence / machine learning research and engineering. I write high performance code and develop mathematical theory. My unique skills are in distribution outcome prediction, interpretable models, black box optimization, and models that work well with small amounts of data. I am actively looking for jobs in the San Francisco Bay area.
+
+I have an extensive set of co-curricular projects that have resulted in publications, granting me experiences that are not explicitly listed in my job history. Please see my GitHub and publication lists for more details on these works. 
+
+## At Virginia Tech
+
 I am a 4th year Ph.D. candidate in Computer Science (CS) at [Virginia Tech](https://vt.edu) co-advised by [Dr. Layne T. Watson](https://dac.cs.vt.edu/person/layne-t-watson-2/) in CS and [Dr. Yili Hong](https://www.apps.stat.vt.edu/hong) in Statistics. I work as part of the [VarSys research team](http://varsys.cs.vt.edu), applying mathematical models to the study of variability in computation. I plan to graduate in 2020 and my primary research area is computational science, specifically numerical analysis and approximation theory. My dissertation is on writing mathematical software that constructs piecewise quintic Hermite interpolating polynomials.
 
 
 <p style="margin-bottom:100px;"></p>
 <hr>
+
+<div style="background-color: #ddd; border-radius: 3%">
 
 # Publications
 
@@ -19,6 +28,7 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 {% endif %} {% endfor %}
 
 {% if pending > 0 %}
+<p style="margin-bottom:20px;"></p>
 ## Pending
 
 {% for item in site.publications %} {% if item.status != 'published' and item.status != 'accepted' and item.id != 'example' %}
@@ -29,6 +39,7 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 {% endif %} {% endfor %}
 {% endif %}
 
+<p style="margin-bottom:20px;"></p>
 ## Published
 
 {% for item in site.publications %} {% if item.status == 'published' or item.status == 'accepted' %}
@@ -40,6 +51,8 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 
 <p style="margin-bottom:100px;"></p>
 <hr>
+
+</div>
 
 # Personal Pursuits
 
