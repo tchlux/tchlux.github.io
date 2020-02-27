@@ -15,7 +15,7 @@
 
 <style type="text/css">
   h4 { margin-top: 10px; }
-<style>
+</style>
 
 I specialize in artificial intelligence / machine learning research and engineering. I write high performance code and develop mathematical theory. My unique skills are in distribution outcome prediction, interpretable models, black box optimization, and models that work well with small amounts of data. I am actively looking for jobs in the San Francisco Bay area.
 
@@ -28,7 +28,6 @@ I am a 4th year Ph.D. candidate in Computer Science (CS) at [Virginia Tech](http
 
 <p style="margin-bottom:40px;"></p>
 <hr>
-
 
 
 # Publications
@@ -46,13 +45,10 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 
 {% for item in site.publications %} {% if item.status != 'published' and item.status != 'accepted' and item.id != 'example' %}
 #### {{item.title}} {% if item.type != 'paper' %} ({{item.type}}) {% endif %}
-<p style="font-size: 9pt;">
-{{item.authors}}.
+<p style="font-size: 9pt;"> {{item.authors}}.
 <br>{{item.venue}}. {% if item.status != nil %} **{{item.status}}** {% endif %} *{{item.month}}, {{item.year}}.*
 {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %}
-{% endif %}
-</p>
-{% endfor %}
+{% endif %} </p> {% endfor %}
 {% endif %}
 
 <p style="margin-bottom:30px;"></p>
