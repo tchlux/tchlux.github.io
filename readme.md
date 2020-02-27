@@ -16,7 +16,7 @@ I am a 4th year Ph.D. candidate in Computer Science (CS) at [Virginia Tech](http
 <p style="margin-bottom:100px;"></p>
 <hr>
 
-<div style="background-color: #ddd; border-radius: 3%">
+
 
 # Publications
 
@@ -49,10 +49,9 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %} 
 {% endif %} {% endfor %}
 
-<p style="margin-bottom:100px;"></p>
+<p style="margin-bottom:30px;"></p>
 <hr>
 
-</div>
 
 # Personal Pursuits
 
