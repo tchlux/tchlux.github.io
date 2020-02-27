@@ -40,6 +40,9 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 {% endif %} {% endfor %}
 
 {% if pending > 0 %}
+<p style="margin-bottom:30px;"></p>
+## Under Review
+
 {% for item in site.publications %} {% if item.status != 'published' and item.status != 'accepted' and item.id != 'example' %}
 
 #### {{item.title}} {% if item.type != 'paper' %} ({{item.type}}) {% endif %}
@@ -63,7 +66,7 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 <hr>
 
 
-# Personal Pursuits
+# Personal Pursuit
 
 My personal research ambitions outside of my direct experience and dissertation work focus on progress towards artificial general intelligence. My current line of work for this is centered about trying to automatically infer the structure of data in order to build very sample-efficient approximations.
 

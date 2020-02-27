@@ -38,7 +38,7 @@ publications:
     venue: "Numerical Algorithms, Springer Journal"
     month: "September"
     year: "2019"
-    pdf: "https://tchlux.github.io/submitted/tchlux-2019-NUMA.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2019-NUMA.pdf"
 
   - id: ""
     type: "paper"
@@ -51,13 +51,13 @@ publications:
 
   - id: ""
     type: "paper"
-    status: "submitted"
+    status: "accepted"
     title: "Analytic Test Functions for Generalizable Evaluation of Convex Optimization Techniques"
     authors: "**Thomas C. H. Lux**, Tyler H. Chang"
     venue: "Institute of Electrical and Electronics Engineers Southeastcon"
     month: "January"
     year: "2020"
-    pdf: "https://tchlux.github.io/submitted/tchlux-2019-IEEESE-2.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2020-IEEESE-2.pdf"
 
   - id: ""
     type: "paper"
@@ -67,7 +67,7 @@ publications:
     venue: "Institute of Electrical and Electronics Engineers Southeastcon"
     month: "January"
     year: "2020"
-    pdf: "https://tchlux.github.io/papers/tchlux-2019-IEEESE-1.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2020-IEEESE-1.pdf"
 
   - id: ""
     type: "paper"
@@ -77,7 +77,7 @@ publications:
     venue: "Spring Simulation Multiconference, High Performance Computing Symposium"
     month: "December"
     year: "2019"
-    pdf: "https://tchlux.github.io/submitted/tchlux-2019-HPC-2.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2019-HPC-2.pdf"
 
   - id: ""
     type: "paper"
@@ -87,7 +87,7 @@ publications:
     venue: "Spring Simulation Multiconference, High Performance Computing Symposium"
     month: "December"
     year: "2019"
-    pdf: "https://tchlux.github.io/submitted/tchlux-2019-HPC-1.pdf"
+    pdf: "https://tchlux.github.io/papers/tchlux-2019-HPC-1.pdf"
 
   - id: ""
     type: "paper"
