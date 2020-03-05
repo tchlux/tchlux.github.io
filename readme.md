@@ -1,9 +1,9 @@
 
 <div align="left" style="margin-left: min(10vw, 50px)">
   <div align="left" style="display: inline-block">
-    <img align="middle" src="https://avatars1.githubusercontent.com/u/7769932?s=460&v=4" width="200" style="border-radius:10%; display:block;">
+    <img src="https://avatars1.githubusercontent.com/u/7769932?s=460&v=4" width="200" style="border-radius:10%; display:block;">
     {%- assign social = site.minima.social_links -%}
-    <ul align="middle" class="social-media-list" style="dislpay: inline; padding-top: 5px;">
+    <ul class="social-media-list" style="dislpay: inline; padding-top: 5px; text-align: center;">
       {%- if social.gscholar -%}<li style="padding: 0px 0px 0px 5px; display: inline-block; width:25px; height:25px;"><a href="https://scholar.google.com/citations?user={{ social.gscholar | cgi_escape | escape }}&hl=en" title="Google Scholar {{ social.gscholar | escape }}"><svg height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g fill="none" fill-rule="evenodd"><path d="M256 411.12L0 202.667 256 0z" fill="#4285f4"/><path d="M256 411.12l256-208.453L256 0z" fill="#356ac3"/><circle cx="256" cy="362.667" fill="#a0c3ff" r="149.333"/><path d="M121.037 298.667c23.968-50.453 75.392-85.334 134.963-85.334s110.995 34.881 134.963 85.334H121.037z" fill="#76a7fa"/></g></svg></a></li>{%- endif -%}
       {%- if social.stoverflow -%}<li style="padding: 0px 0px 0px 5px; display: inline-block; width:25px; height:25px;"><a href="https://stackoverflow.com/users/{{ social.stoverflow | cgi_escape | escape }}" title="Stack Overflow {{ social.stoverflow | escape }}"><svg style="vertical-align: text-bottom;" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><style>.st0{fill:#bcbbbb}.st1{fill:#f48023}</style><path class="st0" d="M84.4 93.8V70.6h7.7v30.9H22.6V70.6h7.7v23.2z"/><path class="st1" d="M38.8 68.4l37.8 7.9 1.6-7.6-37.8-7.9-1.6 7.6zm5-18l35 16.3 3.2-7-35-16.4-3.2 7.1zm9.7-17.2l29.7 24.7 4.9-5.9-29.7-24.7-4.9 5.9zm19.2-18.3l-6.2 4.6 23 31 6.2-4.6-23-31zM38 86h38.6v-7.7H38V86z"/></svg></a></li>{%- endif -%}
       {%- if social.github -%}<li style="padding: 0px 0px 0px 5px; display: inline-block; width:25px; height:25px;"><a style="width:35px; height:35px; display:inline-block;" href="https://github.com/{{ social.github | cgi_escape | escape }}" title="Github {{ social.github | escape }}"><svg style="width:20px; height:20px; vertical-align: inherit;" viewBox="-1 -1 17 17" class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg></a></li>{%- endif -%}
@@ -31,13 +31,12 @@ I am a 4th year Ph.D. candidate in Computer Science (CS) at [Virginia Tech](http
 <p style="margin-bottom:40px;"></p>
 <hr>
 
-
 # Publications
 
 Alternate listings at [Google Scholar](https://scholar.google.com/citations?user=wamfO3sAAAAJ&hl=en), [DBLP](https://dblp.org/pers/hd/l/Lux:Thomas) (imperfect matches), and [ORCID](https://orcid.org/0000-0002-1858-4724) 0000-0002-1858-4724.
 
 {% assign pending = 0 %}
-{% for item in site.publications %} {% if item.status != 'published' and item.id != 'example' %}
+{% for item in site.publications %} {% if item.status != 'published' and item.status != 'unpublished' and item.id != 'example' %}
     {% assign pending = pending | plus: 1 %}
 {% endif %} {% endfor %}
 
@@ -49,7 +48,7 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 
 #### {{item.title}} {% if item.type != 'paper' %} ({{item.type}}) {% endif %}
 <span style="font-size: 10pt;">
-{{item.authors}}. {{item.venue}}. {% if item.status != nil %} **{{item.status}}** {% endif %} *{{item.month}}, {{item.year}}.* {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %}
+{{item.authors}}. {{item.venue}}. {% if item.status != nil %} **{{item.status}}** {% endif %} *{{item.month}}, {{item.year}}.* {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.code != nil %} [[code]({{item.code}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %}
 </span>
 {% endif %} {% endfor %}
 {% endif %}
@@ -60,13 +59,25 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 {% for item in site.publications %} {% if item.status == 'published' or item.status == 'accepted' %}
 #### {{item.title}} {% if item.type != 'paper' %} ({{item.type}}) {% endif %} 
 <span style="font-size: 10pt;">
-{{item.authors}}. {{item.venue}}. {% if item.status != 'published' %} **{{item.status}}** {% endif %} *{{item.month}}, {{item.year}}.* {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %}
+{{item.authors}}. {{item.venue}}. {% if item.status != 'published' %} **{{item.status}}** {% endif %} *{{item.month}}, {{item.year}}.* {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.code != nil %} [[code]({{item.code}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %}
+
 </span>
 {% endif %} {% endfor %}
 
 <p style="margin-bottom:40px;"></p>
 <hr>
 
+# Projects
+
+{% for item in site.projects %}
+#### {{item.title}}
+<span style="font-size: 10pt;">
+{{item.authors}}. {{item.venue}}. *{{item.month}}, {{item.year}}.* {% if item.pdf != nil %} [[paper]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.code != nil %} [[code]({{item.code}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %}
+</span>
+{% endfor %}
+
+<p style="margin-bottom:40px;"></p>
+<hr>
 
 # Personal Pursuits
 

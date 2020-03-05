@@ -23,11 +23,47 @@ header_pages:
 header_links:
  - title: "Publications"
    url: "#publications"
+ - title: "Projects"
+   url: "#projects"
+ - title: "Hobbies"
+   url: "#personal-pursuits"
  - title: "Resume"
    url: "https://tchlux.github.io/documents/tchlux-resume.pdf"
 
 google_analytics: UA-152383948-1
 
+
+projects:
+  - id: "lux2020sync"
+    title: "`sync`: Automatic Fortran Wrapper for Python"
+    authors: "**Thomas C.H. Lux**"
+    venue: "Github"
+    month: "Jan"
+    year: "2020"
+    code: "https://github.com/tchlux/sync"
+  - id: "lux2020fmodpy"
+    title: "`fmodpy`: Automatic Fortran Wrapper for Python"
+    authors: "**Thomas C.H. Lux**"
+    venue: "Github"
+    month: "June"
+    year: "2017"
+    code: "https://github.com/tchlux/fmodpy"
+  - id: "lux2019quantum"
+    title: "`qaml`: Quantum Annealing Math Library"
+    authors: "**Thomas C.H. Lux**, Tyler H. Chang, Sai Sindhura Tipirneni"
+    venue: "Github"
+    month: "October"
+    year: "2019"
+    pdf: "https://tchlux.github.io/papers/tchlux-2019-QIP.pdf"
+    code: "https://github.com/tchlux/qaml"
+  - id: "lux2018mpca"
+    title: "Metric Principle Component Analysis: On Identifying Important Subspaces for Approximation"
+    authors: "**Thomas C. H. Lux**, Tyler H. Chang"
+    venue: "Github"
+    month: "December"
+    year: "2018"
+    pdf: "https://tchlux.github.io/papers/tchlux-2018-mpca.pdf"
+  
 
 publications:
   - id: "lux2020interpolation"
@@ -68,16 +104,6 @@ publications:
     month: "January"
     year: "2020"
     pdf: "https://tchlux.github.io/papers/tchlux-2020-IEEESE-1.pdf"
-
-  - id: ""
-    type: "paper"
-    status: "unpublished"
-    title: "Metric Principle Component Analysis: On Identifying Important Subspaces for Approximation"
-    authors: "**Thomas C. H. Lux**, Tyler H. Chang"
-    venue: ""
-    month: "December"
-    year: "2018"
-    pdf: "https://tchlux.github.io/papers/tchlux-2018-mpca.pdf"
 
   - id: ""
     type: "paper"
@@ -130,6 +156,7 @@ publications:
     year: "2019"
     pdf: "https://tchlux.github.io/papers/tchlux-2019-QIP.pdf"
     link: "https://link.springer.com/article/10.1007%2Fs11128-019-2489-x"
+    code: "https://github.com/tchlux/qaml"
 
   - id: "cameron2019moana"
     type: "paper"
