@@ -85,4 +85,4 @@ My personal research ambitions outside of my direct experience and dissertation 
 
 Outside of Computer Science, I like to hike, run, ride motorcycles, and play music. I was originally trained in percussion / drum set for Jazz and I've taught myself some guitar and piano for fun on the side. As many others do, I enjoy trying to take pretty pictures in my free time. [These are some of my favorites](https://www.icloud.com/sharedalbum/#B0JGWZuqDpCayQ).
 
-<img src="https://tchlux.github.io/media/blacksburg-sunset-with-bird.jpeg" width="90%" style="border-radius:10px; display:block;">
+<div align="center"><img src="https://tchlux.github.io/media/blacksburg-sunset-with-bird.jpeg" width="90%" style="border-radius:10px; display:block;"></div>
