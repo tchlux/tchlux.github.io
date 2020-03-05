@@ -78,7 +78,6 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 <p style="margin-bottom:40px;"></p>
 <hr>
 
-
 # Personal
 
 My personal research ambitions outside of my direct experience and dissertation work focus on progress towards artificial general intelligence. My current line of work for this is centered about trying to automatically infer the structure of data in order to build very sample-efficient approximations.
