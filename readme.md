@@ -60,7 +60,6 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 #### {{item.title}} {% if item.type != 'paper' %} ({{item.type}}) {% endif %} 
 <span style="font-size: 10pt;">
 {{item.authors}}. {{item.venue}}. {% if item.status != 'published' %} **{{item.status}}** {% endif %} *{{item.month}}, {{item.year}}.* {% if item.pdf != nil %} [[pdf]({{item.pdf}})] {% endif %} {% if item.link != nil %} [[link]({{item.link}})] {% endif %} {% if item.code != nil %} [[code]({{item.code}})] {% endif %} {% if item.slides != nil %} [[slides]({{item.slides}})] {% endif %}
-
 </span>
 {% endif %} {% endfor %}
 
