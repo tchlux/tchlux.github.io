@@ -82,6 +82,6 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 
 My personal research ambitions outside of my direct experience and dissertation work focus on progress towards artificial general intelligence. My current line of work for this is centered about trying to automatically infer the structure of data in order to build very sample-efficient approximations.
 
-Outside of Computer Science, I like to hike, run, ride motorcycles, and play music. I was originally trained in percussion / drum set for Jazz and I've taught myself some guitar and piano for fun on the side. As many others do, I enjoy trying to take pretty pictures in my free time. [These are some of my favorites](https://www.icloud.com/sharedalbum/#B0JGWZuqDpCayQ).
+Outside of Computer Science, I like to hike, run, ride motorcycles, and play music. I was originally trained in percussion / drum set for Jazz and I've taught myself some guitar and piano for fun on the side. I ventured into positive psychology in college and wrote [this summary of Jonathan Haidt's *Happiness Hypothesis*](https://tchlux.github.io/documents/Happiness.txt.html), I love that book! Lastly, I enjoy trying to take pretty pictures in my free time and [these are some of my favorites](https://www.icloud.com/sharedalbum/#B0JGWZuqDpCayQ).
 
 <div align="center"><img src="https://tchlux.github.io/media/blacksburg-sunset-with-bird.jpeg" width="90%" style="border-radius:10px; display:block;"></div>
