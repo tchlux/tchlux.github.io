@@ -34,6 +34,13 @@ google_analytics: UA-152383948-1
 
 
 projects:
+  - id: "lux2020fmodpy"
+    title: "`fmodpy` Automatic Fortran Wrapper for Python"
+    authors: "**Thomas C.H. Lux**"
+    venue: "Github"
+    month: "June"
+    year: "2017-present"
+    code: "https://github.com/tchlux/fmodpy"
   - id: "lux2020sync"
     title: "`sync` Lightweight Shell Script for File Synchronization"
     authors: "**Thomas C.H. Lux**"
@@ -41,13 +48,6 @@ projects:
     month: "Jan"
     year: "2020"
     code: "https://github.com/tchlux/sync"
-  - id: "lux2020fmodpy"
-    title: "`fmodpy` Automatic Fortran Wrapper for Python"
-    authors: "**Thomas C.H. Lux**"
-    venue: "Github"
-    month: "June"
-    year: "2017"
-    code: "https://github.com/tchlux/fmodpy"
   - id: "lux2019quantum"
     title: "`qaml` Quantum Annealing Math Library"
     authors: "**Thomas C.H. Lux**, Tyler H. Chang, Sai Sindhura Tipirneni"
@@ -63,6 +63,13 @@ projects:
     month: "December"
     year: "2018"
     pdf: "https://tchlux.github.io/papers/tchlux-2018-mpca.pdf"
+  - id: "lux2017omp"
+    title: "Optimizing OpenDwarf Applications for CPU and GPU Platforms"
+    authors: "**Thomas C. H. Lux**, Kyle Tanous"
+    venue: "Github"
+    month: "May"
+    year: "2017"
+    pdf: "https://tchlux.github.io/papers/tchlux-2017-omp-acc.pdf"
   
 
 publications:
