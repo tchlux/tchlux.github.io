@@ -164,6 +164,7 @@ publications:
     year: "2019"
     pdf: "https://tchlux.github.io/papers/tchlux-2019-ISTAS.pdf"
     link: "https://ieeexplore.ieee.org/abstract/document/8937885"
+    video: "https://www.youtube.com/watch?v=L0WA9pcMMUw"
 
   - id: "lux2019quantum"
     type: "paper"
