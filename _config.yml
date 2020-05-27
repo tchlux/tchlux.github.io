@@ -85,6 +85,15 @@ projects:
   
 
 publications:
+  - id: "wang2020design"
+    type: "paper"
+    status: "submitted"
+    title: "Design Strategies and Approximation Methods for High-Performance Computing Variability Management"
+    authors: "Yueyao Wang, Li Xu, **Thomas C.H. Lux**, Tyler H. Chang, Layne T. Watson, Yili Hong"
+    venue: "Journal of Quality Technology"
+    month: "May"
+    year: "2020"
+
   - id: "lux2020interpolation"
     type: "paper"
     status: "submitted"
