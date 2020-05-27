@@ -135,7 +135,7 @@ publications:
 
   - id: ""
     type: "paper"
-    status: "accepted"
+    status: "published"
     title: "An Algorithm for Constructing Monotone Quintic Interpolating Splines"
     authors: "**Thomas C.H. Lux**, Layne T. Watson, Tyler H. Chang, Li Xu, Yueyao Wang, Yili Hong"
     venue: "Spring Simulation Multiconference, High Performance Computing Symposium"
@@ -146,13 +146,13 @@ publications:
 
   - id: ""
     type: "paper"
-    status: "accepted"
+    status: "published"
     title: "Managing Computationally Expensive Blackbox Multiobjective Optimization Problems with libEnsemble"
     authors: "Tyler H. Chang, Jeffrey Larson, Layne T. Watson, **Thomas C.H. Lux**"
     venue: "Spring Simulation Multiconference, High Performance Computing Symposium"
     month: "February"
     year: "2020"
-
+    link: "https://springsim.conferencespot.org/event-data/pdf/a033/f033"
 
   - id: "xu2020modeling"
     type: "paper"
