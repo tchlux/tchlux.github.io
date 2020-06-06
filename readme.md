@@ -19,9 +19,7 @@
 
 ## About Me
 
-I specialize in artificial intelligence / machine learning research and engineering. I write high performance code and develop mathematical theory. My unique skills are in distribution outcome prediction, interpretable models, black box optimization, and models that work well with small amounts of data. I am actively looking for jobs in the San Francisco Bay area.
-
-I have an extensive set of co-curricular projects that have resulted in publications, granting me experiences that are not explicitly listed in my job history. Please see my GitHub and publication lists for more details on these works. 
+I specialize in artificial intelligence / machine learning research and engineering. I write high performance code and develop mathematical theory. My unique skills are in distribution outcome prediction, interpretable models, black box optimization, and models that work well with small amounts of data.
 
 ## At Virginia Tech
 
