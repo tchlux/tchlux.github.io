@@ -123,7 +123,7 @@ publications:
     year: "2020"
     pdf: "https://tchlux.github.io/papers/tchlux-2020-IEEESE-2.pdf"
 
-  - id: ""
+  - id: "lux2020effective"
     type: "paper"
     status: "accepted"
     title: "Effective Nonparametric Distribution Modeling for Distribution Approximation Applications"
@@ -133,7 +133,7 @@ publications:
     year: "2020"
     pdf: "https://tchlux.github.io/papers/tchlux-2020-IEEESE-1.pdf"
 
-  - id: ""
+  - id: "lux2020algorithm"
     type: "paper"
     status: "published"
     title: "An Algorithm for Constructing Monotone Quintic Interpolating Splines"
@@ -142,9 +142,9 @@ publications:
     month: "February"
     year: "2020"
     pdf: "https://tchlux.github.io/papers/tchlux-2019-HPC-1.pdf"
-    link: "https://springsim.conferencespot.org/event-data/pdf/a035/f035"
+    link: "https://dl.acm.org/doi/abs/10.5555/3408207.3408247"
 
-  - id: ""
+  - id: "chang2020managing"
     type: "paper"
     status: "published"
     title: "Managing Computationally Expensive Blackbox Multiobjective Optimization Problems with libEnsemble"
@@ -152,7 +152,7 @@ publications:
     venue: "Spring Simulation Multiconference, High Performance Computing Symposium"
     month: "February"
     year: "2020"
-    link: "https://springsim.conferencespot.org/event-data/pdf/a033/f033"
+    link: "https://dl.acm.org/doi/abs/10.5555/3408207.3408245"
 
   - id: "xu2020modeling"
     type: "paper"
