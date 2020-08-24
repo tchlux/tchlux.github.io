@@ -21,10 +21,6 @@
 
 I specialize in artificial intelligence / machine learning research and engineering. I write high performance code and develop mathematical theory. My unique skills are in distribution outcome prediction, interpretable models, black box optimization, and models that work well with small amounts of data.
 
-## At Virginia Tech
-
-I am a 4th year Ph.D. candidate in Computer Science (CS) at [Virginia Tech](https://vt.edu) co-advised by [Dr. Layne T. Watson](https://dac.cs.vt.edu/person/layne-t-watson-2/) in CS and [Dr. Yili Hong](https://www.apps.stat.vt.edu/hong) in Statistics. I work as part of the [VarSys research team](http://varsys.cs.vt.edu), applying mathematical models to the study of variability in computation. I plan to graduate in 2020 and my primary research area is computational science, specifically numerical analysis and approximation theory. My dissertation is on writing mathematical software that constructs piecewise quintic Hermite interpolating polynomials.
-
 
 <p style="margin-bottom:40px;"></p>
 <hr>
@@ -75,6 +71,17 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 
 <p style="margin-bottom:40px;"></p>
 <hr>
+
+# Education
+
+## Virginia Tech
+
+I received my Ph.D. in Computer Science (CS) from [Virginia Tech](https://vt.edu) in August 2020. I was co-advised by [Dr. Layne T. Watson](https://dac.cs.vt.edu/person/layne-t-watson-2/) in CS and [Dr. Yili Hong](https://www.apps.stat.vt.edu/hong) in Statistics. I worked as part of the [VarSys research team](http://varsys.cs.vt.edu), applying mathematical models to the study of variability in computation. My primary research area was computational science, specifically numerical analysis and approximation theory. My dissertation is titled [Interpolants, Error Bounds, and Mathematical Software for Modeling and Predicting Variability in Computer Systems](https://tchlux.github.io/papers/tchlux-2020-thesis.pdf).
+
+## Roanoke College
+
+I received my B.S. in Computer Science with minors in Mathematics and Physics from [Roanoke College](https://roanoke.edu). I was advised by [Dr. Durell Bouchard](https://directory.roanoke.edu/faculty?username=bouchard) and did research projects with him in robotics and computer vision; I did research with [Dr. Anil Shende](https://directory.roanoke.edu/faculty?username=shende) on parallel computing and machine learning projects. At Roanoke I was heavily involved in student life and cocurriculars, committing three years (and lots of time) to Student Government and being a Resident Advisor, as well as participating in every club and organization whose meetings I could attend.
+
 
 # Personal
 

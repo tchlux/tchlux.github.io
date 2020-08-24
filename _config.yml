@@ -25,6 +25,8 @@ header_links:
    url: "#publications"
  - title: "Projects"
    url: "#projects"
+ - title: "Education"
+   url: "#education"
  - title: "Personal"
    url: "#personal"
  - title: "Resume"
