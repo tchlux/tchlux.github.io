@@ -87,6 +87,16 @@ projects:
   
 
 publications:
+  - id: "lux2020thesis"
+    type: "paper"
+    status: "published"
+    title: "Interpolants, Error Bounds, and Mathematical Software for Modeling and Predicting Variability in Computer Systems"
+    authors: "**Thomas C.H. Lux**"
+    venue: "VTechWorks: Digital Library for Virginia Polytechnic Institute and State University"
+    month: "September"
+    year: "2020"
+    pdf: "https://vtechworks.lib.vt.edu/handle/10919/100059"
+  
   - id: "wang2020design"
     type: "paper"
     status: "submitted"

@@ -76,7 +76,7 @@ Alternate listings at [Google Scholar](https://scholar.google.com/citations?user
 
 ## Virginia Tech
 
-I received my Ph.D. in Computer Science (CS) from [Virginia Tech](https://vt.edu) in August 2020. I was co-advised by [Dr. Layne T. Watson](https://dac.cs.vt.edu/person/layne-t-watson-2/) in CS and [Dr. Yili Hong](https://www.apps.stat.vt.edu/hong) in Statistics. I worked as part of the [VarSys research team](http://varsys.cs.vt.edu), applying mathematical models to the study of variability in computation. My primary research area was computational science, specifically numerical analysis and approximation theory. My dissertation is titled [Interpolants, Error Bounds, and Mathematical Software for Modeling and Predicting Variability in Computer Systems](https://tchlux.github.io/papers/tchlux-2020-thesis.pdf).
+I received my Ph.D. in Computer Science (CS) from [Virginia Tech](https://vt.edu) in August 2020. I was co-advised by [Dr. Layne T. Watson](https://dac.cs.vt.edu/person/layne-t-watson-2/) in CS and [Dr. Yili Hong](https://www.apps.stat.vt.edu/hong) in Statistics. I worked as part of the [VarSys research team](http://varsys.cs.vt.edu), applying mathematical models to the study of variability in computation. My primary research area was computational science, specifically numerical analysis and approximation theory. My dissertation is titled [Interpolants, Error Bounds, and Mathematical Software for Modeling and Predicting Variability in Computer Systems](https://vtechworks.lib.vt.edu/handle/10919/100059).
 
 ## Roanoke College
 
