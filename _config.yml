@@ -44,6 +44,14 @@ projects:
     year: "2017-present"
     code: "https://github.com/tchlux/fmodpy"
 
+  - id: "lux2020regex"
+    title: "`regex` Fast regular expression library in C for Python"
+    authors: "**Thomas C.H. Lux**"
+    venue: "Github"
+    month: "October"
+    year: "2020"
+    code: "https://github.com/tchlux/regex"
+
   - id: "lux2020sync"
     title: "`sync` Lightweight Shell Script for File Synchronization"
     authors: "**Thomas C.H. Lux**"
