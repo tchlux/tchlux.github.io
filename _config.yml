@@ -7,31 +7,30 @@ description: >
 
 theme: minima
 
-social_links:
-  - twitter: tchlux
-  - github: tchlux
-  - linkedin: thomas-ch-lux
-  - gscholar: wamfO3sAAAAJ
-  - stoverflow:
-      number: 6132097
-      name: thomas-lux
-    # facebook: thomas.ch.lux
+social:
+  picture: "https://avatars1.githubusercontent.com/u/7769932?s=460&v=4"
+  twitter: "https://twitter.com/tchlux"
+  github: "https://github.com/tchlux"
+  linkedin: "https://www.linkedin.com/in/thomas-ch-lux"
+  gscholar: "https://scholar.google.com/citations?user=wamfO3sAAAAJ&hl=en"
+  stoverflow: "https://stackoverflow.com/users/6132097/thomas-lux"
+# - facebook: thomas.ch.lux
 
 header_pages:
 #  - publications.md
 #  - resume.md
 
 header_links:
- - title: "Publications"
-   url: "#publications"
- - title: "Projects"
-   url: "#projects"
- - title: "Education"
-   url: "#education"
- - title: "Personal"
-   url: "#personal"
- - title: "Resume"
-   url: "https://tchlux.github.io/documents/tchlux-resume.pdf"
+  - title: "Publications"
+    url: "#publications"
+  - title: "Projects"
+    url: "#projects"
+  - title: "Education"
+    url: "#education"
+  - title: "Personal"
+    url: "#personal"
+  - title: "Resume"
+    url: "https://tchlux.github.io/documents/tchlux-resume.pdf"
 
 google_analytics: UA-152383948-1
 
