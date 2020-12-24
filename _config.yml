@@ -13,7 +13,9 @@ minima:
     github: tchlux
     linkedin: thomas-ch-lux
     gscholar: wamfO3sAAAAJ
-    stoverflow: "6132097/thomas-lux"
+    stoverflow:
+      number: "6132097"
+      name: "thomas-lux"
     # facebook: thomas.ch.lux
 
 header_pages:
@@ -53,7 +55,7 @@ projects:
     code: "https://github.com/tchlux/regex"
 
   - id: "lux2020sync"
-    title: "`sync` Lightweight Shell Script for File Synchronization"
+    title: "`sync` Lightweight Cross-Device File Synchronization Utility"
     authors: "**Thomas C.H. Lux**"
     venue: "Github"
     month: "Jan"
@@ -95,16 +97,6 @@ projects:
   
 
 publications:
-  - id: "lux2020thesis"
-    type: "paper"
-    status: "published"
-    title: "Interpolants, Error Bounds, and Mathematical Software for Modeling and Predicting Variability in Computer Systems"
-    authors: "**Thomas C.H. Lux**"
-    venue: "VTechWorks: Digital Library for Virginia Polytechnic Institute and State University"
-    month: "September"
-    year: "2020"
-    pdf: "https://vtechworks.lib.vt.edu/handle/10919/100059"
- 
   - id: "lux2021mqsi"
     type: "paper"
     status: "submitted"
@@ -163,6 +155,18 @@ publications:
     year: "2020"
     link: "http://doi.org/10.1145/3422818"
     code: "https://github.com/vtopt/DelaunaySparse"
+
+  - id: "lux2020thesis"
+    type: "paper"
+    status: "published"
+    title: "Thesis: Interpolants, Error Bounds, and Mathematical Software for Modeling and Predicting Variability in Computer Systems"
+    authors: "**Thomas C.H. Lux**"
+    venue: "VTechWorks: Digital Library for Virginia Polytechnic Institute and State University"
+    month: "September"
+    year: "2020"
+    link: "https://vtechworks.lib.vt.edu/handle/10919/100059"
+    pdf: "https://tchlux.github.io/papers/tchlux-2020-thesis.pdf"
+    code: "https://github.com/tchlux/VarSys"
 
   - id: "lux2020analytic"
     type: "paper"
