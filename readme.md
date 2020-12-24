@@ -1,5 +1,5 @@
 
-{%- include profile.html -%}
+%% {%- include profile.html -%}
 
 ## About Me
 
