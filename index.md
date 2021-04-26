@@ -3,7 +3,7 @@
 
 ## About Me
 
-I specialize in artificial intelligence / machine learning research and engineering. I write high performance code and develop mathematical theory. My unique skills are in distribution outcome prediction, interpretable models, black box optimization, and models that work well with small amounts of data.
+I specialize in artificial intelligence (AI) / machine learning (ML) research and engineering. I write and deploy high performance code, and also develop mathematical theory. My unique ML skills are around distribution outcome prediction, interpretable models, black box optimization, convex optimization, and models that work well with small amounts of data.
 
 
 <p style="margin-bottom:40px;"></p>
