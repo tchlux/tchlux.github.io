@@ -126,12 +126,12 @@ publications:
 
   - id: ""
     type: "paper"
-    status: "accepted"
+    status: "published"
     title: "Prediction of High-Performance Computing Input/Output Variability and Its Application to Optimization for System Configurations"
     authors: "Li Xu, **Thomas C.H. Lux**, Tyler Chang, Bo Li, Yili Hong, Layne Watson, Ali Butt, Danfeng Yao, Kirk Cameron"
-    month: "December"
-    year: "2020"
-    link: "https://arxiv.org/pdf/2012.07915"
+    month: "February"
+    year: "2021"
+    link: "https://doi.org/10.1080/08982112.2020.1866203"
 
   - id: "lux2020interpolation"
     type: "paper"
