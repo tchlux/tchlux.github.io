@@ -69,7 +69,7 @@ I received my B.S. in Computer Science with minors in Mathematics and Physics fr
 
 # Personal
 
-My personal research ambitions outside of my direct experience and dissertation work focus on progress towards artificial general intelligence. My current line of work for this is centered about trying to automatically infer the structure of data in order to build very sample-efficient approximations. For fun, [here](https://tchlux.github.io/documents/nn-activations.html) are some examples of neural network activations at each node for a simple regression problem.
+My personal research ambitions outside of my direct experience and dissertation work focus on progress towards artificial general intelligence. My current line of work for this is centered about trying to automatically infer the structure of data in order to build very sample-efficient approximations. For fun, [here](https://tchlux.github.io/documents/nn-activations.html) are some examples of neural network activations at each node for a simple regression problem. These activations were retrieved from my own implementation of [a multilayer perceptron in Fortran](https://tchlux.github.io/documents/piecewise_linear_regression_model.f90).
 
 In the process of pursuing structure prediction for AI, I have made a history-based stock futures prediction algorithm. Some sample predictions are available for [DOGE](https://tchlux.github.io/futures/doge.html) and [TSLA](https://tchlux.github.io/futures/tsla.html).
 
