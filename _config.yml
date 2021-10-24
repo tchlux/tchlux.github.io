@@ -166,6 +166,7 @@ publications:
     link: "https://vtechworks.lib.vt.edu/handle/10919/100059"
     pdf: "https://tchlux.github.io/papers/tchlux-2020-thesis.pdf"
     code: "https://github.com/tchlux/VarSys"
+    slides: "https://tchlux.github.io/papers/tchlux-2020-thesis-slides.pdf"
 
   - id: "lux2020analytic"
     type: "paper"
