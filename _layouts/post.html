@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+<style type="text/css">
+  h4 { margin-top: 30px; margin-bottom: 0px; }
+  .navbar-collapse.collapse { display: block!important; }
+  .navbar-nav>li, .navbar-nav { float: left !important; }
+  .navbar-nav.navbar-right:last-child { margin-right: -15px !important; }
+  .navbar-right { float: right!important; }
+</style>
+
+<body>
+
+  <header class="site-header">
+    <div class="wrapper">
+      {%- assign blog_links = site.blog_links -%}
+      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+      {%- if (blog_links | size > 0) -%}
+        <nav class="site-nav">
+          {%- for path in blog_links -%}
+            {%- assign my_page = site.pages | where: "path", path | first -%}
+            {%- if my_page.title -%}
+              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        </nav>
+      {%- endif -%}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {%- include footer.html -%}
+
+</body>
+
+</html>

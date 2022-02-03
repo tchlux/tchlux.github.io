@@ -21,6 +21,12 @@ header_pages:
 #  - publications.md
 #  - resume.md
 
+blog_links:
+  - title: Blog Home
+    url: "https://tchlux.github.io/blog"
+  - title: About Me
+    url: "https://tchlux.github.io"
+
 header_links:
   - title: "Publications"
     url: "#publications"
