@@ -1,6 +1,6 @@
 title: Thomas C.H. Lux
 author: Thomas C.H. Lux
-email: thomas.ch.lux@gmail.com
+# email: thomas.ch.lux@gmail.com
 description: >
   I specialize in AI / ML research and engineering, writing high
   performance code, and developing mathematical theory.
@@ -14,6 +14,7 @@ social:
   linkedin: "https://www.linkedin.com/in/thomas-ch-lux"
   gscholar: "https://scholar.google.com/citations?user=wamfO3sAAAAJ&hl=en"
   stoverflow: "https://stackoverflow.com/users/6132097/thomas-lux"
+  reddit: "https://www.reddit.com/user/tchlux/?sort=top"
   doge: "https://tchlux.github.io/futures/doge.html"
 # - facebook: thomas.ch.lux
 

@@ -7,12 +7,12 @@
         <ul class="contact-list">
           <li class="p-name">
             {%- if site.author -%}
-              {{ site.author | escape }}
+              <a class="p-name" href="{{ "/" | relative_url }}">{{ site.author | escape }}</a>
             {%- endif -%}
           </li>
-          {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-          {%- endif -%}
+            {%- if site.email -%}
+              <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {%- endif -%}
           <li>
             {%- include social.html -%}
           </li>

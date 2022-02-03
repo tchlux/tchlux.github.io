@@ -1,6 +1,10 @@
 
 {%- include profile.html -%}
 
+<style type="text/css">
+  h4 { margin-top: 10px; }
+</style>
+
 ## About Me
 
 I specialize in artificial intelligence (AI) / machine learning (ML) research and engineering. I write and deploy high performance code, and also develop mathematical theory. My unique ML skills are around distribution outcome prediction, interpretable models, black box optimization, convex optimization, and models that work well with small amounts of data.
