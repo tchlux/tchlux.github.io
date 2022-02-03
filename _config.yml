@@ -17,7 +17,7 @@ social:
   doge: "https://tchlux.github.io/futures/doge.html"
 # - facebook: thomas.ch.lux
 
-blog_title: "`tlux`"
+blog_title: "<img src='/blog/tlux.svg'>"
 
 blog_links:
   - title: "Blog"

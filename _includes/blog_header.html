@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="wrapper">
     {%- assign link_paths = site.blog_links -%}
-    <a class="site-title" rel="home" href="{{ "/" | relative_url }}">{{ site.blog_title | escape }}</a>
+    <a class="site-title" rel="home" href="{{ "/" | relative_url }}">{{ site.blog_title }}</a>
     {%- if (link_paths | size > 0) -%}
       <nav class="site-nav">
         {%- for link in link_paths -%}
