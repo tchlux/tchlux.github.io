@@ -15,7 +15,7 @@ social:
   gscholar: "https://scholar.google.com/citations?user=wamfO3sAAAAJ&hl=en"
   stoverflow: "https://stackoverflow.com/users/6132097/thomas-lux"
   reddit: "https://www.reddit.com/user/tchlux/?sort=top"
-  doge: "https://tchlux.github.io/futures/doge.html"
+  # doge: "https://tchlux.github.io/futures/doge.html"
 # - facebook: thomas.ch.lux
 
 blog_title: "<img src='/blog/tlux.svg' height='50mm'>"
