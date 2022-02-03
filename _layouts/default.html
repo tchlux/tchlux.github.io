@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
+  {%- include head.html -%}
   <style type="text/css">
     h4 { margin-top: 30px; margin-bottom: 0px; }
     .navbar-collapse.collapse { display: block!important; }
@@ -8,19 +8,13 @@
     .navbar-nav.navbar-right:last-child { margin-right: -15px !important; }
     .navbar-right { float: right!important; }
   </style>
-
   <body>
-
     {%- include header.html -%}
-
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
       </div>
     </main>
-
     {%- include footer.html -%}
-
   </body>
-
 </html>
