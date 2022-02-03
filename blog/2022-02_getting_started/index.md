@@ -12,15 +12,16 @@ Including `code` inline looks alright. But what about formula?
 That formula will make everything more clear, especially in the context.
 
 <p class="visual">
-<iframe src="https://tchlux.github.io/documents/nn-activations.html"></iframe>
+<iframe src="https://tchlux.github.io/documents/nn-activations.html.gz">
+</iframe>
 </p>
 <p class="caption">Putting a caption under the image is something that can be done to describe what is happening in a clear way separate from the main body of the text. Yes scroll.</p>
 
 ## Subheadings to the moon 🌔
 
-And sometimes it's not clear. Opaque can be a good.
+And sometimes it's not clear. Opaque can be a god.
 
-### Triple hash code time
+### Triple hash 🦾
 
 ```python
 import time
@@ -30,4 +31,6 @@ print("yes")
 ```
 
 That is some.
+
+\bye
 
