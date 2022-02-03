@@ -9,6 +9,8 @@ Including `code` inline looks alright. But what about formula?
 
 <img class="formula" src="./formula-1.svg" title="testing a title"/>
 
+[//]: # (The above formula can be generated at https://latex.codecogs.com/svg.image?latex_math_mode)
+
 That formula will make everything more clear, especially in the context.
 
 <p class="visual">
