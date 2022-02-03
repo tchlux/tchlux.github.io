@@ -12,7 +12,7 @@ Including `code` inline looks alright. But what about formula?
 That formula will make everything more clear, especially in the context.
 
 <p class="visual">
-<iframe src="https://tchlux.github.io/documents/nn-activations.html.gz">
+<iframe src="https://tchlux.github.io/documents/nn-activations.html">
 </iframe>
 </p>
 <p class="caption">Putting a caption under the image is something that can be done to describe what is happening in a clear way separate from the main body of the text. Yes scroll.</p>
