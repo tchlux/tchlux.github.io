@@ -21,8 +21,8 @@ social:
 blog_title: "<img src='/blog/tlux.svg' height='50mm'>"
 
 blog_links:
-  - title: "about me"
-    url: "https://tchlux.github.io"
+  # - title: "about me"
+  #   url: "https://tchlux.github.io"
 
 header_links:
   - title: "Blog"
