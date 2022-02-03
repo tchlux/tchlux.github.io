@@ -17,11 +17,11 @@ social:
   doge: "https://tchlux.github.io/futures/doge.html"
 # - facebook: thomas.ch.lux
 
-blog_title: "<img src='/blog/tlux.svg'>"
+blog_title: "<img src='/blog/tlux.svg' height='50mm'>"
 
 blog_links:
-  - title: "Blog"
-    url: "https://tchlux.github.io/blog"
+  - title: "about me"
+    url: "https://tchlux.github.io"
 
 header_links:
   - title: "Blog"
