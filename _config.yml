@@ -17,15 +17,11 @@ social:
   doge: "https://tchlux.github.io/futures/doge.html"
 # - facebook: thomas.ch.lux
 
-header_pages:
-#  - publications.md
-#  - resume.md
+blog_title: "`tlux`"
 
 blog_links:
-  - title: Blog Home
+  - title: "Blog"
     url: "https://tchlux.github.io/blog"
-  - title: About Me
-    url: "https://tchlux.github.io"
 
 header_links:
   - title: "Publications"
@@ -36,8 +32,8 @@ header_links:
     url: "#education"
   - title: "Personal"
     url: "#personal"
-  - title: "Resume"
-    url: "https://tchlux.github.io/documents/tchlux-resume.pdf"
+  # - title: "Resume"
+  #   url: "https://tchlux.github.io/documents/tchlux-resume.pdf"
 
 google_analytics: UA-152383948-1
 
