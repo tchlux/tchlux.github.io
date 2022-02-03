@@ -24,6 +24,8 @@ blog_links:
     url: "https://tchlux.github.io/blog"
 
 header_links:
+  - title: "Blog"
+    url: "https://tchlux.github.io/blog"
   - title: "Publications"
     url: "#publications"
   - title: "Projects"
