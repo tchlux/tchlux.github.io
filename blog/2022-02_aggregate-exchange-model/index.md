@@ -108,18 +108,18 @@ Here is the performance of the architecture when approximating a "pure" function
 <iframe src="./agg_exc_out-1.html">
 </iframe>
 </p>
-<p class="caption">The first component of the output prediction, `cos(2 pi norm(x))`.</p>
+<p class="caption">The first component of the output prediction, <code>cos(2 pi norm(x))</code>.</p>
 
 
 <p class="visual">
 <iframe src="./agg_exc_out-2.html">
 </iframe>
 </p>
-<p class="caption">The second component of the output prediction, `cos(norm(4 pi x))`.</p>
+<p class="caption">The second component of the output prediction, <code>cos(norm(4 pi x))</code>.</p>
 
 
 <p class="visual">
 <iframe src="./agg_exc_out-3.html">
 </iframe>
 </p>
-<p class="caption">The third component of the output prediction, `cos(norm(6 pi x))`.</p>
+<p class="caption">The third component of the output prediction, <code>cos(norm(6 pi x))</code>.</p>
