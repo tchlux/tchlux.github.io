@@ -19,6 +19,15 @@ title: Learning a Basis for Approximation
 [//]: # Everything else follows normal markdown syntax.
 
 
+# Learning a Basis for Approximation
+
+This post will establish a set of proofs that show useful properties about composed piecewise linear approximations as well as demonstrating that they are capable of approximating a function with a "learned basis", alleviating the problem of choosing a set of basis functions for approximation.
+
+The properties proven here show that the class of composed piecewise linear functions serves as a strong candidate for arbitrary approximation. This is mainly due to the minimum curvature properties that can be achieved with proper initialization and fitting methodologies. Prepared correctly, the resulting fits can converge almost certainly to minimum residual solutions in fixed-dimension approximation scenarios.
+
+
+## Setting the groundwork
+
 The following considers the problem of function approximation given data `X = {x_1, ..., x_n} ⊂ R^d` and values `{f(x_1), ..., f(x_n)} = {y_1, ..., y_n} = Y ⊂ R^o` for positive integers `d` and `o` that are generated with some true function `f: R^d ➞ R^o` with gradient `𝛿f` that satisfies `||𝛿f(x_i) - 𝛿f(x_j)|| < 𝜀 ||x_i - x_j||` everywhere for some `𝜀 ∈ R` where `||∙||` refers to the 2-norm.
 
 The class of models that will be used to approximate function values given data looks like:
@@ -32,7 +41,9 @@ The error of `M(X)` will be measured in the 2-norm, with the goal to minimize `|
 
 `min_{A_s} ||M(X) - Y||` is invariant to `||m_{s,j}(X)||`
 
-*Proof:* Suppose `A_s` is the matrix that produces the minimum norm solution to `A_s m_{s-1}(X) = Y`. Now, since `A_s` is a linear operator, we can commute any scalar multiplier over `m_{s-1,j}(X)` into the columns of `A_s`.
+### Proof:
+
+Suppose `A_s` is the matrix that produces the minimum norm solution to `A_s m_{s-1}(X) = Y`. Now, since `A_s` is a linear operator, we can commute any scalar multiplier over `m_{s-1,j}(X)` into the columns of `A_s`.
 
 ⧠
 
@@ -43,7 +54,9 @@ A similar argument holds for all `||m_{s,j}(X)||`. Knowing this, we can assume `
 
 The space of basis functions is closed.
 
-*Proof:* This follows directly from the fact that all internal vectors `m_{s,j}(X)` have norm 1. They all exist on the surface of a ball.
+### Proof:
+
+This follows directly from the fact that all internal vectors `m_{s,j}(X)` have norm 1. They all exist on the surface of a ball.
 
 ⧠
 
@@ -52,7 +65,9 @@ The space of basis functions is closed.
 
 `||M(X) - Y||` is invariant to rescaled `A_i` 
 
-*Proof:* Since `M` is composed of linear operations `A_i x + b_i`, any multiplicative factors applied to `A_i` can be commuted.
+### Proof:
+
+Since `M` is composed of linear operations `A_i x + b_i`, any multiplicative factors applied to `A_i` can be commuted.
 
 ⧠
 
