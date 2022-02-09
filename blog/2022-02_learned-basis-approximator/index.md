@@ -39,7 +39,7 @@ The error of `M(X)` will be measured in the 2-norm, with the goal to minimize `|
 
 ## Theorem
 
-`min_{A_s} ||M(X) - Y||` is invariant to `||m_{s,j}(X)||`
+`min_{A_s} ||M(X) - Y||` is invariant to `||m_{s-1,j}(X)||`
 
 ### Proof:
 
@@ -143,3 +143,7 @@ Growing solution volume
 
 The volume of the initialization space that converges to a global solution grows with increasing number of basis functions. Global solutions are difficult to find with a small number of truncated linear basis functions.
 
+
+## Theorem
+
+The curvature of the error function with respect to all pairs of parameters related to the radial symmetry of the data on input. The radial symmetry is connected to the orthogonality of input components. Axis aligned distribution flattening helps when inputs are already orthogonal. Using a separate model to aggregate features that derive from a sampled value function can improve orthogonality of input components. Any "prerequisite information" contained in the positional samples at input can be captured with learnable "location" vectors.
