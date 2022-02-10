@@ -56,7 +56,7 @@ The space of basis functions is closed.
 
 ### Proof:
 
-This follows directly from the fact that all internal vectors `m_{s,j}(X)` have norm 1. They all exist on the surface of a ball.
+This follows directly from the fact that all internal vectors `m_{s,j}(X)` can have norm 1. They all exist on the surface of a ball.
 
 ⧠
 
@@ -74,9 +74,28 @@ Since `M` is composed of linear operations `A_i x + b_i`, any multiplicative fac
 
 ## Theorem
 
+`||M(X) - m_{i-1,j=0}(X)|| <= ||b_s + A_s(...(b_i + A_i(||m_{i,j}(X)||)))||`
+
+Plainly stated, the 2-norm of the contribution of the `j`th component of `m_i` to the output of the model is upper bounded by the application of all weight matrices and shifts absent truncation.
+
+Since the `b_i` terms will be the same for all other components of `m_i(X)`, relative rankings of the upper bound of contribution of `m_{i,j}(X)` to the 2-norm of output can be computed by simply multiplying the norm of values by all proceeding matrices `A_i`.
+
+
+## Theorem
+
+The smallest singular value of `m_i(X)` indicates the level of "redundancy" in the basis functions represented at `m_i(X)` with respect to the data. When that smallest singular value equals (or approaches) zero, any one function in `m_{i-1}(X)` can be modified while minimizing change in `M(X)`.
+
+
+## Theorem
+
+The values captured by a single component `m_{i,j}(X)` can be approximated with some linear combination of `m_{k≠i,j}(X)`, the maximum error associated with the using the approximation can be calculated by projecting the 2-norm of the approximation error through all proceeding transformations.
+
+
+## Theorem
+
 Larger state spaces approach `Y`
 
-The distance from `Y` to the plane defined by affine projections of `m_s(X)` gets smaller as we add more independent basis vectors to `m_s`.
+The distance from `Y` to the plane defined by linear projections of `m_s(X)` gets smaller as we add more independent basis vectors to `m_s`.
 
 
 ## Theorem
@@ -88,9 +107,7 @@ This is only true without the unit norm rescaling factors mentioned in a previou
 
 ## Theorem
 
-Curvature of loss relates to singular value of weight matrix
-
-The loss function must be steeper with 
+The magnitude of change in the components of the next layer are a function of the spacing of the data at the current layer. This specific property of data spacing causes increased (or decreased) magnitude change with gradient steps, reducing the curvature of the error function.
 
 
 ## Theorem
@@ -108,12 +125,6 @@ Upper bounds for curvature
 
 The curvature of loss with respect to a vector in `A_i` is less than or equal to `||m_s(...m_{i+1}(e_i))||`.
 
-
-## Theorem
-
-Upper bound for contribution
-
-`m_{i,j}(X) <= A_{i+1}^{-1}(...A_s^{-1}(M(X)))_j × ||M(X)||`
 
 
 ## Theorem
