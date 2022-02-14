@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Research Projects `tlux`
+title: Research Projects `towards the learner`
 ---
 
 # Research Projects `towards the learner`
@@ -8,32 +8,7 @@ title: Research Projects `tlux`
 
 This blog tracks my active research projects. The purpose is twofold: (1) to do good science that is open to the community, and (2) forcing me to formalize, clarify, and polish my thoughts regularly. It's my hope that all work here is complete and correct (unless labeled as in-progress). If you find any problems or errors, please don't hesitate to [raise an issue](https://github.com/tchlux/tchlux.github.io/issues)!
 
-Cite this research blog in `BibTeX` with
-```
-@book{tchlux:research,
-  title     = "Research Compendium",
-  author    = "Lux, Thomas C.H.",
-  year      = 2022,
-  publisher = "GitHub Pages",
-  doi       = "10.5281/zenodo.6071692",
-  url       = "https://tchlux.info/research"
-}
-```
 
-Or cite any specific posts with
-```
-@incollection{tchlux:research,
-  title     = "<post-title>",
-  booktitle = "Research Compendium",
-  author    = "Lux, Thomas C.H.",
-  year      = 2022,
-  publisher = "GitHub Pages",
-  doi       = "10.5281/zenodo.6071692",
-  url       = "https://tchlux.info/research"
-}
-```
-
-# Articles with Summaries
 
 ## [Aggregate Exchange Models for Approximation](https://tchlux.github.io/research/2022-02_aggregate-exchange-model/)
 
@@ -48,6 +23,33 @@ An alternative to pretraining that guarantees a model captures some desirable un
 ## [MLP's are actually nonlinear ➞ linear preconditioners](https://tchlux.github.io/research/2021-10_mlp_nonlinear_linear_preconditioner/)
 
 Sometimes it's easy to overlook the fundamental nature of neural networks with all their complexity. Almost all architectures reduce to performing linear regression in the last layer, and that's more useful than it may seem.
+
+# Citing this Work
+
+Refer to the entire research blog in `BibTeX` with
+```
+@book{tchlux:research,
+  title     = "Research Compendium",
+  author    = "Lux, Thomas C.H.",
+  year      = 2022,
+  publisher = "GitHub Pages",
+  doi       = "10.5281/zenodo.6071692",
+  url       = "https://tchlux.info/research"
+}
+```
+
+Or refer to any specific post by substituting `<post-title>` and `<post-url>` appropriately within
+```
+@incollection{tchlux:research,
+  title     = "<post-title>",
+  booktitle = "Research Compendium",
+  author    = "Lux, Thomas C.H.",
+  year      = 2022,
+  publisher = "GitHub Pages",
+  doi       = "10.5281/zenodo.6071692",
+  url       = "https://tchlux.info/research/<post-url>"
+}
+```
 
 
 [//]: # ## [Mechanical Groundwork](https://tchlux.github.io/research/2022-02_getting_started/)
