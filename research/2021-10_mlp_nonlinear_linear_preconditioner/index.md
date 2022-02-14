@@ -79,7 +79,13 @@ Now, train a small neural network (8×4 in size) on the \~40 data points seen in
 [Pretty neat!](https://youtu.be/Hm3JodBR-vs) The maximum error of this nearest neighbor approximation decreased significantly when we used a neural network as a preconditioner. And we can use this concept *anywhere*. Want to make distributional predictions and give statistical bounds for any data science problem? Well that's really easy to do with lots of nearest neighbors! And we have all the tools to do it.
 
 
+> ***About me:*** *I spend a lot of time thinking about how we can progress towards useful digital intelligence (AI). I do not research this full time (maybe one day!), but rather do this as a hobby. My current line of work is on building theory for solving arbitrary approximation problems, specifically investigating a generalization of transformers (with nonlinear attention mechanisms) and how to improve the convergence / error reduction properties & guarantees of neural networks in general.*  
+>  
+>*Since this is a hobby, I don't spend lots of time looking for other people doing the same work. I just do this as fun project. Please share any research that is related or that you think would be useful or interesting!*
+
+
 Cite this post in `BibTeX` with:
+
 ```
 @incollection{tchlux:research,
   title     = "Multilayer Perceptrons are Nonlinear to Linear Preconditioners",
@@ -92,7 +98,3 @@ Cite this post in `BibTeX` with:
   url       = "https://tchlux.info/research/2021-10_mlp_nonlinear_linear_preconditioner"
 }
 ```
-
-> ***About me:*** *I spend a lot of time thinking about how we can progress towards useful digital intelligence (AI). I do not research this full time (maybe one day!), but rather do this as a hobby. My current line of work is on building theory for solving arbitrary approximation problems, specifically investigating a generalization of transformers (with nonlinear attention mechanisms) and how to improve the convergence / error reduction properties & guarantees of neural networks in general.*  
->  
->*Since this is a hobby, I don't spend lots of time looking for other people doing the same work. I just do this as fun project. Please share any research that is related or that you think would be useful or interesting!*
