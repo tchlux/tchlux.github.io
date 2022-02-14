@@ -20,7 +20,7 @@ title: Smoothing an MLP with extra data.
 
 
 # Controlling bias with data from other problems
-<p class="caption">Find the source code <a href="https://github.com/tchlux/tchlux.github.io/tree/master/blog/2022-02_smoothing-with-artificial-data/code.py">here</a>, uses <code>tlux=0.0.4</code>. </p>
+<p class="caption">Find the source code <a href="https://github.com/tchlux/tchlux.github.io/tree/master/research/2022-02_smoothing-with-artificial-data/code.py">here</a>, uses <code>tlux=0.0.4</code>. </p>
 
 I've recently been working on supporting "learned embeddings" for categorical inputs to my [Fortran MLP](https://github.com/tchlux/util/blob/master/util/approximate/plrm/stable/stable_relu.f90). When running some tests I noticed a very interesting result!
 

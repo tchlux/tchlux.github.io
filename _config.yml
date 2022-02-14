@@ -18,15 +18,15 @@ social:
   # doge: "https://tchlux.github.io/futures/doge.html"
 # - facebook: thomas.ch.lux
 
-blog_title: "<img src='/blog/tlux.svg' height='50mm' style='margin: 0px 0px 5px 30px;'>"
+blog_title: "<img src='/research/tlux.svg' height='50mm' style='margin: 0px 0px 5px 30px;'>"
 
 blog_links:
   # - title: "about me"
   #   url: "https://tchlux.github.io"
 
 header_links:
-  - title: "Blog"
-    url: "https://tchlux.github.io/blog"
+  - title: "Research Blog"
+    url: "https://tchlux.github.io/research"
   - title: "Publications"
     url: "#publications"
   - title: "Projects"

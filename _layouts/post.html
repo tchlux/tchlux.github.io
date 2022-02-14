@@ -2,8 +2,8 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {%- include head.html -%}
   <head>
-	 <link rel="icon" type="image/png" href="https://tchlux.github.io/blog/tlux.png">
-	 <link rel="icon" type="image/svg" href="https://tchlux.github.io/blog/tlux.svg">
+	 <link rel="icon" type="image/png" href="https://tchlux.github.io/research/tlux.png">
+	 <link rel="icon" type="image/svg" href="https://tchlux.github.io/research/tlux.svg">
   </head>
   <style type="text/css">  
 	 code { border-radius: 5px; }
@@ -20,7 +20,7 @@
     <header class="site-header">
       <div class="wrapper">
         {%- assign link_paths = site.blog_links -%}
-        <a class="site-title" rel="home" href="{{ "/blog" | relative_url }}">{{ site.blog_title }}</a>
+        <a class="site-title" rel="home" href="{{ "/research" | relative_url }}">{{ site.blog_title }}</a>
 		  <!-- style="width: 100%; margin: auto; text-align: center;"  -->
         {%- if (link_paths | size > 0) -%}
           <nav class="site-nav">
