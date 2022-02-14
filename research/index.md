@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Research Projects by `tlux`
+title: Research Projects `tlux`
 ---
 
-# Research Projects by `tlux`
+# Research Projects `by tlux`
 [![DOI](https://zenodo.org/badge/221336331.svg)](https://zenodo.org/badge/latestdoi/221336331)
 
 This blog tracks my active and past research projects. The purpose is twofold: (1) to do good science that is open to the community, and (2) forcing me to formalize, clarify, and polish my thoughts regularly. It's my hope that all work here is complete and correct (unless labeled as in-progress). If you find any problems or errors, please don't hesitate to [raise an issue](https://github.com/tchlux/tchlux.github.io/issues)!
@@ -14,7 +14,7 @@ Cite this research blog in BibTex with
   title     = "Research Compendium",
   author    = "Lux, Thomas C.H.",
   year      = 2022,
-  publisher = "Github Pages",
+  publisher = "GitHub Pages",
   doi       = "10.5281/zenodo.6071692",
   url       = "https://tchlux.info/research"
 }
@@ -27,7 +27,7 @@ Or cite any specific posts with
   booktitle = "Research Compendium",
   author    = "Lux, Thomas C.H.",
   year      = 2022,
-  publisher = "Github Pages",
+  publisher = "GitHub Pages",
   doi       = "10.5281/zenodo.6071692",
   url       = "https://tchlux.info/research"
 }
