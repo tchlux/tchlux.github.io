@@ -20,6 +20,11 @@ title: MLP's are actually nonlinear ➞ linear preconditioners
 
 # MLP's are actually nonlinear ➞ linear preconditioners
 
+<p class="caption">
+  [Comment and discuss this post on Reddit!](https://www.reddit.com/r/MachineLearning/comments/qex0o7/d_mlps_are_actually_nonlinear_linear/)
+  <br>[Raise any issues on GitHub.](https://github.com/tchlux/tchlux.github.io/blob/master/research/2021-10_mlp_nonlinear_linear_preconditioner/index.md?plain=1)
+</p>
+
 In spirit of yesterday being a [bones day](https://www.tiktok.com/@jongraz/video/7022251358833118469), I put together a few visuals last night to show off something people might not always think about. Enjoy!
 
 Let's pretend our goal was to approximate this function with data.
