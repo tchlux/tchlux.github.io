@@ -32,6 +32,7 @@ This is a function I usually use as a sanity-check whenever I implement a new ap
 </p>
 <p class="caption"><code>3x + cos(8x)/2 + sin(5y)</code> over the unit cube <code>[0,1], [0,1]</code>.</p>
 
+
 This is what a typical fit of a tine sample (`N = 15`) might look like for a small MLP architecture (ReLU activation, 16 nodes per layer, 8 layers):
 
 <p class="visual">
