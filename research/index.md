@@ -3,12 +3,12 @@ layout: post
 title: Research Projects `tlux`
 ---
 
-# Research Projects `by tlux`
+# Research Projects `towards the learner`
 [![DOI](https://zenodo.org/badge/221336331.svg)](https://zenodo.org/badge/latestdoi/221336331)
 
-This blog tracks my active and past research projects. The purpose is twofold: (1) to do good science that is open to the community, and (2) forcing me to formalize, clarify, and polish my thoughts regularly. It's my hope that all work here is complete and correct (unless labeled as in-progress). If you find any problems or errors, please don't hesitate to [raise an issue](https://github.com/tchlux/tchlux.github.io/issues)!
+This blog tracks my active research projects. The purpose is twofold: (1) to do good science that is open to the community, and (2) forcing me to formalize, clarify, and polish my thoughts regularly. It's my hope that all work here is complete and correct (unless labeled as in-progress). If you find any problems or errors, please don't hesitate to [raise an issue](https://github.com/tchlux/tchlux.github.io/issues)!
 
-Cite this research blog in BibTex with
+Cite this research blog in `BibTeX` with
 ```
 @book{tchlux:research,
   title     = "Research Compendium",
