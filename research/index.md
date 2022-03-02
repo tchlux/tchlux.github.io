@@ -15,6 +15,11 @@ This blog tracks my active research projects. The purpose is twofold: (1) to do 
 A take on capturing the approximation power of transformers in a much simpler architecture. It's a **work-in-progress**, will keep adding as things are refined.
 
 
+## [Fast Principal Component and Rank Approximation](https://tchlux.github.io/research/2022-02_principal_components/)
+
+**Work-in-progress:** This casual explainer walks through a simple, fast, approximate implementation of principal component analysis in Python + NumPy that is faster than `sklearn` PCA and `numpy.linalg` SVD. The implementation only assumes an ability to do matrix multiplication.
+
+
 ## [Controlling bias with data from other problems](https://tchlux.github.io/research/2022-02_smoothing-with-artificial-data/)
 
 An alternative to pretraining that guarantees a model captures some desirable underlying structure for problems where very little specific data is available, but data for a similar domain is available in abundance.
