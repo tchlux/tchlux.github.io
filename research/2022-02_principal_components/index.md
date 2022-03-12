@@ -43,8 +43,8 @@ num_states = 8
 # Initialize the weights (input, internal, output).
 weight_matrices = [np.random.normal(size=(input_dim, state_dim))] + \
                   [np.random.normal(size=(state_dim, state_dim))
-						 for i in range(num_states-1)] + \
-						[np.zeros((state_dim, output_dim))]
+                   for i in range(num_states-1)] + \
+                  [np.zeros((state_dim, output_dim))]
 shift_vectors = [np.linspace(-1, 1, state_dim) for i in range(num_states)]
 
 # Define the "forward" function for the model that makes predictions.
@@ -122,7 +122,7 @@ def svd(row_vecs, steps=5, bias=1.0):
     assert (multiplier > 0), "ERROR: Provided 'row_vecs' had no nonzero entries."
     multiplier = bias / multiplier
     # Compute the covariance matrix (usually the most expensive operation).
-	 row_vecs = row_vecs * multiplier
+    row_vecs = row_vecs * multiplier
     covariance = np.matmul(row_vecs.T, row_vecs)
     # Compute the initial right singular vectors.
     right_col_vecs, lengths = orthogonalize(covariance.copy())

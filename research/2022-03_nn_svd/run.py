@@ -1,6 +1,6 @@
 import time
 import numpy as np
-from tlux.random import sphere
+from tlux.random import sphere, box
 
 # Generate random normal points.
 def normal(n, d):
@@ -8,10 +8,10 @@ def normal(n, d):
 
 
 # Configure the model.
-input_dim = 2
+input_dim = 10
 output_dim = 1
-state_dim = 32
-num_states = 8
+state_dim = 40
+num_states = 10
 
 # Initialize the weights (input, internal, output).
 weight_matrices = [sphere(input_dim, state_dim)] + \
@@ -33,31 +33,18 @@ def forward(x, states=None):
 
 
 # Define some random data.
-x = np.random.random(size=(100, input_dim))
+x = box(100, input_dim)
 y = np.cos(np.linalg.norm(x, axis=1, keepdims=True))
-
 
 # Initialize holder for the states.
 states = np.zeros((num_states, x.shape[0], state_dim))
 forward(x, states=states)
-
 
 print()
 print(x.shape)
 print(y.shape)
 print(forward(x).shape)
 print(states.shape)
-
-
-# Use "sklearn" to compute the principal compoents 
-def pca(x, num_components=None):
-    from sklearn.decomposition import PCA
-    if (num_components is None): num_components = min(*x.shape)
-    else: num_components = min(num_components, *x.shape)
-    pca = PCA(n_components=num_components)
-    pca.fit(x)
-    return pca.components_, pca.singular_values_
-
 
 # Given column vectors (in a 2D numpy array), orthogonalize and return
 #  the orthonormal vectors and the lengths of the orthogonal components.
@@ -79,7 +66,6 @@ def orthogonalize(col_vecs, essentially_zero=2**(-26)):
             col_vecs[:,i+1:] -= v
     # Return the orthonormalized vectors and their lengths (before normalization).
     return col_vecs, lengths
-
 
 # Compute the singular values and the right singular vectors for a matrix of row vectors.
 def svd(row_vecs, steps=50, bias=1.0):
@@ -106,23 +92,13 @@ def svd(row_vecs, steps=50, bias=1.0):
     return right_col_vecs.T, singular_vals
 
 
-
+print()
+print("Distribution of principal comonent magnitudes")
+print("at each internal state representation.")
+print()
 np.set_printoptions(linewidth=1000, formatter=dict(float=lambda s: f"{s: .2e}"))
 for i in range(num_states):
-    vecs, vals = pca(states[i,:,:])
-    print(f"{i:3d}", vals.round(3))
-    # print(np.matmul(vecs, vecs.T))
     vecs, vals = svd(states[i,:,:])
-    print(f"   ", vals.round(3))
-    # print(np.matmul(vecs, vecs.T))
+    print(f"{i:3d}", vals.round(3))
     print()
-
-from tlux.plot import Plot
-p = Plot()
-x = np.asarray([
-    [0, 0, 1],
-    [0, 1, 0],
-    [0.1, 0.7, 0.7],
-])
-# p.add("Data", )
 
