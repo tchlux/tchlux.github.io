@@ -22,7 +22,7 @@ title: Data Distributions and Initialization
 # Data Distributions and Initializing Neural Networks
 
 <p class="caption">
-  <a href="https://www.reddit.com/">Comment and discuss this post on Reddit!</a>
+  <a href="https://www.reddit.com/r/MachineLearning/comments/tcott9/d_is_it_possible_for_us_to_make_fixedsize/">Comment and discuss this post on Reddit!</a>
   <br><a href="https://github.com/tchlux/tchlux.github.io/blob/master/research/2022-03_nn_svd/index.md?plain=1">Raise any issues on GitHub.</a>
   <br><a href="https://github.com/tchlux/tchlux.github.io/blob/master/research/2022-03_nn_svd/run.py">Run this code for yourself.</a>
 </p>
@@ -34,7 +34,7 @@ Let's consider a simple `MLP` that looks like:
 
 ```python
 # Configure the model.
-input_dim = 10
+input_dim = 3
 output_dim = 1
 state_dim = 40
 num_states = 10
@@ -59,8 +59,10 @@ def forward(x, states=None):
 ```
 
 Given this simple ReLU architecture, lets define some random uniform
-data and construct a test function for us to approximate. We'll use
-this to observe some properties of the model.
+data ([over the unit
+ball](https://stackoverflow.com/questions/54544971/how-to-generate-uniform-random-points-inside-d-dimension-ball-sphere/54544972#54544972))
+and construct a test function for us to approximate. We'll use this to
+observe some properties of the model.
 
 ```python
 # Define some random data.

@@ -9,11 +9,13 @@ title: Research Projects `towards the learner`
 This blog tracks my active research projects. The purpose is twofold: (1) to do good science that is open to the community, and (2) forcing me to formalize, clarify, and polish my thoughts regularly. It's my hope that all work here is complete and correct (unless labeled as in-progress). If you find any problems or errors, please don't hesitate to [raise an issue](https://github.com/tchlux/tchlux.github.io/issues)!
 
 
+## [Data Distributions and Model Initialization](https://tchlux.github.io/research/2022-03_nn_svd/)
+
+This post accompanies the [interview I did](https://youtu.be/ZaOp1KNhpUQ) with [Machine Learning Street Talk](https://www.youtube.com/c/MachineLearningStreetTalk/). It juxtaposes the consequences of various initialization schemes and grounds their success in geometry. 
 
 ## [Aggregate Exchange Models for Approximation](https://tchlux.github.io/research/2022-02_aggregate-exchange-model/)
 
 A take on capturing the approximation power of transformers in a much simpler architecture. It's a **work-in-progress**, will keep adding as things are refined.
-
 
 ## [Fast Principal Component and Rank Approximation](https://tchlux.github.io/research/2022-02_principal_components/)
 
