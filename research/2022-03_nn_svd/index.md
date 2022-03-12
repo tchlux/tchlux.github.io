@@ -110,7 +110,7 @@ Below are visuals of the data for layers 1, 6 (middle), and 10 (last).
 <p class="caption">Data distribution at the middle layer of the model. Interact with this visual <a href="./normal_init/data_layer_6.html">here</a>.</p>
 
 <p class="visual">
-  <video controls="" autoplay="" loop="" type="video/mp4" src="./normal_init/data_layer_6.mp4"></video>  
+  <video controls="" autoplay="" loop="" type="video/mp4" src="./normal_init/data_layer_10.mp4"></video>  
 </p>
 <p class="caption">Data distribution at the last layer of the model. Interact with this visual <a href="./normal_init/data_layer_10.html">here</a>.</p>
 
@@ -124,15 +124,9 @@ weights that have been initialized with values from a purely random
 normal distribution:
 
 <p class="visual">
- <iframe src="./normal_init/lengths.html">
- </iframe>
+  <img src="./normal_init/lengths.png">
 </p>
-<p class="caption">2-norm distribution of random normal weight vectors.</p>
-
-<p class="visual">
-  <img src="./lengths.png"></img>
-</p>
-<p class="caption">2-norm distribution of random normal weight vectors. Interact with this visual <a href="./lengths.html">here</a>.</p>
+<p class="caption">2-norm distribution of random normal weight vectors. Interact with this visual <a href="./normal_init/lengths.html">here</a>.</p>
 
 
 A simple way to try and solve that problem is to initialize
@@ -148,23 +142,21 @@ This is what happens when we try to do that.
 <p class="caption">Data distribution at the first layer of the model. Interact with this visual <a href="./sphere_init/data_layer_1.html">here</a>.</p>
 
 <p class="visual">
-  <video controls="" autoplay="" loop="" type="video/mp4" src="./sphere_init/data_layer_6.mp4l"></video>  
+  <video controls="" autoplay="" loop="" type="video/mp4" src="./sphere_init/data_layer_6.mp4"></video>  
 </p>
 <p class="caption">Data distribution at the middle layer of the model. Interact with this visual <a href="./sphere_init/data_layer_6.html">here</a>.</p>
 
 <p class="visual">
-  <video controls="" autoplay="" loop="" type="video/mp4" src="./sphere_init/data_layer_6.mp4"></video>  
+  <video controls="" autoplay="" loop="" type="video/mp4" src="./sphere_init/data_layer_10.mp4"></video>  
 </p>
 <p class="caption">Data distribution at the last layer of the model. Interact with this visual <a href="./sphere_init/data_layer_10.html">here</a>.</p>
 
 
-The scaling problem is mostly gone! If anything we need to worry about
-the data getting scaled down, but over many repeated trials it seems
-to hold more closely to the original scale.
-
-Now the remaining issue is how distorted the data has become. Notice
-that our data that was nicely distributed over the unit ball has not
-been pushed into a flat arc-like pattern (we've lost a lot of input
+The scaling problem is mostly gone, if anything it's been reversed
+(over many trials it balances closer to 1 though). Now the remaining
+issue is how distorted the data has become. Notice that our data that
+was nicely distributed over the unit ball has been pushed into a
+slightly flat and arc-like pattern (i.e., we've lost a lot of input
 direction variance). With this low dimensional input data, the
 distortions are not much of an issue, but when we have data that has
 high intrinsic dimension (≥ 10 nonzero principal components), then we
@@ -176,10 +168,22 @@ can quickly lose important information!
 Let's look at the distribution of magnitudes of the singular values
 (the amount of variance squared of the data along the principal
 components) at each of the internal state representations for the
-model when we raise the input dimension to 10.
+model when we raise the input dimension to 40.
 
 <p class="visual">
   <video controls="" autoplay="" loop="" type="video/mp4" src="./sphere_init/singular_values.mp4"></video>  
 </p>
 <p class="caption">Singular value distribution at various layers in the model (plotting software bug causes some series to not correctly disappear on transitions). Interact with this visual <a href="./sphere_init/singular_values.html">here</a>.</p>
 
+This is where the bulk of difficulties with initialization lie. Whether
+it's different weight initializations, introducing residual connections,
+applying a layer-norm operation, or "training" your model (initializing)
+with a forward gradient method, we need to do something to prevent this
+critical loss of variance during network initialization!
+
+Why? Because the gradient depends on the presence of information. We
+cannot train a model with gradient descent when there is no gradient.
+This is where I believe some of the most important fundamental
+research in neural networks exists. We need a way to **guarantee** we've
+solved this problem (the set of failure must have a measure of 0) if we
+truly want to *solve* the neural network training problem.
