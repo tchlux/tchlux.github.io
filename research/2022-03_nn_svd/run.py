@@ -55,40 +55,36 @@ print(states.shape)
 
 # Generating visuals.
 
-auto_show = True # Change to "True" to automatically open in browser.
+auto_show = False # Change to "True" to automatically open in browser.
 
 # --------------------------------------------------------------------
 # Random normal weight distributions.
-lengths = np.linalg.norm(normal(1000000, 3), axis=1)
-p = Plot(f"Distribution of 1M normal weight vector 2-norm lengths")
-p.add_histogram("lengths", lengths, color=1, num_bins=200)
+lengths = np.linalg.norm(normal(10000, 3), axis=1)
+p = Plot("", "2-norm length", "count")
+p.add_histogram("lengths", lengths, color=1, num_bins=60)
 p.plot(file_name=f"normal_init/lengths.html", show=auto_show, show_legend=False)
 # --------------------------------------------------------------------
-
+exit()
 # Looking at principal components of data.
 
 # --------------------------------------------------------------------
-# Use "sklearn" to compute the principal compoents 
-def pca(x, num_components=None):
+# Use "sklearn" to compute the principal compoents and project data down.
+def project(x, num_components):
     from sklearn.decomposition import PCA
-    if (num_components is None): num_components = min(*x.shape)
-    else: num_components = min(num_components, *x.shape)
     pca = PCA(n_components=num_components)
     pca.fit(x)
-    return pca.components_, pca.singular_values_
+    return np.matmul(x, pca.components_.T)
 
 # Generate a projection and a visual for the input data.
-projection, _ = pca(x, num_components=3)
-x_3d = np.matmul(x, projection.T)
-p = Plot("Data distribution in first 3 principal components at initialization.")
+x_3d = project(x, 3)
+p = Plot()
 p.add("Data", *x_3d.T, marker_size=5, marker_line_width=2, color=1, shade=True)
 p.plot(file_name="input_data.html", show=auto_show, show_legend=False)
 
 # Cycle through and make visuals for all internal layers.
 for i in (0, num_states//2, num_states-1):
-    projection, _ = pca(states[i,:,:], num_components=3)
-    x_3d = np.matmul(states[i,:,:], projection.T)
-    p = Plot(f"Layer {i+1} data distribution (first 3 principal components)")
+    x_3d = project(states[i,:,:], 3)
+    p = Plot()
     p.add("Data", *x_3d.T, marker_size=5, marker_line_width=2, color=1, shade=True)
     p.plot(file_name=f"normal_init/data_layer_{i+1}.html", show=auto_show, show_legend=False)
 
@@ -101,9 +97,38 @@ forward(x, states=states)
 
 # Cycle through and make visuals for all internal layers.
 for i in (0, num_states//2, num_states-1):
-    projection, _ = pca(states[i,:,:], num_components=3)
-    x_3d = np.matmul(states[i,:,:], projection.T)
-    p = Plot(f"Layer {i+1} data distribution (first 3 principal components)")
+    x_3d = project(states[i,:,:], 3)
+    p = Plot()
     p.add("Data", *x_3d.T, marker_size=5, marker_line_width=2, color=1, shade=True)
     p.plot(file_name=f"sphere_init/data_layer_{i+1}.html", show=auto_show, show_legend=False)
 # --------------------------------------------------------------------
+
+# Use "sklearn" to get the singular values of data.
+def singular_values(x):
+    from sklearn.decomposition import PCA
+    pca = PCA(n_components=min(x.shape))
+    pca.fit(x)
+    return pca.singular_values_
+
+# Raise the input dimension of the model and data.
+input_dim = 40
+weight_matrices[0] = sphere(input_dim, state_dim)
+x = ball(1000, input_dim)
+y = np.cos(np.linalg.norm(x, axis=1, keepdims=True))
+states = np.zeros((num_states, x.shape[0], state_dim))
+forward(x, states=states)
+
+p = Plot("", "principal component", "singular value")
+for i in range(num_states):
+    sv = singular_values(states[i,:,:])
+    p.add(f"layer {i}",
+          sum(([j,j,None] for j in range(len(sv))),[]),
+          sum(([0,sv[j],None] for j in range(len(sv))),[]),
+          mode="lines",
+          line_width=10,
+          marker_line_width=1,
+          color=i,
+          frame=i+1,
+    )
+p.show(file_name="sphere_init/singular_values.html",
+       show_legend=False, bounce=True, frame_label="Layer ")

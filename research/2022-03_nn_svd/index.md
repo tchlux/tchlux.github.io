@@ -32,7 +32,7 @@ I'm currently exploring ways to make multilayer perceptrons (MLP's) provably con
 
 Let's consider a simple `MLP` that looks like:
 
-```python3
+```python
 # Configure the model.
 input_dim = 10
 output_dim = 1
@@ -62,7 +62,7 @@ Given this simple ReLU architecture, lets define some random uniform
 data and construct a test function for us to approximate. We'll use
 this to observe some properties of the model.
 
-```python3
+```python
 # Define some random data.
 x = ball(100, input_dim)
 y = np.cos(np.linalg.norm(x, axis=1, keepdims=True))
@@ -79,31 +79,41 @@ where we are losing (or gaining) information. Here's a visual of the
 sample points that we've generated:
 
 <p class="visual">
- <iframe src="./input_data.html">
- </iframe>
+  <video controls="" autoplay="" loop="" type="video/mp4" src="./input_data.mp4"></video>  
 </p>
-<p class="caption">Data distribution before it is passed through the model.</p>
+<p class="caption">Data distribution at input, before passing through the model. Interact with this visual <a href="./input_data.html">here</a>.</p>
 
 What about if we look at the representations that are created for data
-inside the model? Below are visuals for layers 1, 5 (middle), and 10 (last.
+inside the model? The internal dimension is too high to visualize,
+but we can just look at the principal components to get an idea for how
+the data is being transformed.
+
+```python
+# Use "sklearn" to compute the principal compoents and project data down.
+def project(x, num_components):
+    from sklearn.decomposition import PCA
+    pca = PCA(n_components=num_components)
+    pca.fit(x)
+    return np.matmul(x, pca.components_.T)
+```
+
+Below are visuals of the data for layers 1, 6 (middle), and 10 (last).
 
 <p class="visual">
- <iframe src="./normal_init/data_layer_1.html">
- </iframe>
+  <video controls="" autoplay="" loop="" type="video/mp4" src="./normal_init/data_layer_1.mp4"></video>  
 </p>
-<p class="caption">Data distribution at the first layer of the model.</p>
+<p class="caption">Data distribution at the first layer of the model. Interact with this visual <a href="./normal_init/data_layer_1.html">here</a>.</p>
 
 <p class="visual">
- <iframe src="./normal_init/data_layer_6.html">
- </iframe>
+  <video controls="" autoplay="" loop="" type="video/mp4" src="./normal_init/data_layer_6.mp4"></video>  
 </p>
-<p class="caption">Data distribution at the sixth (middle most) layer of the model.</p>
+<p class="caption">Data distribution at the middle layer of the model. Interact with this visual <a href="./normal_init/data_layer_6.html">here</a>.</p>
 
 <p class="visual">
- <iframe src="./normal_init/data_layer_10.html">
- </iframe>
+  <video controls="" autoplay="" loop="" type="video/mp4" src="./normal_init/data_layer_6.mp4"></video>  
 </p>
-<p class="caption">Data distribution at the tenth (last) layer of the model.</p>
+<p class="caption">Data distribution at the last layer of the model. Interact with this visual <a href="./normal_init/data_layer_10.html">here</a>.</p>
+
 
 The first thing to notice is that the scale of the data becomes huge!
 This is exactly the problem that schemes like [Kaiming
@@ -119,6 +129,11 @@ normal distribution:
 </p>
 <p class="caption">2-norm distribution of random normal weight vectors.</p>
 
+<p class="visual">
+  <img src="./lengths.png"></img>
+</p>
+<p class="caption">2-norm distribution of random normal weight vectors. Interact with this visual <a href="./lengths.html">here</a>.</p>
+
 
 A simple way to try and solve that problem is to initialize
 weight vectors inside the network to have unit 2-norm (this stops them
@@ -128,22 +143,19 @@ This is what happens when we try to do that.
 ## Using random <code>sphere</code> initializations
 
 <p class="visual">
- <iframe src="./sphere_init/data_layer_1.html">
- </iframe>
+  <video controls="" autoplay="" loop="" type="video/mp4" src="./sphere_init/data_layer_1.mp4"></video>  
 </p>
-<p class="caption">Data distribution at the first layer of the model.</p>
+<p class="caption">Data distribution at the first layer of the model. Interact with this visual <a href="./sphere_init/data_layer_1.html">here</a>.</p>
 
 <p class="visual">
- <iframe src="./sphere_init/data_layer_6.html">
- </iframe>
+  <video controls="" autoplay="" loop="" type="video/mp4" src="./sphere_init/data_layer_6.mp4l"></video>  
 </p>
-<p class="caption">Data distribution at the sixth (middle most) layer of the model.</p>
+<p class="caption">Data distribution at the middle layer of the model. Interact with this visual <a href="./sphere_init/data_layer_6.html">here</a>.</p>
 
 <p class="visual">
- <iframe src="./sphere_init/data_layer_10.html">
- </iframe>
+  <video controls="" autoplay="" loop="" type="video/mp4" src="./sphere_init/data_layer_6.mp4"></video>  
 </p>
-<p class="caption">Data distribution at the tenth (last) layer of the model.</p>
+<p class="caption">Data distribution at the last layer of the model. Interact with this visual <a href="./sphere_init/data_layer_10.html">here</a>.</p>
 
 
 The scaling problem is mostly gone! If anything we need to worry about
@@ -162,7 +174,12 @@ can quickly lose important information!
 ## Chasing the distributions
 
 Let's look at the distribution of magnitudes of the singular values
-(the amount of variance of the data along the principal components)
-at each of the internal state representations for the model when we
-raise the input dimension to 10.
+(the amount of variance squared of the data along the principal
+components) at each of the internal state representations for the
+model when we raise the input dimension to 10.
+
+<p class="visual">
+  <video controls="" autoplay="" loop="" type="video/mp4" src="./sphere_init/singular_values.mp4"></video>  
+</p>
+<p class="caption">Singular value distribution at various layers in the model (plotting software bug causes some series to not correctly disappear on transitions). Interact with this visual <a href="./sphere_init/singular_values.html">here</a>.</p>
 
