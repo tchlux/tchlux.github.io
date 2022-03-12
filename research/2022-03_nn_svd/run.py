@@ -1,24 +1,31 @@
 import time
 import numpy as np
-from tlux.random import sphere, box
+from tlux.random import well_spaced_box as box
+from tlux.random import well_spaced_sphere as sphere
+from tlux.random import well_spaced_ball as ball
+from tlux.plot import Plot
+
+np.random.seed(0)
 
 # Generate random normal points.
 def normal(n, d):
     return np.random.normal(size=(n,d))
 
-
+# --------------------------------------------------------------------
 # Configure the model.
-input_dim = 10
+input_dim = 3
 output_dim = 1
 state_dim = 40
 num_states = 10
 
 # Initialize the weights (input, internal, output).
-weight_matrices = [sphere(input_dim, state_dim)] + \
-                  [sphere(state_dim, state_dim)
+weight_matrices = [normal(input_dim, state_dim)] + \
+                  [normal(state_dim, state_dim)
                    for i in range(num_states-1)] + \
                   [np.zeros((state_dim, output_dim))]
-shift_vectors = [np.linspace(-1, 1, state_dim) for i in range(num_states)]
+shift_vectors = [
+    np.linspace(-1, 1, state_dim) for i in range(num_states)
+]
 
 # Define the "forward" function for the model that makes predictions.
 # Optionally provided "states" matrix that has a shape:
@@ -31,9 +38,8 @@ def forward(x, states=None):
             states[i,:,:] = x[:,:]
     return np.matmul(x, weight_matrices[-1])
 
-
 # Define some random data.
-x = box(100, input_dim)
+x = ball(100, input_dim)
 y = np.cos(np.linalg.norm(x, axis=1, keepdims=True))
 
 # Initialize holder for the states.
@@ -45,60 +51,59 @@ print(x.shape)
 print(y.shape)
 print(forward(x).shape)
 print(states.shape)
+# --------------------------------------------------------------------
 
-# Given column vectors (in a 2D numpy array), orthogonalize and return
-#  the orthonormal vectors and the lengths of the orthogonal components.
-def orthogonalize(col_vecs, essentially_zero=2**(-26)):
-    rank = 0
-    lengths = np.zeros(col_vecs.shape[1])
-    for i in range(col_vecs.shape[1]):
-        lengths[i:] = np.linalg.norm(col_vecs[:,i:], axis=0)
-        # Move the longest vectors to the front / leftmost position (pivot).
-        descending_order = np.argsort(-lengths[i:])
-        lengths[i:] = lengths[i:][descending_order]
-        col_vecs[:,i:] = col_vecs[:,i+descending_order]
-        # Break if none of the remaining vectors have positive length.
-        if (lengths[i] < essentially_zero): break
-        col_vecs[:,i] /= lengths[i]
-        # Normalize then orthogonalize, remove vector i from all remaining vectors.
-        if (i+1 < col_vecs.shape[1]):
-            v = np.dot(col_vecs[:,i],col_vecs[:,i+1:]) * col_vecs[:,i:i+1]
-            col_vecs[:,i+1:] -= v
-    # Return the orthonormalized vectors and their lengths (before normalization).
-    return col_vecs, lengths
+# Generating visuals.
 
-# Compute the singular values and the right singular vectors for a matrix of row vectors.
-def svd(row_vecs, steps=50, bias=1.0):
-    dim = row_vecs.shape[1]
-    # Initialize a holder for the singular valeus and the right
-    #   singular vectors (the principal components).
-    # Rescale the data for stability control, exit early when given only zeros.
-    multiplier = abs(row_vecs).max()
-    assert (multiplier > 0), "ERROR: Provided 'row_vecs' had no nonzero entries."
-    multiplier = bias / multiplier
-    # Compute the covariance matrix (usually the most expensive operation).
-    covariance = np.matmul(multiplier*row_vecs.T, multiplier*row_vecs)
-    # Compute the initial right singular vectors.
-    right_col_vecs, lengths = orthogonalize(covariance.copy())
-    # Do the power iteration.
-    for i in range(steps):
-        right_col_vecs, lengths = orthogonalize(
-            np.matmul(covariance, right_col_vecs))
-    # Compute the singular values from the lengths.
-    singular_vals = lengths
-    singular_vals[singular_vals > 0] = np.sqrt(
-        singular_vals[singular_vals > 0]) / multiplier
-    # Return the singular values and the right singular vectors.
-    return right_col_vecs.T, singular_vals
+auto_show = True # Change to "True" to automatically open in browser.
 
+# --------------------------------------------------------------------
+# Random normal weight distributions.
+lengths = np.linalg.norm(normal(1000000, 3), axis=1)
+p = Plot(f"Distribution of 1M normal weight vector 2-norm lengths")
+p.add_histogram("lengths", lengths, color=1, num_bins=200)
+p.plot(file_name=f"normal_init/lengths.html", show=auto_show, show_legend=False)
+# --------------------------------------------------------------------
 
-print()
-print("Distribution of principal comonent magnitudes")
-print("at each internal state representation.")
-print()
-np.set_printoptions(linewidth=1000, formatter=dict(float=lambda s: f"{s: .2e}"))
-for i in range(num_states):
-    vecs, vals = svd(states[i,:,:])
-    print(f"{i:3d}", vals.round(3))
-    print()
+# Looking at principal components of data.
 
+# --------------------------------------------------------------------
+# Use "sklearn" to compute the principal compoents 
+def pca(x, num_components=None):
+    from sklearn.decomposition import PCA
+    if (num_components is None): num_components = min(*x.shape)
+    else: num_components = min(num_components, *x.shape)
+    pca = PCA(n_components=num_components)
+    pca.fit(x)
+    return pca.components_, pca.singular_values_
+
+# Generate a projection and a visual for the input data.
+projection, _ = pca(x, num_components=3)
+x_3d = np.matmul(x, projection.T)
+p = Plot("Data distribution in first 3 principal components at initialization.")
+p.add("Data", *x_3d.T, marker_size=5, marker_line_width=2, color=1, shade=True)
+p.plot(file_name="input_data.html", show=auto_show, show_legend=False)
+
+# Cycle through and make visuals for all internal layers.
+for i in (0, num_states//2, num_states-1):
+    projection, _ = pca(states[i,:,:], num_components=3)
+    x_3d = np.matmul(states[i,:,:], projection.T)
+    p = Plot(f"Layer {i+1} data distribution (first 3 principal components)")
+    p.add("Data", *x_3d.T, marker_size=5, marker_line_width=2, color=1, shade=True)
+    p.plot(file_name=f"normal_init/data_layer_{i+1}.html", show=auto_show, show_legend=False)
+
+# Initialize the weights with a sphere method instead.
+weight_matrices = [sphere(input_dim, state_dim)] + \
+                  [sphere(state_dim, state_dim)
+                   for i in range(num_states-1)] + \
+                  [np.zeros((state_dim, output_dim))]
+forward(x, states=states)
+
+# Cycle through and make visuals for all internal layers.
+for i in (0, num_states//2, num_states-1):
+    projection, _ = pca(states[i,:,:], num_components=3)
+    x_3d = np.matmul(states[i,:,:], projection.T)
+    p = Plot(f"Layer {i+1} data distribution (first 3 principal components)")
+    p.add("Data", *x_3d.T, marker_size=5, marker_line_width=2, color=1, shade=True)
+    p.plot(file_name=f"sphere_init/data_layer_{i+1}.html", show=auto_show, show_legend=False)
+# --------------------------------------------------------------------
