@@ -28,7 +28,7 @@ title: Data Distributions and Initialization
 </p>
 
 
-I'm currently exploring ways to make multilayer perceptrons (MLP's) provably converge. It's always bothered me that initialization seems so arbitrary and all the optimization algorithms produce different results that are "better for `X` domain" or "optimal for `N` or bigger data". The first step to really studying this phenomenon is to actually look at some data and see what is happening.
+*Is it possible for us to make fixed-size multilayer perceptrons (MLP's) provably converge?* This is the question I've been exploring for a while. It's always bothered me that initialization seems arbitrary and all the optimization algorithms produce different results that are "better for `X` domain" or "optimal for `N` or bigger data". The first step to really studying this phenomenon is to actually look at some data and see what is happening.
 
 Let's consider a simple `MLP` that looks like:
 
@@ -84,15 +84,16 @@ sample points that we've generated:
 <p class="caption">Data distribution at input, before passing through the model. Interact with this visual <a href="./input_data.html">here</a>.</p>
 
 What about if we look at the representations that are created for data
-inside the model? The internal dimension is too high to visualize,
-but we can just look at the principal components to get an idea for how
-the data is being transformed.
+inside the model? The internal dimension is too high to visualize, but
+we can just look at the [principal
+components](https://setosa.io/ev/principal-component-analysis/) to get
+an idea for how the data is being transformed.
 
 ```python
 # Use "sklearn" to compute the principal compoents and project data down.
-def project(x, num_components):
+def project(x, dimension):
     from sklearn.decomposition import PCA
-    pca = PCA(n_components=num_components)
+    pca = PCA(n_components=dimension)
     pca.fit(x)
     return np.matmul(x, pca.components_.T)
 ```
@@ -123,18 +124,17 @@ data. This is actually the distribution of 2-norm magnitudes for
 weights that have been initialized with values from a purely random
 normal distribution:
 
-<p class="visual">
+<p class="caption">
   <img src="./normal_init/lengths.png">
+  2-norm distribution of random normal weight vectors. Notice that most of them are greater than 1, which means on average these vectors will increase the scale of data. Interact with this visual <a href="./normal_init/lengths.html">here</a>.
 </p>
-<p class="caption">2-norm distribution of random normal weight vectors. Interact with this visual <a href="./normal_init/lengths.html">here</a>.</p>
-
 
 A simple way to try and solve that problem is to initialize
 weight vectors inside the network to have unit 2-norm (this stops them
 from scaling the data up or down, only doing directional projections).
 This is what happens when we try to do that.
 
-## Using random <code>sphere</code> initializations
+## Using random <code>sphere</code> initializations instead of <code>normal</code>
 
 <p class="visual">
   <video controls="" autoplay="" loop="" type="video/mp4" src="./sphere_init/data_layer_1.mp4"></video>  
@@ -165,25 +165,31 @@ can quickly lose important information!
 
 ## Chasing the distributions
 
-Let's look at the distribution of magnitudes of the singular values
-(the amount of variance squared of the data along the principal
-components) at each of the internal state representations for the
-model when we raise the input dimension to 40.
+Lastly, let's try to generalize what we're observing. To do this we
+can plot the distribution of singular values (roughly the amount
+variance in data along the principal components) at each of the
+internal state representations for the model when we raise the input
+dimension to 40 (the same as the state dimensions).
 
 <p class="visual">
   <video controls="" autoplay="" loop="" type="video/mp4" src="./sphere_init/singular_values.mp4"></video>  
 </p>
 <p class="caption">Singular value distribution at various layers in the model (plotting software bug causes some series to not correctly disappear on transitions). Interact with this visual <a href="./sphere_init/singular_values.html">here</a>.</p>
 
-This is where the bulk of difficulties with initialization lie. Whether
-it's different weight initializations, introducing residual connections,
-applying a layer-norm operation, or "training" your model (initializing)
-with a forward gradient method, we need to do something to prevent this
-critical loss of variance during network initialization!
+This is where the bulk of difficulties with initialization
+lie. Whether it's different weight initializations, introducing
+[residual connections](https://arxiv.org/abs/1512.03385), applying a
+[layer-norm](https://arxiv.org/abs/1607.06450) operations, or
+"training" your model (initializing) with a [forward gradient
+method](https://arxiv.org/abs/2202.08587), we need to do something to
+prevent this critical loss of variance during network initialization!
+
+### We need to prevent total information loss at initialization.
 
 Why? Because the gradient depends on the presence of information. We
 cannot train a model with gradient descent when there is no gradient.
 This is where I believe some of the most important fundamental
-research in neural networks exists. We need a way to **guarantee** we've
-solved this problem (the set of failure must have a measure of 0) if we
-truly want to *solve* the neural network training problem.
+theoretical research in neural networks exists. We need a way to
+**guarantee** we've solved this problem (the set of failure must have
+a measure of 0) if we truly want to *solve* the neural network
+training problem everywhere.

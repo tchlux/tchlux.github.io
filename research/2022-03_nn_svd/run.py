@@ -64,14 +64,14 @@ p = Plot("", "2-norm length", "count")
 p.add_histogram("lengths", lengths, color=1, num_bins=60)
 p.plot(file_name=f"normal_init/lengths.html", show=auto_show, show_legend=False)
 # --------------------------------------------------------------------
-exit()
+
 # Looking at principal components of data.
 
 # --------------------------------------------------------------------
 # Use "sklearn" to compute the principal compoents and project data down.
-def project(x, num_components):
+def project(x, dimension):
     from sklearn.decomposition import PCA
-    pca = PCA(n_components=num_components)
+    pca = PCA(n_components=dimension)
     pca.fit(x)
     return np.matmul(x, pca.components_.T)
 
