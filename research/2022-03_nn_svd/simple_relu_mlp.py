@@ -1,17 +1,11 @@
-# import numpy as np
-import jax.numpy as np
-from jax import grad
+import numpy as np
 
-try:
-    from jax import random
-    key = random.PRNGKey(0)
-    def uniform(size):
-        return random.uniform(key, size)
-except:
-    np.random.seed(0)
-    def uniform(size):
-        return np.random.uniform(size=size)
+# Seed for repeatability.
+np.random.seed(0)
 
+# Generate random uniform values.
+def uniform(size):
+    return np.random.uniform(size=size)
 
 # Create weight matrices and shift vectors for new model.
 def new_model(state_dims):
@@ -42,7 +36,7 @@ def gradient(x, y, weights, shifts):
     # Compute the squared error gradient.
     grad = (output - y) / x.shape[0]
     # Store the mean squared error.
-    mean_squared_error = np.mean(grad**2)
+    mean_squared_error = np.sum(grad**2)
     # Compute the gradient for all weights and shifts.
     weights_grad = [None] * len(weights)
     shifts_grad = [None] * len(shifts)
@@ -55,28 +49,8 @@ def gradient(x, y, weights, shifts):
     return weights_grad, shifts_grad, mean_squared_error
 
 # Take one mean squared error gradient step for a model.
-def step(x, y, weights, shifts, step_size=0.0001):
+def step(x, y, weights, shifts, step_size=0.001):
     weights_grad, shifts_grad, mse = gradient(x, y, weights, shifts)
-    print("Weights grad")
-    for wg in weights_grad:
-        print(wg)
-    print()
-    print("Shifts grad")
-    for sg in shifts_grad:
-        print(sg)
-    print()
-    eval_error = lambda weights, shifts: ((evaluate(x, weights, shifts) - y)**2).mean() / 2
-    eval_grad = grad(eval_error, argnums=[0,1])
-    weights_grad, shifts_grad = eval_grad(weights, shifts)
-    print("True weights grad")
-    for wg in weights_grad:
-        print(wg)
-    print()
-    print("True Shifts grad")
-    for sg in shifts_grad:
-        print(sg)
-    print()
-    exit()
     for i in range(len(weights)):
         weights[i] -= step_size * weights_grad[i]
     for i in range(len(shifts)):
@@ -84,14 +58,12 @@ def step(x, y, weights, shifts, step_size=0.0001):
     return mse
 
 
-
-
 # Configure the model.
 input_dim = 2
 output_dim = 1
-state_dim = 3
-num_states = 3
-num_steps = 1
+state_dim = 256
+num_states = 1
+num_steps = 10001
 num_printouts = 31
 
 # Initialize a model.
