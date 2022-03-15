@@ -49,7 +49,7 @@ def gradient(x, y, weights, shifts):
     return weights_grad, shifts_grad, mean_squared_error
 
 # Take one mean squared error gradient step for a model.
-def step(x, y, weights, shifts, step_size=0.001):
+def step(x, y, weights, shifts, step_size):
     weights_grad, shifts_grad, mse = gradient(x, y, weights, shifts)
     for i in range(len(weights)):
         weights[i] -= step_size * weights_grad[i]
@@ -62,9 +62,11 @@ def step(x, y, weights, shifts, step_size=0.001):
 input_dim = 2
 output_dim = 1
 state_dim = 256
-num_states = 1
+num_states = 2
 num_steps = 10001
 num_printouts = 31
+step_size = 0.0001
+
 
 # Initialize a model.
 state_dims = (input_dim,) + (state_dim,) * num_states + (output_dim,)
@@ -78,9 +80,8 @@ y = 1 - np.cos(5*np.linalg.norm(x, axis=1, keepdims=True))
 # Set the print interval.
 print_at = set(np.linspace(0, num_steps-1, num_printouts).round())
 
-x_min_max = np.asarray([np.min(x, axis=0), np.max(x, axis=0)]).T
 # Train the model.
 for i in range(num_steps):
-    mse = step(x, y, weights, shifts)
+    mse = step(x, y, weights, shifts, step_size)
     if (i in print_at):
         print(f"{i:5d}: ", mse)
