@@ -19,23 +19,23 @@ def new_model(state_dims):
     return weights, shifts
 
 # Define the forward function for the ReLU MLP.
-def evaluate(x, weights, shifts, states=None):
+def evaluate(x, weights, shifts):
     x = x.reshape((-1, weights[0].shape[0]))
-    if (states is not None): states[0] = x[:,:]
     for i in range(len(weights)-1):
-        x = np.clip(np.matmul(x, weights[i]) + shifts[i], 0.0, float("inf"))
-        if (states is not None): states[i+1] = x[:,:]
+        x = np.maximum(np.matmul(x, weights[i]) + shifts[i], 0.0)
     return np.matmul(x, weights[-1])
 
 # Define a "gradient" function that computes the mean squared error
 # gradient of weights and shifts when approximating "y".
 def gradient(x, y, weights, shifts):
-    # Run the model forward.
-    states = [None] * len(weights)
-    output = evaluate(x, weights, shifts, states=states)
-    # Compute the squared error gradient.
+    # Run the model forward (storing intermediate state values).
+    states = [x[:,:]]
+    for i in range(len(weights)-1):
+        x = np.maximum(np.matmul(x, weights[i]) + shifts[i], 0.0)
+        states.append(x[:,:])
+    output = np.matmul(x, weights[-1])
+    # Compute the mean squared error gradient.
     grad = (output - y) / x.shape[0]
-    # Store the mean squared error.
     mean_squared_error = np.sum(grad**2)
     # Compute the gradient for all weights and shifts.
     weights_grad = [None] * len(weights)
