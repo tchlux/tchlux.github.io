@@ -1,0 +1,38 @@
+Medical Plain Text Additional Disclosure
+
+Last updated: April 16, 2026
+
+Medical Plain Text is designed as a private, local-first iOS app for retrieving and formatting lab results.
+
+Data accessed:
+- Patient demographics needed to identify the connected chart
+- Laboratory Observation resources
+- DiagnosticReport resources related to lab results
+
+Purpose of access:
+- Retrieve recent lab results from the connected Epic/MyChart-compatible FHIR server
+- Normalize lab values, units, timestamps, reference ranges, and abnormal flags
+- Display lab rows in the app
+- Generate deterministic plain-text output for the user's own copy/export workflow
+
+Data storage:
+- Retrieved data is intended to remain local to the user's device.
+- OAuth access tokens are intended to be stored securely.
+- The current development version may hold tokens only temporarily while the app is running.
+
+Data sharing:
+- The app does not intentionally send retrieved health data to a third-party analytics service.
+- The app does not intentionally sell or rent user health data.
+- The app does not intentionally upload health data to cloud storage.
+- The app does not intentionally write data to Apple Health.
+- If the user copies or exports text or JSON from the app, the user controls where that exported information goes.
+
+Limitations:
+- Data availability depends on the connected health system's FHIR configuration.
+- Some records may be filtered, unavailable, delayed, corrected, or amended by the health system.
+- The app should not be used for emergency care or time-sensitive medical decisions.
+- Users should verify important results with the source health system and qualified clinicians.
+
+Contact:
+For questions about this private app, contact the app owner/operator directly.
+
