@@ -12,5 +12,10 @@
         ]
       }
     ]
+  },
+  "webcredentials": {
+    "apps": [
+      "NX2A35D6DP.com.thomaslux.medicaldataapp"
+    ]
   }
 }
