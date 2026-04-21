@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Thomas Lux</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --card: #ffffff;
+      --text: #17242a;
+      --muted: #56656b;
+      --line: rgba(23, 36, 42, 0.12);
+      --accent: #1c485a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(163, 207, 214, 0.35), transparent 34rem),
+        linear-gradient(180deg, #fbfaf7, var(--bg));
+    }
+    main {
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 1rem 2.5rem rgba(23, 36, 42, 0.08);
+      backdrop-filter: blur(10px);
+    }
+    h1, h2, p { margin: 0; }
+    h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 1.75rem 0 0.75rem;
+    }
+    p + p { margin-top: 0.9rem; }
+    ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.1rem;
+    }
+    li + li { margin-top: 0.45rem; }
+    a {
+      color: var(--accent);
+      font-weight: 600;
+      text-underline-offset: 0.15em;
+    }
+    .lede {
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h1>About Thomas Lux</h1>
+      <p class="lede">Thomas Lux is the developer behind Medical Data App. When Epic shows the business name “Thomas Lux,” it is referring to the individual developer of this project.</p>
+
+      <h2>Background</h2>
+      <p>Thomas Lux is a software engineer and AI / machine learning researcher. His work centers on high-performance code, mathematical modeling, interpretable models, optimization, and practical systems that work well with limited data.</p>
+      <p>He received a Ph.D. in Computer Science from Virginia Tech in 2020 and a B.S. in Computer Science from Roanoke College, with minors in Mathematics and Physics.</p>
+
+      <h2>Why This App Exists</h2>
+      <p>Medical Data App is a free-time, volunteer-built project. It was created to help people retrieve, read, search, and copy their own medical data in plain text from supported Epic / MyChart connections.</p>
+      <p>This is an independent open-source project. It is not affiliated with Epic, MyChart, or any hospital or health system.</p>
+
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://github.com/tchlux/medical-data-app">Medical Data App source code</a></li>
+        <li><a href="https://tchlux.github.io/">Thomas Lux website</a></li>
+        <li><a href="https://github.com/tchlux">Thomas Lux on GitHub</a></li>
+        <li><a href="https://scholar.google.com/citations?user=wamfO3sAAAAJ&hl=en">Google Scholar profile</a></li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
