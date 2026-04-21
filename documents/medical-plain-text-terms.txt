@@ -1,14 +1,14 @@
 Medical Plain Text Terms and Conditions
 
-Last updated: April 16, 2026
+Last updated: April 21, 2026
 
-Medical Plain Text is a private iOS application intended for personal use by the account holder. The app helps retrieve lab result data from an Epic/MyChart-compatible FHIR server, store it locally on the user's device, and format it into plain text for the user's own review and export.
+Medical Plain Text is a local-first iPhone application intended for personal use by the account holder. The app helps retrieve a patient's own Epic/MyChart-compatible medical records, store them locally on the user's device in encrypted form, and format them into plain text for the user's own review and export.
 
 By using this app, you understand and agree that:
 
 1. This app is not a medical device.
 2. This app does not provide medical advice, diagnosis, treatment recommendations, or emergency assistance.
-3. Lab result summaries are generated from data returned by the connected health system and may be incomplete, delayed, corrected, amended, or unavailable.
+3. Record summaries are generated from data returned by the connected health system and may be incomplete, delayed, corrected, amended, unavailable, or permission-limited.
 4. You are responsible for reviewing information with qualified medical professionals before making medical decisions.
 5. The app stores retrieved data locally on the device unless the user chooses to copy or export it.
 6. The app does not intentionally sell, rent, or disclose health information to third parties.
@@ -16,6 +16,6 @@ By using this app, you understand and agree that:
 8. Use of the app depends on availability, permissions, and configuration of the connected Epic/MyChart FHIR server.
 9. Access may fail or return limited data if the health system does not expose the requested resources or scopes.
 10. You are responsible for using the app only with accounts and records you are authorized to access.
+11. If you copy or export medical data from the app, you are responsible for handling that information carefully once it leaves the app.
 
 If you do not agree to these terms, do not use the app.
-

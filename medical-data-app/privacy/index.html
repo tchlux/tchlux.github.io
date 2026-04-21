@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medical Plain Text Privacy</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --card: rgba(255, 255, 255, 0.92);
+      --text: #17242a;
+      --muted: #56656b;
+      --line: rgba(23, 36, 42, 0.12);
+      --accent: #1c485a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(163, 207, 214, 0.35), transparent 34rem),
+        linear-gradient(180deg, #fbfaf7, var(--bg));
+    }
+    main { max-width: 48rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 1rem 2.5rem rgba(23, 36, 42, 0.08);
+      backdrop-filter: blur(10px);
+    }
+    h1, h2, p, ul { margin: 0; }
+    h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.05; margin-bottom: 0.9rem; }
+    h2 { font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 1.75rem 0 0.75rem; }
+    p + p, ul + p, p + ul { margin-top: 0.9rem; }
+    ul { padding-left: 1.1rem; }
+    li + li { margin-top: 0.45rem; }
+    a { color: var(--accent); font-weight: 600; text-underline-offset: 0.15em; }
+    .lede { font-size: 1.05rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h1>Medical Plain Text Privacy</h1>
+      <p class="lede">Last updated: April 21, 2026</p>
+
+      <h2>What the app accesses</h2>
+      <ul>
+        <li>Patient identity details needed to identify the connected chart</li>
+        <li>Labs, vitals, reports, medications, and available attachment metadata from Epic/MyChart-compatible FHIR servers</li>
+        <li>Previewable attachment content only when a user opens an available attachment</li>
+      </ul>
+
+      <h2>What the app does with it</h2>
+      <p>The app retrieves a patient's own records so they can read, search, filter, and copy them in plain text on their iPhone.</p>
+      <p>The app does not intentionally send retrieved medical data to a third-party analytics service, sell it, rent it, or upload it to developer-controlled cloud storage for normal use.</p>
+
+      <h2>Storage</h2>
+      <p>Auth state is stored securely in Keychain. Synced clinical data cached by the app is stored locally on the device in an encrypted device-bound store.</p>
+
+      <h2>User-controlled export</h2>
+      <p>If a user copies plain text or raw data from the app, the user controls where that exported information goes next. Other apps may be able to read clipboard contents while copied data remains on the clipboard.</p>
+
+      <h2>Limits</h2>
+      <p>Availability and completeness depend on the connected health system. Some records, attachments, or previews may be missing, delayed, corrected, amended, or permission-limited.</p>
+      <p>Medical Plain Text does not provide medical advice or emergency assistance.</p>
+
+      <h2>Support</h2>
+      <p>Support information is available at <a href="https://tchlux.github.io/medical-data-app/support/">Medical Plain Text Support</a>.</p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medical Plain Text Support</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --card: rgba(255, 255, 255, 0.92);
+      --text: #17242a;
+      --muted: #56656b;
+      --line: rgba(23, 36, 42, 0.12);
+      --accent: #1c485a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(163, 207, 214, 0.35), transparent 34rem),
+        linear-gradient(180deg, #fbfaf7, var(--bg));
+    }
+    main { max-width: 48rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 1rem 2.5rem rgba(23, 36, 42, 0.08);
+      backdrop-filter: blur(10px);
+    }
+    h1, h2, p, ul { margin: 0; }
+    h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.05; margin-bottom: 0.9rem; }
+    h2 { font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 1.75rem 0 0.75rem; }
+    p + p, p + ul, ul + p { margin-top: 0.9rem; }
+    ul { padding-left: 1.1rem; }
+    li + li { margin-top: 0.45rem; }
+    a { color: var(--accent); font-weight: 600; text-underline-offset: 0.15em; }
+    .lede { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h1>Medical Plain Text Support</h1>
+      <p class="lede">Last updated: April 21, 2026</p>
+
+      <h2>What to include</h2>
+      <ul>
+        <li>Your iPhone model and iOS version</li>
+        <li>The institution or `Epic Sandbox` you selected</li>
+        <li>Whether the problem happened during login, sync, relaunch, copy, or attachment preview</li>
+        <li>A description of the issue without including unnecessary medical details</li>
+      </ul>
+
+      <h2>Support links</h2>
+      <ul>
+        <li><a href="https://github.com/tchlux/medical-data-app/issues">GitHub Issues</a></li>
+        <li><a href="https://tchlux.github.io/medical-data-app/about/">About Thomas Lux</a></li>
+        <li><a href="https://tchlux.github.io/medical-data-app/privacy/">Privacy</a></li>
+        <li><a href="https://tchlux.github.io/medical-data-app/terms/">Terms</a></li>
+      </ul>
+
+      <h2>Important note</h2>
+      <p>Medical Plain Text is not a medical device and does not provide emergency assistance. If you have an urgent medical concern, contact your clinician or local emergency services instead of relying on the app.</p>
+    </div>
+  </main>
+</body>
+</html>

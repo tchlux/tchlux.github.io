@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medical Plain Text Terms</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --card: rgba(255, 255, 255, 0.92);
+      --text: #17242a;
+      --muted: #56656b;
+      --line: rgba(23, 36, 42, 0.12);
+      --accent: #1c485a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(163, 207, 214, 0.35), transparent 34rem),
+        linear-gradient(180deg, #fbfaf7, var(--bg));
+    }
+    main { max-width: 48rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 1rem 2.5rem rgba(23, 36, 42, 0.08);
+      backdrop-filter: blur(10px);
+    }
+    h1, p, ol { margin: 0; }
+    h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.05; margin-bottom: 0.9rem; }
+    p + p, p + ol, ol + p { margin-top: 0.9rem; }
+    ol { padding-left: 1.2rem; }
+    li + li { margin-top: 0.45rem; }
+    a { color: var(--accent); font-weight: 600; text-underline-offset: 0.15em; }
+    .lede { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h1>Medical Plain Text Terms</h1>
+      <p class="lede">Last updated: April 21, 2026</p>
+      <p>Medical Plain Text is a local-first iPhone app intended for personal use by the account holder.</p>
+      <ol>
+        <li>The app is not a medical device.</li>
+        <li>The app does not provide medical advice, diagnosis, treatment recommendations, or emergency assistance.</li>
+        <li>Record summaries are generated from data returned by the connected health system and may be incomplete, delayed, corrected, amended, unavailable, or permission-limited.</li>
+        <li>You are responsible for reviewing important information with qualified medical professionals before making medical decisions.</li>
+        <li>The app stores retrieved data locally on the device unless you choose to copy or export it.</li>
+        <li>The app does not intentionally sell, rent, or disclose health information to third parties for normal use.</li>
+        <li>The app does not intentionally route data to Apple Health.</li>
+        <li>Use of the app depends on availability, permissions, and configuration of the connected Epic/MyChart-compatible FHIR server.</li>
+        <li>You are responsible for using the app only with accounts and records you are authorized to access.</li>
+        <li>If you copy or export medical data from the app, you are responsible for handling that information carefully once it leaves the app.</li>
+      </ol>
+      <p>If you do not agree to these terms, do not use the app.</p>
+      <p>Privacy details are available at <a href="https://tchlux.github.io/medical-data-app/privacy/">Medical Plain Text Privacy</a>.</p>
+    </div>
+  </main>
+</body>
+</html>
