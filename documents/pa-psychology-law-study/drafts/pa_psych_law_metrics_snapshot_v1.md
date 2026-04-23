@@ -1,0 +1,24 @@
+# PA Psychology Law Metrics Snapshot V1
+
+- compact set size: `60`
+- supporting bundle size: `14` `.md` files
+- source split: `20` Act-primary / `40` Regulations-primary
+- benchmark sample size: `12` matched seams
+- top regression subset size: `12`
+- top regression subset split: `6` Act-primary / `6` Regulations-primary
+- compact-set mean difficulty: `3.72 / 6`
+- Act mean difficulty: `3.80 / 6`
+- Regulations mean difficulty: `3.67 / 6`
+- difficulty mix:
+  - `6` items at `5/6`
+  - `31` items at `4/6`
+  - `23` items at `3/6`
+- field coverage in compact set:
+  - `60` sources
+  - `60` questions
+  - `60` answers
+  - `60` difficulty notes
+  - `60` legitimacy notes
+- matched-sample composite score:
+  - old average: `4.25 / 8`
+  - new average: `8.00 / 8`

@@ -51,6 +51,42 @@ The source map and exam file were verified to have:
 - exact `40/80` source split
 - unique chunk coverage in the answer key
 
+## New Compact Benchmark Files
+
+The current compact replacement set and benchmark bundle lives in `drafts/`:
+
+- current bundle size: `14` supporting `.md` files
+- `pa_psych_law_compact_verified_v1.md`
+  - `60` verified questions total
+  - exact `20` Act-primary / `40` Regulations-primary split
+  - every item includes source, answer, difficulty, and legitimacy note
+- `pa_psych_law_old_vs_new_benchmark_v1.md`
+  - manual old-versus-new scorecard and aggregate metrics
+- `pa_psych_law_benchmark_scorecard_v1.md`
+  - reusable scoring rubric for future old-versus-new comparisons
+- `pa_psych_law_compact_crosswalk_v1.md`
+  - provenance map from new items back to canonical mock-exam ancestors
+- `pa_psych_law_compact_top12_v1.md`
+  - highest-yield fast regression subset
+- `pa_psych_law_compact_watchlist_v1.md`
+  - items most likely to need tightening after a fresh blind run
+- `pa_psych_law_blind_run_checklist_v1.md`
+  - instructions for a future context-free blind evaluation pass
+- `pa_psych_law_blind_run_results_template_v1.md`
+  - fill-in template for the next blind evaluation
+- `pa_psych_law_rewrite_checklist_v1.md`
+  - quick promotion checklist for future rewrites
+- `pa_psych_law_compact_families_v1.md`
+  - seam-family grouping of the compact set
+- `pa_psych_law_next_actions_v1.md`
+  - ordered next-step sequence for the next revision pass
+- `pa_psych_law_bundle_qc_v1.md`
+  - quick QC checklist for future revisions
+- `pa_psych_law_bundle_index_v1.md`
+  - recommended reading order through the compact bundle
+- `pa_psych_law_metrics_snapshot_v1.md`
+  - one-page summary of the main counts and benchmark numbers
+
 ## Important Limitation Of Current Assets
 
 The current markdown artifacts are not a perfect app-ready dataset yet.

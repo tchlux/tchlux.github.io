@@ -8,725 +8,725 @@
 
 ## Questions
 
-1. A doctoral student is providing services in an accredited hospital as part of a supervised course of study. Which title is most appropriate?
-A. Licensed psychologist
-B. Behavioral consultant
+1. A doctoral student is seeing patients in an accredited hospital as part of a supervised practicum. Which title best fits the statutory exemption?
+A. Psychology resident
+B. Licensed psychologist
 C. Psychology intern
-D. Independent practitioner
+D. Psychological consultant
 
-2. A Pennsylvania licensed psychologist needs continuing education for the next biennium. Which activity could count if it otherwise meets the program requirements?
-A. Up to 15 contact hours of approved home-study with specific learning objectives and evaluation
-B. Unlimited office-management webinars
-C. Any self-study regardless of sponsor
-D. Carrying over excess child-abuse hours to the next biennium
+2. A licensee wants to satisfy CE with self-paced coursework. Which option is potentially creditable if all approval conditions are met?
+A. Fifteen contact hours of approved home-study with stated learning objectives and an evaluation component
+B. Twenty-five hours of practice-building webinars offered by a billing vendor
+C. Any asynchronous course as long as it relates to mental health
+D. Carrying unused child-abuse hours forward into the next biennium
 
-3. A therapist learns that a client has made a serious threat that seems likely to be carried out against a specific person. Which disclosure is most clearly permitted?
-A. Sharing full case notes with a curious colleague
-B. Publishing identifiable case details to teach interns
-C. Warning an identified potential victim when a client has expressed a serious threat likely to be carried out
-D. Disclosing confidential communications to the client's spouse without consent
+3. A client tells a psychologist he intends to seriously harm a named former partner tonight, and the psychologist believes the threat is likely to be carried out. Which disclosure is most clearly authorized?
+A. Sending the full chart to the client's employer
+B. Discussing the threat with friends of the client for support
+C. Warning the identified potential victim
+D. Informing the client's spouse solely because they live together
 
-4. A psychologist ends therapy with a client on June 1. Which statement is correct?
-A. A psychologist may begin sexual intimacies with a former client after 1 year if the former client initiates the relationship.
-B. Sexual intimacies with a former client are barred for at least 2 years after termination.
-C. Sexual intimacies with a former client's immediate family are allowed immediately after termination if the former client is no longer in treatment.
-D. After 2 years, sexual intimacies with a former client are automatically permitted without any further inquiry into exploitation.
+4. Therapy ended 14 months ago. Which statement is legally correct?
+A. Sexual intimacies are permissible because more than 1 year has passed
+B. Sexual intimacies with the former client remain prohibited because 2 full years have not passed
+C. Sexual intimacies with the former client's immediate family are now permissible because treatment ended
+D. Once 2 years pass, the psychologist never has to address exploitation concerns
 
-5. A psychologist licensed only in Ohio wants to list herself under "psychologists" in a Pennsylvania telephone directory. Before doing so, what written proof must she provide to the Board office?
-A. Current licensure in another state and proof that she has applied for Pennsylvania endorsement
-B. Current licensure in another state and proof that she maintains a Pennsylvania office
-C. Current licensure in another state and proof that she has passed the Pennsylvania Psychology Law Examination
-D. Current licensure in another state and compliance with `§ 41.52(c)`
+5. A New Jersey psychologist with no Pennsylvania license wants a Pennsylvania directory listing under "psychologists" while on temporary assignment. What written proof must be on file with the Board office?
+A. Current out-of-state licensure and proof of pending endorsement application
+B. Current out-of-state licensure and proof of a Pennsylvania office lease
+C. Current out-of-state licensure and proof of EPPP passage score
+D. Current out-of-state licensure and compliance with `§ 41.52(c)`
 
-6. A Pennsylvania psychologist is disciplined in another state on May 1, and that discipline becomes final that day. By when must she report it to the Pennsylvania Board?
-A. Only at the next renewal
-B. Within 30 days
-C. Within 60 days
-D. On the biennial renewal application or within 90 days of disposition, whichever is sooner
+6. Final discipline is imposed on a Pennsylvania licensee by another state board on March 3. When must Pennsylvania be notified?
+A. At the next renewal only
+B. Within 30 days regardless of renewal timing
+C. Within 60 days of the final order
+D. By biennial renewal or within 90 days of the disposition, whichever comes first
 
-7. A psychologist is drafting a public advertisement for a practice. Which version would most clearly be misleading?
-A. Listing office hours and languages spoken
-B. Claiming "Guaranteed cure in three sessions"
-C. Identifying licensure type and address
-D. Noting acceptance of third-party payment
+7. Which advertisement is most clearly prohibited as misleading?
+A. "Evening appointments available; Spanish spoken."
+B. "Guaranteed cure in three sessions or your money back."
+C. "Licensed psychologist accepting major insurers."
+D. "Adult assessment and therapy services by appointment."
 
-8. A psychologist receives computerized test results from a software service. Which statement is correct?
-A. Responsibility for computerized test results rests only with the software vendor.
-B. When computerized testing results are provided to a nonpsychologist, no further psychological assessment is required.
-C. The psychologist receiving computerized results becomes responsible for their use, and if results are provided to a nonpsychologist the psychologist must provide an assessment according to current standards for noncomputerized assessments.
-D. Computer-generated data are exempt from ethical regulation.
+8. A psychologist receives computer-generated test interpretations and forwards them to a school administrator. Under the ethics rule, who bears professional responsibility?
+A. Only the software company that generated the interpretation
+B. The recipient school administrator once the report is delivered
+C. The psychologist, who must ensure an appropriate professional assessment if results go to a nonpsychologist
+D. No one, because computerized interpretations are treated differently from traditional assessments
 
-9. An employer asks a psychologist to evaluate an employee for workplace concerns. Before starting, the psychologist's best first step is to:
-A. Keep the role ambiguous to preserve neutrality
-B. Clarify the nature of the relationships and loyalties to all parties concerned
-C. Promise complete confidentiality to the employee regardless of employer involvement
-D. Send the full report directly to coworkers for transparency
+9. A corporation hires a psychologist to evaluate an employee after a safety incident. Before any testing begins, what must the psychologist address first?
+A. Preserve flexibility by avoiding discussion of loyalties
+B. Clarify the relationships and loyalties involved for all concerned parties
+C. Promise the employee absolute confidentiality from the employer
+D. Decide in advance to release the full file to management
 
-10. A psychologist reports suspected child abuse in good faith and is later sued by the alleged perpetrator. The psychologist:
-A. Receives immunity from civil and criminal liability, and good faith is presumed
-B. Is immune only from civil liability, not criminal liability
-C. Is immune only if the report is later substantiated
-D. Must affirmatively prove good faith before receiving immunity
+10. A psychologist makes a child-abuse report based on reasonable suspicion and is later sued. Assuming the report was made in good faith, what protection applies?
+A. Civil and criminal immunity, with good faith presumed
+B. Civil immunity only
+C. Immunity only if abuse is later substantiated
+D. No immunity unless the psychologist proves good faith at trial
 
-11. A parent repeatedly leaves a young child unsupervised for long periods despite the child's age and abilities. Which situation best fits serious physical neglect?
-A. A one-time late pickup from school with no ongoing danger to the child
-B. A repeated, prolonged, or egregious failure to supervise a child appropriately for the child's developmental age and abilities
-C. Failure to enroll a child in extracurricular activities
-D. Use of strict but age-appropriate household rules
+11. Which scenario most clearly matches serious physical neglect as defined here?
+A. A parent is 20 minutes late for pickup during a snowstorm on one occasion
+B. A caregiver repeatedly leaves a young child unsupervised for hours despite the child's age and limitations
+C. A parent refuses to pay for private tutoring
+D. A family enforces a strict bedtime and homework schedule
 
-12. A certified school psychologist wants to offer private services. Which additional condition is required?
-A. Holding a Pennsylvania psychology license
-B. Concurrent employment in a Pennsylvania school as a school psychologist in good standing
-C. Working only in a hospital setting
-D. Completing a 2-year postdoctoral residency
+12. A person holds the required school-psychology specialist certificate and wants to privately perform the acts allowed by the regulation. What additional condition must be met?
+A. The person must also hold a psychology license
+B. The person must be concurrently employed in a Pennsylvania school in good standing
+C. The services must be limited to hospital consultations
+D. The person must complete a postdoctoral residency first
 
-13. A psychologist is considering using a technique outside her training. Which statement best reflects the correct approach?
-A. Psychologists may use any technique if a colleague informally approves it.
-B. Psychologists may provide only services and use only techniques for which they are qualified by education and training, and they must maintain current scientific and professional knowledge.
-C. Once licensed, psychologists need not adjust practice to later scientific developments.
-D. In areas without recognized standards, psychologists may proceed without special precautions.
+13. A psychologist is considering a specialized intervention she has never been trained to use. Which answer best states the governing rule?
+A. She may use it if another psychologist says it is common practice
+B. She may use only techniques for which she is qualified and must maintain current scientific and professional knowledge
+C. Licensure itself authorizes use of any treatment later adopted in the field
+D. Lack of formal standards allows experimentation without extra safeguards
 
-14. The Board seeks to stop unlicensed practice in court. Which statement is correct?
-A. The Board may seek an injunction only after proving a specific person was individually injured.
-B. The Board may levy a civil penalty only against current licensees, never against unlicensed practitioners.
-C. Courts may enjoin unlawful practice, and individual injury need not be shown.
-D. Civil penalties may be imposed without a hearing.
+14. The Board files in court to stop someone from unlawfully practicing psychology. Which statement is right?
+A. The Board must prove a named consumer suffered actual injury
+B. Injunctive relief is unavailable against unlicensed persons
+C. The court may enjoin the practice without proof of individual injury
+D. A civil penalty may be imposed first without a hearing and then converted to an injunction
 
-15. A new Board member asks about service rules and compensation. Which statement is accurate?
-A. The Board selects a chair and vice chair annually, and members other than the commissioner receive per diem and reasonable expenses when attending Board work.
-B. The Commissioner receives the same per diem as other members.
-C. A member forfeits a seat after missing one meeting for any reason.
-D. Public members may skip two consecutive mandated training seminars without consequence.
+15. Which statement accurately describes Board governance or compensation?
+A. The Board elects a chair and vice chair each year, and members other than the commissioner receive per diem and reasonable expenses for Board work
+B. The commissioner receives the same per diem as every other member
+C. Missing one meeting automatically forfeits a seat
+D. Public members may miss two consecutive required training seminars without consequence
 
-16. An applicant with a foreign doctoral degree is told the degree was not found equivalent through National Register evaluation. How may the applicant still qualify?
-A. Completing any online CE course
-B. Finishing supplemental education or training from an APA-, CPA-, or PCSAS-accredited or ASPPB/National Register designated program that certifies equivalency
-C. Retaking only the PPLE
-D. Practicing for 2 years in another state
+16. A foreign-trained applicant does not obtain equivalency through National Register evaluation. What is the remaining regulatory path?
+A. Complete any approved continuing-education course in Pennsylvania law
+B. Complete supplemental education or training from an approved accredited or designated program that certifies equivalency
+C. Retake only the Pennsylvania law exam
+D. Practice independently in another state for 2 years
 
-17. A supervising psychologist oversees an unlicensed employee with graduate training in psychology. Which requirement applies?
-A. The employee may provide services without written service plans if the psychologist reviews the chart monthly
-B. The supervisor may delegate final professional responsibility if the employee has doctoral-level coursework
-C. The employee's supervised status must be disclosed in billing and public announcements.
-D. The employee may practice independently if the psychologist remains available for consultation by phone
+17. A licensed psychologist employs an unlicensed graduate-trained worker. Which item is expressly required?
+A. The worker may provide services without written service plans if weekly consultation occurs
+B. Final professional responsibility may be transferred once the worker has advanced coursework
+C. The worker's supervised status must appear in billing and public announcements
+D. The worker may practice independently as long as the psychologist remains reachable
 
-18. A psychologist continues a clinical relationship long after it is reasonably clear the client is not benefitting, without discussing alternatives. Which principle is most directly implicated?
-A. Principle 3 only
-B. Principle 4 only
+18. A psychologist keeps treating a client for months after it is reasonably clear the client is not benefitting and never raises alternatives. Which principle is most directly implicated?
+A. Principle 3
+B. Principle 4
 C. Principle 6
 D. Principle 10
 
-19. The Board is deciding whether a group qualifies as another recognized profession rather than unlicensed psychology practice. What does it look for?
-A. Any use of counseling language
-B. An identifiable theoretical body, entry standards, ethical and quality standards, and ordinary professional characteristics
-C. Only national media recognition
-D. Only whether the group bills insurance
+19. The Board is deciding whether a field should be treated as another recognized profession rather than unlicensed psychology. Which showing matters most?
+A. The group commonly uses counseling terminology in its marketing
+B. The group has its own identifiable theory base, entry standards, ethical standards, and normal professional characteristics
+C. The group is frequently featured in national media
+D. The group has succeeded in getting insurers to reimburse its services
 
-20. An applicant is preparing for Pennsylvania psychology licensure. Which examinations must the applicant pass?
-A. Only the EPPP
-B. Only the Pennsylvania Psychology Law Examination
-C. A jurisprudence oral exam and ethics exam
-D. Both the EPPP and the Pennsylvania Psychology Law Examination
+20. Which exam combination is required for Pennsylvania psychology licensure?
+A. EPPP only
+B. Pennsylvania Psychology Law Examination only
+C. Oral jurisprudence exam plus ethics exam
+D. EPPP and Pennsylvania Psychology Law Examination
 
-21. A Department of Human Services employee selects, administers, scores, and interprets a psychological assessment. What extra step is required before the report is finalized?
-A. A licensed psychologist must select the assessment, but need not review or co-sign the report
-B. A licensed psychologist must review the assessment and co-sign the corresponding report.
-C. The employee may finalize the report if the psychologist later reviews a sample of reports
-D. The employee may interpret the assessment independently as long as a psychologist signed the referral
+21. A DHS employee selects, administers, scores, and interprets a psychological assessment. Before the report can be issued, what must occur?
+A. A licensed psychologist must approve the test selection only
+B. A licensed psychologist must review the assessment and co-sign the report
+C. A psychologist may later audit a sample of reports instead
+D. No further step is required if the employee has graduate training
 
-22. An applicant educated in the United States, Canada, or a U.S. territory is applying for licensure. What evidence of doctoral program status is required?
-A. A self-attestation plus diploma copy
-B. A Verification of Doctoral Program Approval Status completed by the program director and an official transcript
+22. A U.S.-educated applicant asks what proof of doctoral program status must be sent with the application. Which package is required?
+A. Diploma copy plus a notarized personal statement
+B. A Verification of Doctoral Program Approval Status from the program director and an official transcript
 C. Only a National Register evaluation
-D. Two letters from licensed psychologists
+D. Two reference letters from Pennsylvania psychologists
 
-23. A psychologist is contacted by someone already receiving similar services from another professional. How should the psychologist respond?
-A. Accept the case immediately and avoid discussing the existing relationship.
-B. Carefully consider the existing relationship and proceed with caution and sensitivity to the client's welfare.
-C. Refuse all second opinions.
-D. Contact the other professional and release confidential information without consent.
+23. A prospective client is already receiving similar treatment from another professional and asks to begin with you immediately. What is the best response under the rule?
+A. Accept the case and avoid discussing the ongoing treatment relationship
+B. Consider the existing relationship carefully and proceed with caution and sensitivity to the client's welfare
+C. Decline automatically because second opinions are never allowed
+D. Contact the other professional and disclose the client's request without consent
 
-24. A mandated reporter reasonably suspects a child died from abuse after being transported to another county for treatment. Where should the report go?
-A. The coroner or medical examiner of the county where death occurred, regardless of where the injuries were sustained
-B. ChildLine, followed by the county agency where the child lived
-C. The coroner or medical examiner of the county where the injuries were sustained
-D. The county agency where the treatment hospital is located
+24. A child is injured in County A, transported to County B for treatment, and dies there. A mandated reporter suspects abuse caused the death. Which coroner or medical examiner should receive the report?
+A. The one in County B, because that is where the child died
+B. The one serving the county agency where the child lived
+C. The one in County A, where the injuries were sustained
+D. The one in whichever county first requested medical records
 
-25. Which person is most clearly exempt because the work is part of another recognized profession?
-A. An unlicensed individual marketing herself to the public as a psychologist
-B. A social worker doing work of a psychological nature consistent with the training and ethics of social work
-C. A business consultant selling neuropsychological testing without licensed oversight
-D. A clerical employee independently diagnosing depression
+25. Which person is most likely protected by the exemption for another recognized profession?
+A. An unlicensed person advertising psychological treatment to the general public
+B. A social worker performing overlapping work consistent with social-work training and ethics
+C. A consultant selling neuropsychological testing directly to the public without licensed oversight
+D. An office assistant independently diagnosing mood disorders
 
-26. Which service most clearly counts as the practice of psychology for pay?
-A. Selling standardized testing materials to clinicians for profit
-B. Providing clerical intake support under a psychologist's supervision
-C. Applying principles of motivation and perception for remuneration to counsel a family about adjustment problems
-D. Managing billing and accounts receivable for a mental health practice
+26. Which activity most clearly falls within the statutory practice of psychology when done for pay?
+A. Selling assessment materials wholesale to clinics
+B. Scheduling intake appointments for a psychology practice
+C. Applying principles of motivation and perception to counsel a family about adjustment problems
+D. Managing payroll and receivables for a mental-health office
 
-27. A psychologist wants to know whether a message from the Board is official. Which communication counts as official?
-A. A casual phone call from an individual Board member
+27. Which communication counts as an official Board communication?
+A. A voicemail from one Board member speaking informally
 B. An oral message relayed by another licensee
 C. A written communication generated by a Board officer and authorized by the Board
-D. A hallway conversation with Board staff
+D. An off-the-record conversation with Board staff in a hallway
 
-28. In what kind of case may the Board waive the examination requirement?
-A. Has failed the exam at least twice
-B. Has practiced in another state for 6 months
-C. Has an international or national reputation for an extraordinary contribution to psychology and current competency
-D. Holds a school psychologist certificate
+28. In what circumstance may the Board waive the exam requirement?
+A. The applicant failed the exam multiple times but has recent CE
+B. The applicant practiced in another state for 6 months
+C. The applicant has an extraordinary national or international contribution to psychology and current competency
+D. The applicant holds specialist school-psychology certification
 
-29. The Board finds grounds for discipline against a psychologist. Which action may it expressly take?
-A. Secret revocation without notice or appeal
-B. Requiring the licensee to submit to care, counseling, or treatment by a physician or psychologist designated by the Board
-C. Imprisonment by Board order alone
-D. Permanent discipline without a right to hearing
+29. Which sanctioning tool is expressly available to the Board after it finds discipline grounds?
+A. Revocation without notice, hearing, or appeal
+B. Ordering the licensee to obtain care, counseling, or treatment from a Board-designated physician or psychologist
+C. Jailing the licensee by Board order alone
+D. Imposing permanent discipline without adjudication rights
 
-30. A psychologist is deciding how long to keep professional-record data entries. What is the minimum retention period needed to provide a formal record for review?
-A. 5 years after intake, regardless of when services ended
-B. 7 years after the last date service was rendered
-C. Until the next biennial renewal following termination
-D. 5 years after the last date service was rendered
+30. To maintain the minimum formal professional record required by the regulation, how long must data entries be retained?
+A. Five years from intake regardless of discharge date
+B. Seven years from the last service date
+C. Until the next renewal cycle ends
+D. Five years after the last date service was rendered
 
-31. An applicant has a felony conviction under Pennsylvania's controlled-substance law. What fact must be true before licensure can even be considered?
-A. The applicant has finished one CE cycle.
-B. At least 10 years have elapsed since the conviction.
-C. The applicant practiced in another state for 6 months.
-D. The conviction was expunged automatically at sentencing.
+31. An applicant has a felony conviction under Pennsylvania's controlled-substance law. What threshold fact must be true before the application may even be considered for licensure?
+A. The applicant completed one full CE biennium
+B. At least 10 years have elapsed since the conviction
+C. The applicant has practiced elsewhere for 6 months
+D. The conviction was automatically erased at sentencing
 
-32. A sole practitioner who is a licensed psychologist wants to provide substance abuse services. Which statement is most accurate?
-A. Automatically subject to Department of Health licensure in all cases
-B. Prohibited unless a psychiatrist co-signs each note
-C. Regarded by the Board as exempt from Department licensure if the psychologist is competent to provide the services
-D. Allowed only in hospital settings
+32. A solo licensed psychologist wants to add substance-abuse treatment to the practice. Which statement best matches the Board's position?
+A. Department of Health licensure is always required
+B. The psychologist may do so only if each note is co-signed by a psychiatrist
+C. The service is viewed as exempt from Department licensure if the psychologist is competent to provide it
+D. The service may be provided only in a hospital or licensed facility
 
-33. Which of the following counts as graduate training in psychology?
-A. Any 15 graduate credits in any field
-B. Only postdoctoral continuing education
-C. A master's degree plus one ethics course
-D. 15 graduate semester hours in a doctoral psychology program with core instruction, appropriate supervised practicum or related training, and specialty-area coursework
+33. Which option satisfies the regulatory definition of graduate training in psychology?
+A. Any 15 graduate credits in a behavioral-science field
+B. Postdoctoral CE focused on assessment and therapy
+C. A master's degree with one graduate ethics seminar
+D. Fifteen graduate semester hours in a doctoral psychology program with core content, supervised practicum or related training, and specialty coursework
 
-34. A licensee legally changes her last name. How soon must she notify the Board in writing?
-A. 5 days
-B. 10 days
-C. 30 days
-D. The next biennial renewal cycle
+34. A licensee legally changes her name. When must written notice be sent to the Board?
+A. Within 5 days
+B. Within 10 days
+C. Within 30 days
+D. At the next biennial renewal
 
-35. Which experience would not count toward Pennsylvania's postdoctoral supervised-experience requirement?
-A. Experience obtained under a primary supervisor in a professional setting
-B. Experience at two entities simultaneously, each for at least 15 hours per week and 6 consecutive months, total not exceeding 45 hours per week
-C. Experience in which the psychology resident acts independently as a qualified member of another recognized profession
-D. Experience under a Board-approved exceptional supervision plan
+35. Which experience would not count toward required postdoctoral supervised experience?
+A. Work performed under a primary supervisor in a qualifying professional setting
+B. Simultaneous work at two sites that each meet the minimum duration and hour requirements and stay within the total weekly cap
+C. Work in which the resident practices independently as a qualified member of another recognized profession
+D. Work completed under an exceptional supervision plan approved by the Board
 
-36. A psychologist's Pennsylvania license has been revoked. What may the Board require the psychologist to do?
-A. Return the license or registration as directed by the Board, with failure to do so constituting a misdemeanor of the third degree
-B. Return only the wall certificate, but not the registration or renewal materials
-C. Notify all former clients within 10 days, regardless of whether they are current clients
-D. File for automatic reinstatement after completing 2 ethics continuing-education hours
+36. After revocation, what may the Board direct the psychologist to do?
+A. Return the license or registration as directed, with failure to do so constituting a third-degree misdemeanor
+B. Return only the wall certificate, not the registration document
+C. Notify every former client within 10 days whether or not they are current
+D. Reactivate automatically after completing two ethics hours
 
-37. A psychology resident asks what a primary supervisor must do. Which statement is correct?
-A. They may accept gifts from psychology residents if modest.
-B. They may treat the resident as long as disclosure is made.
-C. They must meet individually face-to-face with the resident for an average total of at least 2 supervisory hours per week.
-D. They need not keep supervisory notes once the resident applies for licensure.
+37. Which statement correctly describes a primary supervisor's duty to a psychology resident?
+A. Small gifts from the resident are permissible if disclosed
+B. Personal treatment of the resident is allowed with consent
+C. The supervisor must meet individually face-to-face with the resident for an average of at least 2 hours each week
+D. Supervisory notes may be discarded once the resident files an application
 
-38. When may Pennsylvania grant a license without examination based on another state's credential?
-A. Has ever taken a psychology course outside Pennsylvania
-B. Holds any mental health credential
-C. Has practiced in another state for 14 days
-D. Currently holds a valid license or certificate from another state whose requirements are substantially equivalent to Pennsylvania's
+38. When may Pennsylvania issue licensure without examination based on another state's credential?
+A. Whenever the person has taken graduate psychology coursework outside Pennsylvania
+B. Whenever the person holds any mental-health credential
+C. After 14 days of practice in another state
+D. When the person currently holds a valid substantially equivalent out-of-state license or certificate
 
-39. An applicant is assembling licensure materials based on postdoctoral supervision. Which item must be submitted in a sealed envelope signed across the flap by the primary supervisor?
-A. Verification of postdoctoral experience form with quarterly evaluations or progress reports and supervisory letter
-B. Child-abuse course certificate
-C. Fingerprint card
-D. Proof of malpractice insurance
+39. Which item must arrive in a sealed envelope signed across the flap by the primary supervisor?
+A. The postdoctoral verification form with quarterly evaluations or progress reports and the supervisory letter
+B. The child-abuse training certificate
+C. The criminal-history report
+D. Proof of malpractice coverage
 
-40. A psychologist enters an impaired-professional program after a practice-related problem. Which statement best reflects how that program works?
-A. Entry into treatment automatically defers discipline even for controlled-substance felonies
-B. A professional may participate without entering any agreement that imposes suspension or revocation
-C. A participating professional must enter an agreement under which suspension or revocation is imposed but enforcement may be stayed while satisfactory progress continues.
-D. Approved program providers may never disclose information about an impaired professional in treatment, even when the section otherwise requires disclosure
+40. A psychologist enters the impaired-professional process after a practice-related problem. Which statement is correct?
+A. Participation automatically prevents discipline even in controlled-substance felony cases
+B. No agreement imposing suspension or revocation is required for participation
+C. The psychologist must enter an agreement imposing suspension or revocation, though enforcement may be stayed while progress is satisfactory
+D. Program providers are absolutely barred from disclosing treatment information under any circumstance
 
-41. A multidisciplinary practice wants to advertise its services to the public. Which statement is correct?
-A. Only corporations may use a fictitious name.
-B. Sole proprietors may never practice under a fictitious name.
-C. Multidisciplinary practices may describe all providers simply as psychologists.
-D. Public announcements of multidisciplinary services must accurately represent the professions of the service providers.
+41. A group practice includes psychologists, social workers, and counselors. What must be true of its public advertising?
+A. Only corporations may advertise under a shared name
+B. Sole proprietors may never use a fictitious name
+C. Everyone in the group may be described simply as psychologists if one owner is licensed
+D. The public announcement must accurately identify the professions of the actual providers
 
-42. A psychologist is preparing a biennial renewal. What is the renewal fee?
+42. What is the biennial renewal fee for a psychologist license under the fee schedule?
 A. $105
 B. $165
 C. $300
 D. $80
 
-43. An endorsement applicant has prior discipline in another jurisdiction. Which statement is most accurate?
-A. The Board must deny the application automatically.
-B. The Board may require a personal interview and may, in its discretion, determine the past discipline is not an impediment.
-C. The applicant is automatically eligible for a provisional license and then a full license.
-D. The applicant can avoid child-abuse training if disciplined elsewhere.
+43. An endorsement applicant discloses prior discipline in another jurisdiction. Which statement is most accurate?
+A. The Board must deny the application automatically
+B. The Board may require a personal interview and may decide the past discipline is not disqualifying
+C. The applicant is automatically entitled to a provisional license first
+D. Prior discipline eliminates the child-abuse training requirement
 
-44. An applicant is filling out a licensure application. Which statement is correct?
-A. A false statement in the application may subject the applicant to perjury prosecution.
-B. An applicant who fails once may reapply immediately without updating the application
-C. A second examination may be taken without paying an additional fee
-D. The Board may not regulate eligibility for applicants who have failed two examinations
+44. Which statement about the licensure application is correct?
+A. Knowingly false statements may expose the applicant to perjury prosecution
+B. After one failed examination, the applicant may reuse the old application indefinitely
+C. A second examination attempt requires no new fee
+D. The Board loses authority to regulate eligibility after two failures
 
-45. An applicant wants to know whether older or newer educational regulations apply. What determines that?
-A. The applicant's age at filing
-B. The date the applicant enrolled in the doctoral program, with reapplicants evaluated under regulations in effect at reapplication
-C. The date the internship began
+45. Which date generally determines whether an applicant is judged under earlier or later educational regulations?
+A. The applicant's age when filing
+B. The date of enrollment in the doctoral program, with reapplicants judged under the regulations in effect when they reapply
+C. The internship start date
 D. The date the EPPP was passed
 
-46. A psychology graduate is planning postdoctoral supervision. By when must the postdoctoral experience generally be completed?
-A. Within 2 years of the degree
-B. Within 5 years of starting supervision
-C. Before taking the EPPP in any jurisdiction
-D. Within 10 calendar years from award of the doctoral degree, unless the Board grants a hardship or medical-necessity waiver
+46. A postdoctoral trainee asks about the outside deadline for completing required supervised experience. What is the general rule?
+A. Finish within 2 years of the doctorate
+B. Finish within 5 years of beginning supervision
+C. Finish before sitting for any licensing examination
+D. Finish within 10 calendar years of the doctoral degree unless the Board grants a waiver
 
-47. Which conduct is specifically listed as a ground for discipline?
-A. Filing a false or deceptive biennial registration with the Board
-B. Failing to report another state's discipline within 90 days
-C. Practicing during a provisional endorsement period
-D. Missing a school-employment deadline
+47. Which action is expressly listed as a discipline ground?
+A. Filing a false or deceptive biennial registration
+B. Failing to work in a school after obtaining specialist certification
+C. Practicing under a valid provisional endorsement license
+D. Missing an internal employer deadline for records completion
 
-48. A newly awarded doctoral degree is being evaluated for licensure. When does the program qualify?
-A. Within 1 year from the award of the doctoral degree, the program was accredited by APA, CPA, or PCSAS, designated by the ASPPB/National Register Designation Project, or was an equivalent foreign program
-B. Within 2 years of the degree award, the program was accredited by any regional accreditor recognized by CHEA
-C. At the time of graduation, the program included supervised practicum and 15 graduate credits in psychology
-D. The degree was awarded by an accredited university and the program title included the word psychology
+48. A doctoral degree program is being evaluated for Pennsylvania licensure purposes. Which description matches a qualifying program route?
+A. Within 1 year of the degree award, the program was accredited by APA, CPA, or PCSAS, designated by ASPPB/National Register, or equivalent as a foreign program
+B. Within 2 years of the degree award, the university held regional accreditation
+C. The degree title included the word psychology and required a practicum
+D. The student completed 15 graduate psychology credits before graduation
 
-49. A psychologist conducts an evaluation for an employer. When may the psychologist release the results to the employer?
-A. Only after written authorization from the examinee or legal representative, unless limitations were agreed to in advance in writing
-B. Immediately, because the employer paid for the exam
-C. Only after Board approval
-D. Never, under any circumstance
+49. An employer-sponsored fitness-for-duty evaluation is complete. When may the psychologist release the results to the employer?
+A. After written authorization from the examinee or legal representative, unless advance written limitations were agreed upon
+B. Immediately, because the employer paid for the evaluation
+C. Only after the Board approves the release
+D. Never, because employer referrals eliminate all release authority
 
-50. An applicant is completing initial licensure requirements. What child-abuse training is generally required?
-A. 3 hours of Bureau- and DHS-approved child-abuse recognition and reporting training, documented electronically by the provider unless an exemption applies
-B. 1 hour of child-abuse training from any source
-C. 2 hours of child-abuse training each year
-D. No child-abuse training unless the applicant works with minors
+50. What child-abuse training is generally required for initial licensure?
+A. Three hours of Bureau- and DHS-approved child-abuse recognition and reporting training, electronically documented by the provider unless exempt
+B. One hour of child-abuse training from any source
+C. Two hours of child-abuse training each calendar year
+D. No child-abuse training unless the applicant will treat minors
 
-51. For discipline purposes, which disposition counts as a conviction?
-A. Only a final appellate affirmance
+51. For disciplinary purposes, which disposition counts as a conviction?
+A. Only a conviction affirmed on appeal
 B. A plea of nolo contendere or probation without verdict
-C. Only incarceration after sentencing
-D. Only a jury verdict
+C. Only a sentence involving incarceration
+D. Only a verdict after trial
 
-52. A Pennsylvania psychologist is treating a client whose care also requires medical diagnosis beyond the psychologist's competence. What must the psychologist do?
-A. Continue to manage all aspects of care if the client consents to integrated treatment
-B. Transfer the entire case immediately, including the psychological treatment, regardless of clinical need
-C. Assist the client in obtaining qualified professional help for relevant aspects outside the psychologist's competence.
-D. Continue treatment and address the medical issue only if it later becomes central to therapy
+52. A treating psychologist encounters a medical issue outside the psychologist's competence but still relevant to the client's care. What is required?
+A. Continue managing the outside issue if the client prefers integrated care
+B. Terminate all psychological treatment immediately
+C. Help the client obtain qualified professional assistance for the aspect outside the psychologist's competence
+D. Ignore the issue unless it later becomes the sole treatment focus
 
-53. A psychologist practiced in a nonexempt setting while the Pennsylvania license was inactive. What may reactivation require?
-A. A late renewal fee of $5 per month or part of a month of unauthorized practice, plus biennial fees, without foreclosing discipline
-B. Only a letter of apology
-C. No fees if the psychologist later stops practicing
-D. Retaking both examinations in every case
+53. A psychologist practiced in a nonexempt setting while the Pennsylvania license was inactive and now seeks reactivation. Which statement is correct?
+A. Reactivation may require a $5 monthly late fee for unauthorized practice plus biennial fees, and discipline may still be pursued
+B. Reactivation requires only a written apology
+C. No fees apply if the psychologist has now stopped practicing
+D. Retaking both licensing examinations is mandatory in every case
 
-54. Which conduct best reflects competent professional self-monitoring?
-A. Continuing to treat clients despite serious personal impairment because termination is inconvenient
-B. Making testing-based policy decisions without understanding psychometrics
-C. Refusing to update knowledge after licensure
-D. Seeking assistance and limiting practice when personal problems are likely to impair professional effectiveness
+54. Which response best reflects proper self-monitoring when personal problems threaten professional effectiveness?
+A. Continue practice to avoid inconveniencing clients
+B. Make psychometric decisions despite not understanding the measurements
+C. Refuse to update knowledge after licensure
+D. Seek assistance and limit or suspend practice as needed
 
-55. If Board revenues will not cover projected expenditures, what must happen?
-A. The Board must wait until revenues fall short over a 3-year period before adjusting fees
-B. The Bureau may suspend enforcement activity until revenues recover
-C. The Board increase fees by regulation so projected revenues meet or exceed projected expenditures.
-D. Fees remain fixed unless the General Assembly separately approves an increase
+55. Projected Board revenue will not cover projected expenditures. What does the statute require?
+A. Delay action until there has been a 3-year shortfall
+B. Suspend enforcement until the budget stabilizes
+C. Increase fees by regulation so projected revenues meet or exceed projected expenditures
+D. Keep fees fixed unless the legislature separately enacts an increase
 
-56. A psychologist becomes the subject of a disciplinary case before the State Board of Psychology. What procedural rules generally govern the proceeding?
-A. `1 Pa. Code Part II`, the general rules of administrative practice and procedure
-B. Only the Pennsylvania Rules of Criminal Procedure
-C. Only local county court rules
-D. No procedural rules unless the Board creates them for each case
+56. A psychologist asks what procedural code generally governs State Board disciplinary proceedings. What is the best answer?
+A. `1 Pa. Code Part II`
+B. The Pennsylvania Rules of Criminal Procedure
+C. Local county civil rules only
+D. No standing procedural rules apply
 
-57. A licensee is convicted of a felony or misdemeanor. When must the conviction be reported to the Board?
+57. When must a conviction for a felony or misdemeanor be reported to the Board?
 A. Within 90 days only
-B. Only if another state also disciplines the licensee
-C. Within 30 days of conviction, or on the biennial renewal application, whichever is sooner
-D. Only after sentencing is completed
+B. Only if another state later disciplines the licensee
+C. Within 30 days of conviction or on the biennial renewal application, whichever is sooner
+D. Only after all sentencing terms are completed
 
-58. When a person receiving services has a legal guardian, who is the client or client-patient for decision-making purposes?
-A. The legal guardian for all purposes, including confidential therapeutic communications and direct safety issues
-B. The individual receiving services for all purposes, even when a legal guardian exists
-C. The legal guardian unless the psychologist determines it is clinically preferable to treat the individual as the client-patient
-D. The legal guardian, except for issues specifically reserved to the individual such as confidential therapeutic communications or direct safety issues
+58. A patient has a legal guardian. Under the definition section, who is treated as the client or client-patient for decision-making purposes?
+A. The guardian for every purpose, including confidential therapeutic communications and immediate safety issues
+B. The individual receiving services for every purpose despite the guardianship
+C. Whichever person the psychologist finds clinically easier to work with
+D. The guardian, except where the law reserves a matter to the individual receiving services
 
-59. In psychology practice, what does "measuring and testing" refer to?
-A. Psychological assessment and evaluation of abilities, attitudes, aptitudes, achievements, adjustments, motives, personality dynamics, or other attributes by standardized measurements or recognized methods
-B. Only laboratory blood analysis
-C. Administrative time spent scoring invoices
-D. Only IQ testing of children
+59. In the Act, what is "measuring and testing"?
+A. Psychological assessment or evaluation of abilities, attitudes, aptitudes, achievements, adjustments, motives, personality dynamics, or other attributes by standardized or otherwise recognized methods
+B. Biological specimen analysis performed in a lab
+C. Administrative scoring of fee schedules and invoices
+D. IQ testing only
 
-60. Which circumstance triggers a mandated child-abuse report?
-A. A therapist hears a generalized complaint that a parent is "too strict," with no specific indication of child abuse
-B. A person makes a specific disclosure that an identifiable child is the victim of child abuse.
-C. A psychologist learns that an adult client was abused as a child, but no identifiable child is currently at risk
-D. A teacher asks whether a family should be reported based only on chronic tardiness
+60. Which fact pattern most clearly triggers a mandated child-abuse report?
+A. A vague statement that a parent is "mean," with no abuse facts
+B. A specific disclosure identifying a child as the victim of abuse
+C. An adult client's report of childhood abuse with no identifiable child currently implicated
+D. Chronic school tardiness with no other abuse indication
 
-61. A psychologist licensed in another state with substantially equivalent requirements wants Pennsylvania licensure. What is also required?
-A. Must repeat every portion of the exam regardless of prior scores
-B. May be exempt from examination, but must apply, pay the initial fee, and complete 3 hours of child-abuse training
-C. Needs no application if already nationally certified
-D. May practice indefinitely before contacting the Board
+61. An out-of-state psychologist qualifies for substantially equivalent licensure. What is still required?
+A. Repeating all examinations regardless of prior scores
+B. Filing the application, paying the initial fee, and completing 3 hours of child-abuse training, even though examination may be waived
+C. No application if the person already holds a national credential
+D. Indefinite practice in Pennsylvania before contacting the Board
 
 62. Which out-of-state psychologist may work temporarily in Pennsylvania without first giving written notice to the Board?
-A. One on temporary assignment for an aggregate of 10 days
-B. One on temporary assignment for 4 months
-C. One seeking a 6-month extension
-D. One whose home-state license is inactive
+A. One whose temporary assignment totals no more than 14 days
+B. One whose temporary assignment will last 4 months
+C. One seeking a 6-month extension of an earlier assignment
+D. One whose home-state license has lapsed
 
-63. Which course may not receive continuing-education credit toward biennial renewal?
-A. An approved ethics seminar
+63. Which course cannot be counted toward biennial CE credit?
+A. An approved ethics course
 B. An approved child-abuse reporting course
-C. A course in office management or practice building
-D. An approved clinical training workshop
+C. A course on office management or practice building
+D. An approved clinical workshop
 
-64. Which person is included as a mandated reporter for this chapter?
-A. Only fully licensed psychologists and certified school psychologists
+64. Which person falls within the chapter's mandated-reporter definition?
+A. Only fully licensed psychologists
 B. A psychology intern or resident supervised by a licensed psychologist
-C. Any unlicensed person working in a mental health office, whether supervised or not
-D. Only psychologists whose practices primarily involve minors
+C. Any unsupervised receptionist in a therapy office
+D. Only psychologists whose caseload is mostly children
 
-65. A psychologist's Pennsylvania license was revoked. Absent a court order, when may the Board generally reinstate it?
-A. One year has passed and the psychologist pays the renewal fee.
-B. Five years have passed and the applicant again meets all licensure qualifications, including the examination requirement.
-C. The psychologist completes 30 CE hours.
-D. Another state issues a temporary license.
+65. Absent a court order, when may the Board generally reinstate a revoked Pennsylvania license?
+A. After 1 year if renewal fees are paid
+B. After 5 years if the applicant again satisfies all licensure requirements, including the exam requirement
+C. After 30 CE hours are completed
+D. As soon as another state issues any psychology credential
 
-66. Which statement about temporary psychology practice in Pennsylvania is accurate?
-A. The Board must issue a temporary license to any psychologist holding an active out-of-state credential
-B. Temporary assignment practice for up to 6 months requires only written notice to the Board, not written permission from the Board
-C. Temporary licenses are available only to applicants who have already filed for full Pennsylvania licensure
-D. A temporary license may be refused if the psychologist is the subject of past or pending disciplinary action in another jurisdiction.
+66. Which statement about temporary practice or temporary licensure in Pennsylvania is accurate?
+A. Any active out-of-state psychologist is entitled to a temporary license on request
+B. A 6-month temporary assignment requires notice only, not Board permission
+C. Temporary licensure is available only after filing for full Pennsylvania licensure
+D. The Board may refuse a temporary license because of past or pending discipline in another jurisdiction
 
-67. An endorsement applicant must submit the issuing jurisdiction's governing law, regulation, or rule. What must that copy include?
-A. The enactment date
-B. The issuing jurisdiction's most recent renewal certificate
-C. A certified translation if the Board later requests one, but not the underlying law or rule itself
-D. A summary prepared by the applicant describing the issuing jurisdiction's requirements
+67. An endorsement applicant submits the issuing jurisdiction's governing law or rule. What must accompany that submission?
+A. The enactment date of the law, regulation, or rule
+B. The applicant's most recent renewal card
+C. Only an applicant-prepared summary if the full text is lengthy
+D. A translation only if the applicant personally thinks one may help
 
-68. Except for certain suspensions, when may a Board member count toward a quorum and vote?
-A. Has participated by teleconference and reviewed the file beforehand
-B. Is physically in attendance at the meeting
-C. Has submitted a proxy vote to the chair in advance of the meeting
-D. Is represented by counsel and available to answer questions remotely
+68. Except in limited statutory circumstances, when may a Board member count toward quorum and vote?
+A. When participating remotely by phone after reviewing the file
+B. When physically present at the meeting
+C. When submitting a proxy vote in advance
+D. When counsel appears on the member's behalf
 
-69. A practice wants to use the name "Statewide Neuropsychology Elite Center." What may the Board require?
-A. Nothing, because any specialty term is automatically allowed
-B. Only a higher filing fee
-C. A copy of every future advertisement
-D. Documentation of training sufficient to establish credentials in the named specialty area for relevant service providers
+69. A practice proposes the name "Statewide Neuropsychology Elite Center." What may the Board require before approving it?
+A. Nothing beyond payment of the filing fee
+B. Proof of a regional market presence in multiple counties
+C. Copies of all planned advertising campaigns
+D. Documentation showing that relevant providers have credentials supporting the claimed specialty
 
-70. Which conduct is expressly unlawful unless an exemption applies?
-A. Volunteering in an emergency under another profession's scope
-B. Performing clerical duties for a licensed psychologist
-C. Teaching psychology at an accredited university as part of faculty duties
-D. Using the words "psychological" or "psychologist" in offering services to the public without a license
+70. Which conduct is unlawful unless an exemption applies?
+A. Volunteering within another recognized profession during an emergency
+B. Performing clerical functions for a licensed psychologist
+C. Teaching psychology as accredited faculty
+D. Offering services to the public using the title "psychologist" without a license
 
-71. During a Board investigation, when may patient records be subpoenaed?
-A. Anytime the Board asks for them
-B. Only with patient consent or a court order showing the records are reasonably necessary for the investigation
-C. Only in criminal cases, never disciplinary matters
-D. Only after a final disciplinary adjudication
+71. During an investigation, when may patient records be reached by subpoena?
+A. Whenever the Board believes the records might be useful
+B. Only with patient consent or a court order showing the records are reasonably necessary to the investigation
+C. Only in criminal prosecutions, not licensing matters
+D. Only after the Board enters a final disciplinary order
 
-72. A psychologist sees a client-patient only on an intermittent basis. How is the professional relationship treated?
-A. Is deemed to continue uninterrupted forever
-B. Is deemed to start anew on each date the psychologist provides a professional service
-C. Exists only if the client prepays
-D. Ends permanently after the first gap in treatment
+72. A psychologist treats a client intermittently over several years. How is the professional relationship defined?
+A. It continues uninterrupted from first contact until final discharge
+B. It begins anew on each date the psychologist provides professional service
+C. It exists only if the client prepays for the next visit
+D. It ends permanently after the first significant gap in care
 
-73. Which feature is part of a qualifying professional setting for supervised training?
-A. The setting may leave responsibility for client welfare to the trainee as long as supervision occurs weekly
-B. The setting may be limited to a single discipline if it provides intensive supervision
-C. The setting need not collect fees if the trainee bills clients directly
-D. The setting must provide easy and continuous access to the supervisor by both the applicant and clients or patients.
+73. Which feature is required of a qualifying professional setting for supervised training?
+A. The trainee may bear primary responsibility for client welfare if weekly supervision is documented
+B. The setting may be purely solo-practice if the supervisor answers email promptly
+C. The trainee may collect fees directly while the institution disclaims responsibility
+D. The setting must provide easy and continuous access to the supervisor for both the applicant and clients or patients
 
-74. Who may privately perform acts permitted in public and private schools without holding a psychology license?
-A. A person who completed all certification requirements after June 30, 2017 and holds a valid Educational Specialist certificate
-B. A person who was first enrolled in a qualifying school psychology certification program after June 30, 2018 and later receives an Educational Specialist certificate
-C. A person who, on or before June 30, 2017, completed all requirements for certification as an Educational Specialist I or II in school psychology, or who was enrolled in that program on or before June 30, 2018, is employed in an appropriate educational setting, and holds a valid Educational Specialist I or II certificate in good standing
-D. Any person holding a current Educational Specialist I or II certificate, regardless of employment setting or enrollment date
+74. Which person falls within the grandfathered school-psychology private-practice exemption?
+A. A person who first completed certification requirements after June 30, 2017 and now holds the certificate
+B. A person first enrolled in the qualifying certification pathway after June 30, 2018
+C. A person who met the statute's June 30, 2017 or June 30, 2018 timing thresholds and also holds the required educational employment and certificate status
+D. Any current Educational Specialist certificate holder regardless of enrollment date or work setting
 
-75. Who can be a perpetrator of child abuse by failure to act?
-A. An individual 14 years of age or older who has direct contact with children as an employee of a school
-B. An adult relative within the third degree of consanguinity or affinity who does not live with the child
-C. An adult who engages a child in severe trafficking in persons
-D. A person responsible for the child's welfare who is 18 years of age or older
+75. Who can be a perpetrator of child abuse by failure to act under this definition?
+A. Any school employee age 14 or older with direct child contact
+B. Any adult relative within the third degree regardless of role
+C. Any adult involved in trafficking, whether or not responsible for the child
+D. A person responsible for the child's welfare who is at least 18 years old
 
-76. A psychologist is designing an animal-research protocol. Which statement best reflects the proper approach?
-A. Procedures subjecting animals to pain may be used routinely even when an alternative exists.
-B. Animal research is exempt from legal regulation if the researcher is licensed.
-C. Psychologists must make every effort to minimize discomfort, illness, and pain, and euthanasia should be rapid and painless when appropriate.
-D. Training of staff who handle animals is optional.
+76. Which statement best states the governing animal-research duty?
+A. Painful procedures may be used whenever they produce better data
+B. Animal research is exempt from legal and ethical regulation if the investigator is licensed
+C. Psychologists must minimize discomfort, illness, and pain, and use rapid painless euthanasia when appropriate
+D. Staff handling animals need no special training if the principal investigator is competent
 
-77. A psychologist thinks making a child-abuse report would violate confidentiality. What rule controls?
-A. Ethical Principle 5 always overrides child-abuse reporting duties.
-B. Privileged communications relieve the psychologist of the duty to report.
-C. Child-abuse reporting requirements take precedence over Ethical Principle 5, and privileged communications do not excuse the report.
-D. A report may be made only with parental consent.
+77. A psychologist worries that a child-abuse report would breach confidentiality. What rule controls?
+A. Ethical confidentiality always overrides reporting statutes
+B. Privileged communications excuse the report
+C. Child-abuse reporting duties override confidentiality and privilege rules
+D. The report can be made only if a parent consents
 
-78. A psychologist's license is actively suspended. Within 30 days, what must the written notice to current clients or patients and supervised individuals include?
-A. The sanction imposed, effective date and length, nature of the violation, and a statement about assisting with alternative resources and transfer of records
-B. The sanction imposed and effective date only, if the licensee expects to resume practice promptly
-C. The sanction imposed, the Board docket number, and a statement that records will not be transferred until the appeal is resolved
-D. Only a notice that the practice is closed until further notice
+78. A psychologist's license is actively suspended. What must written notice to current clients or patients and supervised persons include within 30 days?
+A. The sanction, its effective date and length, the nature of the violation, and help regarding alternative resources and transfer of records
+B. Only the sanction and effective date if an appeal is planned
+C. The sanction and docket number, with records withheld until the matter ends
+D. Only a notice that the office is temporarily closed
 
-79. A researcher is planning a human-subjects study. Which statement best reflects the correct rule?
-A. Participants may be required to stay in a study once they consent.
-B. Minimal risk means no possibility of discomfort.
-C. Concealment or deception is acceptable whenever it makes data collection easier.
-D. The individual investigator remains responsible for ethical practice and must respect participants' freedom to decline or withdraw.
+79. Which statement best reflects the human-subjects research rule?
+A. Participants may not withdraw after signing consent
+B. Minimal risk means zero possibility of discomfort
+C. Deception is acceptable whenever it improves data quality
+D. The investigator remains ethically responsible and must respect the subject's freedom to decline or withdraw
 
-80. Which annual report must the Board submit?
-A. A report to legislative committees describing complaint types, case status, board action, and time from complaint to final resolution
-B. A monthly report to all licensees of closed investigations
-C. A report to each county court listing confidential patient names
-D. A daily report of every Board communication
+80. Which annual report is the Board required to submit?
+A. A legislative report describing complaint types, case status, Board action, and time to final resolution
+B. A monthly report to every licensee listing closed investigations
+C. A court report identifying clients involved in Board cases
+D. A daily log of every Board communication sent that year
 
-81. A psychologist is reflecting on a core professional duty. What is most directly required?
-A. Use services in any way the employer prefers
-B. Avoid responsibility for the consequences of their work
-C. Accept responsibility for the consequences of their work and strive to ensure their services are used appropriately
-D. Limit concern to scientific work, not practice
+81. Which statement best captures a core duty under Principle 1?
+A. The psychologist may let an employer decide how services are used
+B. The psychologist should avoid responsibility for foreseeable consequences of professional work
+C. The psychologist must accept responsibility for the consequences of professional work and strive for proper use of services
+D. The duty applies only to research, not to applied practice
 
-82. Who counts as a psychology resident?
-A. An individual enrolled in a doctoral internship before the doctoral degree is awarded
-B. An individual who has obtained a doctoral degree and is fulfilling the supervised experience requirement for licensure, or continuing training under `§ 41.31(4)`
-C. An individual with a master's degree obtaining supervised experience before doctoral study
-D. Any unlicensed employee with graduate training in psychology working under a licensed psychologist
+82. Who qualifies as a psychology resident?
+A. A doctoral student completing a predegree internship
+B. A person who already holds the doctoral degree and is completing required supervised experience or continuing training under `§ 41.31(4)`
+C. Any master's-level trainee planning to enter doctoral study later
+D. Any unlicensed graduate-trained employee in a psychology office
 
-83. A psychology resident employed by a school has reasonable cause to suspect child abuse. After making the mandated report, what must the resident do next?
-A. Wait for the principal to decide whether to notify anyone.
-B. Immediately notify the person in charge of the institution or school, or the designated agent.
-C. First confront the alleged perpetrator.
-D. Submit only a Board complaint.
+83. A psychology resident working in a school makes a mandated child-abuse report. What must happen next?
+A. Wait to see whether the principal wants the matter reported internally
+B. Immediately notify the person in charge of the school or the designated agent
+C. First confront the suspected perpetrator
+D. File only a Board complaint and wait for instructions
 
-84. An applicant is checking the core prerequisites for licensure. Which item is not one of them?
+84. Which item is not one of the basic licensure prerequisites in Section 6(a)(1)-(4)?
 A. Acceptable moral character
 B. Qualifying doctoral education and supervised experience
-C. Passage of a board-adopted examination
-D. Completion of a one-year provisional Pennsylvania license
+C. Passage of the required examination
+D. Completion of a 1-year Pennsylvania provisional license
 
-85. Which statement best captures the purpose of Pennsylvania's psychology licensing law?
-A. The Act is strictly construed to limit Board authority.
-B. The practice of psychology affects public safety and welfare, and the Act should be liberally construed to protect the public.
-C. The Act regulates only academic psychologists.
-D. The Act's sole purpose is revenue collection.
+85. Which statement best reflects the Act's declared purpose?
+A. It should be strictly construed to minimize regulation
+B. Because psychology practice affects public safety and welfare, the Act should be liberally construed in the public interest
+C. It applies only to university-based psychologists
+D. It exists primarily to generate licensing revenue
 
-86. More than 2 years after treatment ends, a psychologist begins a romantic relationship with a former client. Who has the burden to show there was no exploitation?
-A. The former client, because the 2-year prohibition has expired
-B. The Board investigator, because the relationship began after termination
+86. A psychologist begins a romantic relationship with a former client 3 years after termination. In a disciplinary case, who bears the burden of showing no exploitation occurred?
+A. The former client
+B. The Board investigator
 C. The psychologist
-D. No one bears a special burden once 2 years have passed
+D. No one, because the 2-year prohibition has expired
 
-87. Which reporting method satisfies the child-abuse reporting rule without requiring an additional oral or written report once confirmation is received?
-A. Leaving a voicemail for the employer
-B. Filing an electronic report through the Department of Human Services' Child Welfare Information Solution self-service portal and receiving confirmation
-C. Sending a text message to a colleague
-D. Mailing a note to the Board
+87. Which reporting method satisfies the child-abuse rule without requiring any additional oral or written report once confirmation is received?
+A. Leaving a voicemail for a supervisor
+B. Filing electronically through the DHS Child Welfare Information Solution portal and receiving confirmation
+C. Texting a colleague to document concern
+D. Mailing a notice to the Board
 
-88. Psychologists want to form a professional corporation with another licensed profession. With whom may they do so if another chapter also authorizes it?
-A. Only other psychologists, unless they instead practice under a fictitious name
-B. Chiropractors, medical doctors, nurses, and certain other listed licensed professions
-C. Any licensed profession, so long as psychologists are minority owners
-D. Only non-health professions specifically regulated by the Department of State
+88. If another chapter also authorizes it, psychologists may form a professional corporation with which group?
+A. Only other psychologists
+B. Certain listed licensed professions such as physicians, nurses, chiropractors, and others authorized by the regulation
+C. Any licensed profession if psychologists are minority owners
+D. Only non-health professions regulated by the Department of State
 
-89. Which relationship is expressly prohibited under `§ 41.81` specifically?
+89. Which relationship is expressly prohibited by `§ 41.81` itself?
 A. Sexual intimacies between a psychologist and a current client or patient
-B. Accepting as a client a person with whom the psychologist previously engaged in sexual intimacies
+B. Accepting a former sexual partner as a client
 C. Sexual intimacies with a former client 18 months after termination
 D. Sexual intimacies with a former client's immediate family member 3 years after termination
 
-90. An initial applicant for examination must submit which criminal-history document?
-A. A Pennsylvania State Police criminal history report dated within 90 days of the application, or an equivalent law-enforcement report from the state of residence if outside Pennsylvania
-B. Any report from any time in the last 5 years
-C. A self-disclosure with no supporting record
-D. Only a federal background check
+90. What criminal-history document must an initial applicant for examination submit?
+A. A Pennsylvania State Police criminal-history report dated within 90 days of the application, or an equivalent report from the applicant's home state if living outside Pennsylvania
+B. Any criminal-history report from the last 5 years
+C. A self-disclosure without supporting records
+D. Only an FBI report
 
-91. After a child-abuse report, certain photographs, X-rays, and test reports are medically indicated. When should the summaries or reports be sent to the county agency?
-A. Only if requested by the alleged perpetrator
-B. At the time the written report is sent, or within 48 hours after an electronic report, or as soon thereafter as possible
-C. Only after court approval
-D. Never, because they are privileged
+91. Certain photographs, X-rays, and tests are medically indicated after a child-abuse report. When should their summaries or reports be sent to the county agency?
+A. Only if the alleged perpetrator requests them
+B. When the written report is sent, or within 48 hours after an electronic report, or as soon thereafter as possible
+C. Only after a court order is entered
+D. Never, because they remain privileged
 
-92. Which statement is correct about independent practice and professional responsibility?
-A. An ownership interest by a person who provides direct services in a business that provides psychological services can constitute independent practice.
-B. A person may engage in independent practice before licensure if all services are co-signed by a licensed psychologist
-C. Psychologists may represent nonpsychological degrees as psychological qualifications if the degrees are from accredited schools
-D. A psychologist with first-hand knowledge of another psychologist's ethical violation has no duty to act unless a client complains
+92. Which statement about independent practice and responsibility is correct?
+A. A direct-service ownership interest in a business providing psychological services can amount to independent practice
+B. Unlicensed independent practice is allowed if a licensed psychologist co-signs the work
+C. Nonpsychology degrees may be described as psychology credentials if issued by accredited schools
+D. First-hand knowledge of another psychologist's ethical violation creates no duty unless a client complains
 
-93. How many contact hours in ethical issues are required each biennium as part of the 30 continuing-education hours?
+93. Of the required 30 CE hours each biennium, how many must be in ethical issues?
 A. 1
 B. 2
 C. 3
 D. 6
 
-94. Which action would most clearly violate another person's legal or civil rights in professional practice?
+94. Which action most clearly violates another person's legal or civil rights under Principle 3?
 A. Participating in or condoning unlawful discriminatory employment practices
-B. Following institutional regulations while seeking resolution of a conflict with professional standards
-C. Respecting students' differing values when teaching controversial topics
-D. Avoiding actions that diminish clients' civil rights
+B. Following institutional rules while trying to resolve a professional conflict
+C. Respectfully presenting controversial material to students with differing values
+D. Avoiding conduct that would diminish a client's rights
 
-95. A psychologist refuses a Board-directed mental or physical examination without circumstances beyond the psychologist's control. What is the effect of that refusal?
-A. Has no consequence until criminal charges are filed
-B. Automatically restores the license
-C. Constitutes an admission of the allegations, allowing a default and final order without taking testimony or evidence
-D. Is treated only as a CE deficiency
+95. A psychologist refuses a Board-directed physical or mental examination without circumstances beyond the psychologist's control. What is the regulatory effect?
+A. No effect unless criminal charges are filed
+B. Automatic restoration of the license
+C. The refusal is treated as an admission of the allegations, permitting default and final order without testimony or evidence
+D. The refusal is treated only as a CE deficiency
 
-96. What must psychology trainees and licensees do about the scope of their practice?
-A. Practice in any area if supervised once a month
-B. Limit their practices to areas of demonstrated competence
-C. Refer every case to a psychiatrist
-D. Avoid all new treatment methods
+96. What must psychology trainees and licensees do regarding the scope of practice?
+A. Practice any specialty if monthly supervision is available
+B. Limit practice to areas of demonstrated competence
+C. Refer every clinical matter to a physician
+D. Avoid all newly developed methods
 
-97. Which practice may expose a licensee to discipline?
-A. Providing acceptance, support, and understanding to a questioning adolescent
+97. Which practice may subject a licensee to discipline under the conversion-therapy rule?
+A. Providing supportive care to an adolescent questioning identity
 B. Counseling a client through gender transition
 C. Using conversion therapy on an individual under 18 years of age
-D. Providing sexual-orientation-neutral interventions to prevent unsafe sexual practices
+D. Offering neutral risk-reduction counseling regarding sexual behavior
 
 98. Which statement about a provisional endorsement license is correct?
-A. It automatically converts to a permanent license after 30 days.
-B. It may be reissued repeatedly after expiration.
-C. It may last up to 1 year, with a possible written good-cause extension of no longer than 1 additional year.
-D. It cannot terminate when the Board grants the full license.
+A. It becomes permanent automatically after 30 days
+B. It may be reissued over and over after expiration
+C. It may last up to 1 year and may receive one written good-cause extension of no more than 1 additional year
+D. It remains active even after the Board grants the full license
 
-99. How much of the required postdoctoral experience must be in direct professional work and related supervision or consultation?
+99. What fraction of the required postdoctoral experience must consist of direct professional work and related supervision or consultation?
 A. 25%
 B. One-third
 C. At least 50%
 D. 100%
 
-100. Which event triggers automatic suspension?
-A. Any malpractice claim
-B. Legal commitment of the licensee because of mental incompetence, or specified controlled-substance felony convictions
-C. Failure to attend one Board meeting
-D. Missing a continuing-education deadline
+100. Which event causes automatic suspension?
+A. Any malpractice lawsuit
+B. Commitment for mental incompetence or certain controlled-substance felony convictions
+C. Missing one Board meeting
+D. Failing to complete CE on time
 
-101. After a temporary suspension, within what time must the Board conduct or cause a preliminary hearing on whether a prima facie case exists?
-A. 10 days
-B. 30 days
-C. 90 days
-D. 180 days
+101. After a temporary suspension order, when must the preliminary hearing on prima facie case occur?
+A. Within 10 days
+B. Within 30 days
+C. Within 90 days
+D. Within 180 days
 
 102. Which item must be included in a written or electronic suspected child-abuse report?
 A. The source of the report
-B. The reporter's recommended treatment plan for the child
-C. The accused person's complete criminal history
-D. A definitive diagnosis of abuse by the mandated reporter
+B. The reporter's preferred treatment recommendation
+C. The accused person's full criminal history
+D. A physician-confirmed diagnosis
 
-103. When the Board disciplines a psychologist for prohibited sexual-intimacy conduct, what additional consequence applies?
-A. Must be offered an impaired-professional program instead of discipline
-B. Is not eligible for placement into an impaired-professional program in lieu of disciplinary or corrective action
-C. May avoid discipline by obtaining client consent
-D. Is automatically placed on probation only
+103. What additional consequence applies when the Board disciplines a psychologist for prohibited sexual-intimacy conduct?
+A. The psychologist may elect impaired-professional diversion instead of discipline
+B. The psychologist is ineligible for impaired-professional diversion in lieu of discipline
+C. The Board must defer its case unless a civil suit is filed first
+D. The matter can be handled only in court, not through Board discipline
 
-104. Which activity counts as psychological consulting?
-A. Only selling published self-help books
-B. Clerical support functions in a hospital
-C. Phlebotomy services
-D. Interpreting or reporting scientific fact or theory in psychology, rendering expert psychological opinion or evaluation, or engaging in applied psychological research
+104. Which activity is psychological consulting under the Act?
+A. Teaching an undergraduate survey course
+B. Selling scheduling software to clinicians
+C. Clerically entering test scores with no interpretation
+D. Rendering an expert psychological opinion or evaluation for compensation
 
-105. When do Pennsylvania psychology licenses expire?
-A. On the licensee's birthday each year
-B. Every 3 years on June 30
-C. On November 30 of each odd-numbered year
-D. On the date first issued plus 24 months
+105. On what schedule do Pennsylvania psychology licenses expire?
+A. December 31 of every odd-numbered year
+B. June 30 of every even-numbered year
+C. November 30 of every odd-numbered year
+D. Exactly 2 years from the issue date
 
 106. How may an endorsement applicant demonstrate current competency?
-A. 2 of the last 5 years of active practice in the issuing jurisdiction or 30 hours of qualifying continuing education in the 24 months immediately preceding the application
-B. Only 10 continuing-education hours in the last year
-C. A single notarized affidavit from a colleague
-D. Any internship completed before graduation
+A. By showing either active practice for 2 of the last 5 years or 30 qualifying CE hours during the prior 24 months
+B. Only by retaking the EPPP
+C. Only by recent full-time academic employment
+D. Only by ABPP certification
 
 107. Which activity is permitted without a psychology license?
-A. A business selling psychological testing services to the public through unlicensed staff
-B. Employees of a business applying psychology principles to placement, evaluation, selection, promotion, or job adjustment of their own employees
-C. A clerical employee independently practicing psychology
-D. A corporation marketing therapy to the public without licensed providers
+A. Advertising psychotherapy services to the public under the title "psychologist"
+B. Applying psychological principles internally within an employer's own business for personnel purposes
+C. Selling counseling services to the public under a psychology-based trade name
+D. Providing diagnostic testing directly to consumers without supervision
 
-108. After first-time examination failure, when may the applicant take a second examination?
-A. Immediately upon payment
-B. Only after 6 months and within 2 years of the first examination date
-C. Only after 2 years
-D. Never
+108. After first failing the licensing examination, when may an applicant take the second examination?
+A. Immediately after paying the fee
+B. After 6 months, provided the second exam is taken within 2 years of the first
+C. Only after earning a new doctoral degree
+D. At any time the Board informally permits
 
-109. A mandated reporter willfully fails to report suspected child abuse, and none of the more serious listed categories apply. What is the grading of the offense?
-A. A summary offense
-B. A misdemeanor of the second degree
-C. A felony of the third degree
-D. A civil infraction only
+109. A mandated reporter willfully fails to report suspected child abuse, and no aggravating category applies. What is the grading of the offense?
+A. Summary offense
+B. Misdemeanor of the second degree
+C. Misdemeanor of the first degree
+D. Felony of the third degree
 
-110. Which conduct violates a psychologist's research-responsibility rules?
-A. Acknowledging alternative hypotheses and limitations
-B. Discussing how data may be misconstrued in social-policy contexts
-C. Suppressing disconfirming data to make findings appear stronger
-D. Clarifying expectations for sharing data in advance
+110. Which act violates the psychologist's research-integrity duties?
+A. Disclosing important study limitations
+B. Giving appropriate professional credit
+C. Suppressing disconfirming data to strengthen the preferred conclusion
+D. Trying to prevent institutional misuse of findings
 
-111. Postdoctoral trainees and graduate-trained employees are working under a licensed psychologist. How must they perform their duties?
-A. Independently if they hold doctoral degrees
-B. Under the full direction, control, and supervision of a licensed psychologist pursuant to board regulations
-C. Only in federal settings
-D. Only after passing the EPPP
+111. How must postdoctoral trainees and graduate-trained employees work when employed by a licensed psychologist?
+A. With general administrative oversight only if they are experienced
+B. Under the psychologist's full direction, control, and supervision
+C. Independently so long as files are later audited
+D. Through peer consultation without a designated supervisor
 
-112. In a disciplinary proceeding involving prohibited sexual intimacies, what effect does the client's consent have?
-A. It may be considered only in mitigation of sanction
-B. It is relevant if the psychologist can show the client initiated the relationship
-C. It defeats liability if the client was not in active treatment at the time
-D. Is not a defense
+112. In a disciplinary case involving prohibited sexual intimacies, what effect does the client's consent have?
+A. It is a complete defense if the client was an adult
+B. It is a partial defense if treatment had ended
+C. It shifts the burden to the complainant
+D. It is not a defense
 
-113. Which power is expressly granted to the Board?
-A. To issue criminal sentences directly
-B. To adopt and revise standards for professional practice and a code of ethics
-C. To license all healing arts in Pennsylvania
-D. To compel hospitals to hire psychologists
+113. Which authority is expressly granted to the Board?
+A. Creating new crimes by regulation
+B. Adopting and revising standards of professional practice and a code of ethics
+C. Sentencing violators to jail after a hearing
+D. Waiving any statutory licensure requirement whenever it seems fair
 
-114. Which conduct is specifically listed as a discipline ground?
-A. Passing the PPLE on the first attempt
-B. Intentionally submitting to a third-party payor a claim for a service not actually provided to a client
-C. Maintaining records in accordance with Board regulations
-D. Reporting multiple licensure on a biennial renewal application
+114. Which conduct is expressly listed as a ground for discipline?
+A. Referring a client to a physician for outside medical care
+B. Intentionally billing a third-party payor for a service not actually provided
+C. Using a Board-approved fictitious name
+D. Practicing under a valid temporary assignment exemption
 
-115. What is the penalty for a first offense of unlicensed practice?
-A. A summary offense only
-B. A misdemeanor, with up to $1,000 fine or up to 6 months' imprisonment
-C. A felony of the third degree automatically
-D. License suspension only
+115. What is the criminal penalty for a first offense of unlawful practice?
+A. Civil penalty only
+B. A misdemeanor punishable by up to a $1,000 fine or up to 6 months' imprisonment
+C. Felony of the third degree
+D. Automatic injunction with no criminal liability
 
-116. A court invalidates one section of Pennsylvania's psychology licensing law. What happens to the rest?
-A. The entire Act automatically becomes void.
-B. Only the Board's fee rules survive.
-C. The judgment does not affect, impair, or invalidate the remainder of any section or part thereof.
-D. All pending cases are dismissed.
+116. A court invalidates one section of the Act. What happens to the remainder?
+A. The entire Act automatically falls
+B. Only regulations remain enforceable
+C. The rest remains effective under the severability clause unless inseparability requires otherwise
+D. All licensing actions are stayed for 1 year
 
-117. In a civil or criminal action, when may a psychologist be examined about information learned while serving a client?
-A. Any time the Board deems the information professionally relevant
-B. The client's written consent, the written consent of the client's authorized legal representative, or guardian authority by order in incompetency proceedings
-C. When a subpoena is issued in civil litigation, even without client authorization
-D. When an adult family member requests disclosure for treatment planning
+117. In civil or criminal litigation, when may a psychologist be examined about information obtained while serving a client?
+A. Whenever a party shows relevance
+B. Only with proper written consent or other authorized legal consent
+C. Whenever the psychologist thinks disclosure would help the case
+D. Whenever treatment has already ended
 
-118. What are psychological methods?
-A. Administrative recordkeeping procedures
-B. Application of learning and motivation principles in an interpersonal setting to modify perception and adjustment
-C. Medical procedures performed under anesthesia
-D. Only research performed at universities
+118. Under the Act, what are psychological methods?
+A. Statistical tools used to validate research
+B. Interpersonal applications of learning and motivation principles to affect perception, adjustment, feelings, values, self-concept, goals, and adaptive patterns
+C. Administrative procedures for assigning diagnoses in hospitals
+D. Only Board-approved treatment manuals
 
 119. Which statement about Board composition is correct?
-A. All nine members must be licensed psychologists.
-B. The Board includes six licensed psychologists, two public members, and the Commissioner of Professional and Occupational Affairs.
-C. The Commissioner may not serve on the Board.
-D. Public members must be psychologists licensed in Pennsylvania.
+A. Five psychologists, three public members, and the commissioner
+B. Six licensed psychologists, two public members, and the commissioner
+C. Seven psychologists and two public members, with no commissioner
+D. Four psychologists, four public members, and the commissioner
 
-120. An employing psychologist uses an unlicensed employee with graduate training in psychology. What responsibility does the psychologist retain?
-A. May delegate all professional responsibility to an unlicensed employee
-B. Bears full professional responsibility for the welfare of every client or patient served by the employee
-C. Has no duty to verify the employee's graduate training in psychology
-D. May supervise from another field without competence in the delegated services
+120. A licensed psychologist employs an unlicensed graduate-trained worker. What responsibility remains with the psychologist?
+A. Billing responsibility only
+B. Full professional responsibility for the clients or patients served by the worker
+C. Responsibility only for intake screening
+D. No responsibility if the worker signs an independent-contractor agreement
 
 ## Answer Key
 

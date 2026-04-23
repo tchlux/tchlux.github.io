@@ -9,6 +9,8 @@ ROOT = Path(__file__).resolve().parent
 CARDS_MD = ROOT / "cards.md"
 EXAM_MD = ROOT / "pa_psych_law_mock_exam.md"
 SOURCE_MAP_MD = ROOT / "pa_psych_law_source_map.md"
+COMPACT_MD = ROOT / "drafts" / "pa_psych_law_compact_verified_v1.md"
+CROSSWALK_MD = ROOT / "drafts" / "pa_psych_law_compact_crosswalk_v1.md"
 INDEX_HTML = ROOT / "index.html"
 START_MARKER = "<!-- CARDS_MARKDOWN:START -->"
 END_MARKER = "<!-- CARDS_MARKDOWN:END -->"
@@ -195,6 +197,99 @@ def build_cards(
     return cards
 
 
+# Parse the compact verified set into ordered item records.
+#
+# Arguments:
+#   raw (str): compact verified markdown contents
+# 
+# Returns:
+#   (list[dict[str, str]]): compact items in file order
+#
+def parse_compact_verified(raw: str) -> list[dict[str, str]]:
+    items = []
+    pattern = re.compile(
+        r"(?ms)^### (?P<label>[AR]\d+)\n"
+        r"- Sources: (?P<sources>.+?)\n"
+        r"- Question: (?P<question>.+?)\n"
+        r"- Answer: (?P<answer>.+?)\n"
+        r"- Difficulty: `(?P<difficulty>.+?)`\n"
+        r"- Legitimacy: (?P<legitimacy>.+?)(?=^### [AR]\d+|\Z)"
+    )
+    for match in pattern.finditer(raw):
+        item = {key: value.strip() for key, value in match.groupdict().items()}
+        item["source_ids"] = ",".join(re.findall(r"`([AB]\d{2})`", item["sources"]))
+        items.append(item)
+    if len(items) != 60:
+        raise ValueError(f"Expected 60 compact items, found {len(items)}.")
+    return items
+
+
+# Parse the compact crosswalk into first-ancestor mock-question ids.
+#
+# Arguments:
+#   raw (str): compact crosswalk markdown contents
+# 
+# Returns:
+#   (dict[str, int]): first ancestor mock-question id keyed by compact label
+#
+def parse_compact_crosswalk(raw: str) -> dict[str, int]:
+    mapping: dict[str, int] = {}
+    pattern = re.compile(r"^\| `(?P<label>[AR]\d+)` \| `Mock Q(?P<qid>\d+)`", re.M)
+    for match in pattern.finditer(raw):
+        mapping[match.group("label")] = int(match.group("qid"))
+    if len(mapping) != 60:
+        raise ValueError(f"Expected 60 compact crosswalk entries, found {len(mapping)}.")
+    return mapping
+
+
+# Build a first-pass compact card set from compact seams plus ancestor MCQs.
+#
+# Arguments:
+#   compact_items (list[dict[str, str]]): parsed compact items
+#   crosswalk (dict[str, int]): first ancestor mock-question ids
+#   questions (dict[int, dict[str, object]]): parsed canonical exam questions
+#   answers (dict[int, dict[str, str]]): parsed canonical answer-key data
+#   source_map (dict[str, dict[str, str]]): parsed source-map metadata
+# 
+# Returns:
+#   (list[dict[str, object]]): normalized compact cards
+#
+def build_compact_cards(
+    compact_items: list[dict[str, str]],
+    crosswalk: dict[str, int],
+    questions: dict[int, dict[str, object]],
+    answers: dict[int, dict[str, str]],
+    source_map: dict[str, dict[str, str]],
+) -> list[dict[str, object]]:
+    cards = []
+    for qid, item in enumerate(compact_items, start=1):
+        ancestor_id = crosswalk.get(item["label"])
+        if not ancestor_id or ancestor_id not in questions or ancestor_id not in answers:
+            raise ValueError(f"Missing ancestor data for compact item {item['label']}.")
+        source_ids = item["source_ids"].split(",")
+        meta = [source_map[source_id] for source_id in source_ids]
+        files = sorted({entry["source_file"] for entry in meta})
+        categories = sorted({entry["category"] for entry in meta})
+        citations = [entry["citation"] for entry in meta]
+        quotes = [entry["source_quote"] for entry in meta]
+        # Keep the compact source grounding, but use mapped ancestor MCQs as the first live app form.
+        cards.append(
+            {
+                "id": qid,
+                "source_chunk_id": ", ".join(source_ids),
+                "source_file": "; ".join(files),
+                "citation": "; ".join(citations),
+                "category": "; ".join(categories),
+                "source_quote": " / ".join(quotes),
+                "question": questions[ancestor_id]["question"],
+                "choices": questions[ancestor_id]["choices"],
+                "correct_choice": ord(answers[ancestor_id]["answer"]) - 65,
+                "rationale": item["answer"],
+            }
+        )
+    return cards
+
+
 # Render the canonical cards markdown file.
 #
 # Arguments:
@@ -270,7 +365,6 @@ def section_body(block: str, heading: str) -> str:
 def parse_cards_md(raw: str) -> list[dict[str, object]]:
     cards: list[dict[str, object]] = []
     ids: set[int] = set()
-    chunks: set[str] = set()
     pattern = re.compile(r"(?ms)^## Card (?P<id>\d+)\n(?P<body>.*?)(?=^## Card \d+\n|\Z)")
     for match in pattern.finditer(raw):
         body = match.group("body").strip()
@@ -295,10 +389,7 @@ def parse_cards_md(raw: str) -> list[dict[str, object]]:
         chunk = field("source_chunk_id")
         if qid in ids:
             raise ValueError(f"Duplicate card id {qid}.")
-        if chunk in chunks:
-            raise ValueError(f"Duplicate source chunk {chunk}.")
         ids.add(qid)
-        chunks.add(chunk)
 
         answer = field("answer")
         if answer not in {"A", "B", "C", "D"}:
@@ -350,21 +441,31 @@ def inject_cards_markdown(html: str, cards_md: str) -> str:
     return pattern.sub(block, html, count=1)
 
 
-# Build or refresh cards.md from the legacy markdown source files.
+# Build or refresh cards.md from one of the markdown source bundles.
 #
 # Arguments:
 #   force (bool): whether to regenerate even if cards.md already exists
+#   compact (bool): whether to build from the compact 60-card bundle
 # 
 # Returns:
 #   (bool): whether cards.md changed
 #
-def bootstrap_cards(force: bool) -> bool:
+def bootstrap_cards(force: bool, compact: bool) -> bool:
     if CARDS_MD.exists() and not force:
         return False
-    cards = build_cards(
-        parse_questions(read_text(EXAM_MD)),
-        parse_answer_key(read_text(EXAM_MD)),
-        parse_source_map(read_text(SOURCE_MAP_MD)),
+    questions = parse_questions(read_text(EXAM_MD))
+    answers = parse_answer_key(read_text(EXAM_MD))
+    source_map = parse_source_map(read_text(SOURCE_MAP_MD))
+    cards = (
+        build_compact_cards(
+            parse_compact_verified(read_text(COMPACT_MD)),
+            parse_compact_crosswalk(read_text(CROSSWALK_MD)),
+            questions,
+            answers,
+            source_map,
+        )
+        if compact
+        else build_cards(questions, answers, source_map)
     )
     return write_text(CARDS_MD, format_cards_md(cards))
 
@@ -384,6 +485,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Regenerate cards.md from pa_psych_law_mock_exam.md and pa_psych_law_source_map.md before syncing.",
     )
+    parser.add_argument(
+        "--compact-bootstrap",
+        action="store_true",
+        help="Regenerate cards.md from the compact 60-question bundle before syncing.",
+    )
     return parser.parse_args()
 
 
@@ -397,7 +503,7 @@ def parse_args() -> argparse.Namespace:
 #
 def main() -> int:
     args = parse_args()
-    cards_changed = bootstrap_cards(force=args.bootstrap)
+    cards_changed = bootstrap_cards(force=args.bootstrap or args.compact_bootstrap, compact=args.compact_bootstrap)
     cards_md = read_text(CARDS_MD)
     cards = parse_cards_md(cards_md)
     html_changed = write_text(INDEX_HTML, inject_cards_markdown(read_text(INDEX_HTML), cards_md))
