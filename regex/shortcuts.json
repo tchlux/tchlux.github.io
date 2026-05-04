@@ -1,0 +1,9 @@
+[
+  { "name": "^", "tokens": "{.}" },
+  { "name": "$", "tokens": "{.}" },
+  { "name": "s", "tokens": "[ \\t\\n\\v\\f\\r]" },
+  { "name": "d", "tokens": "[0123456789]" },
+  { "name": "a", "tokens": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]" },
+  { "name": "w", "tokens": "[_0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]" },
+  { "name": "letters", "tokens": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]" }
+]

@@ -1,0 +1,1628 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>regex wasm demo</title>
+<style>
+:root {
+  --bg: #f7f7f4;
+  --fg: #171717;
+  --muted: #757575;
+  --line: #1f1f1f;
+  --soft: #ededE8;
+  --hit: #ffedd5;
+  --err: #f3d2cf;
+  --token-box: 28px;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 14px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  overflow: hidden;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 1120px;
+  height: 100%;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 18px;
+  overflow: hidden;
+}
+#regex {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  border: 2px solid var(--line);
+  border-radius: 0;
+  background: #fff;
+  color: var(--fg);
+  font: inherit;
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 6px 10px;
+  white-space: pre;
+  overflow-x: auto;
+  outline: none;
+}
+#regex:focus { background: #fffffb; }
+#regexBar { display: flex; }
+.plain-button {
+  flex: 0 0 auto;
+  align-self: center;
+  height: 36px;
+  border: 2px solid var(--line);
+  border-radius: 0;
+  background: #fff;
+  color: var(--fg);
+  font: inherit;
+  font-size: 14px;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+.plain-button:focus { outline: none; }
+body.panel-open #displayActions {
+  position: fixed;
+  top: 18px;
+  right: 14px;
+  z-index: 4;
+}
+.overlay[hidden] { display: none; }
+.overlay {
+  position: fixed;
+  inset: 0 0 20px 20px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  border: 2px solid var(--line);
+  background: var(--bg);
+}
+#settingsHead {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#saveShortcuts {
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: #fff;
+  color: var(--fg);
+  font: inherit;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.shortcut-use { color: #245fbd; }
+#shortcutRows {
+  display: grid;
+  gap: 8px;
+  overflow: auto;
+}
+.shortcut-row {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) 18px;
+  gap: 5px;
+  padding: 4px;
+  border: 2px solid transparent;
+}
+.shortcut-row.invalid { border-color: #7d1810; }
+.shortcut-row input, .shortcut-token {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: #fff;
+  color: var(--fg);
+  font: inherit;
+  padding: 5px 7px;
+  white-space: pre;
+  overflow-x: auto;
+  scrollbar-width: none;
+  outline: none;
+}
+.shortcut-row input::-webkit-scrollbar, .shortcut-token::-webkit-scrollbar { display: none; }
+.shortcut-delete {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+.shortcut-delete:hover, .shortcut-delete:focus { color: var(--fg); }
+.shortcut-delete.hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+.shortcut-token:empty::before {
+  content: attr(data-placeholder);
+  color: var(--muted);
+}
+#displayRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+#displayControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#displayActions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+#viewToggle {
+  flex: 0 0 auto;
+  width: 132px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: #fff;
+  color: var(--fg);
+  font: inherit;
+  padding: 0 7px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+#viewToggle:focus {
+  outline: none;
+}
+#displayRow[data-mode="linear"] #viewToggle { background: var(--soft); }
+#displayRow[data-mode="graph"] #viewToggle { background: #fff; }
+#viewArrow {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+#displayRow[data-mode="graph"] #viewArrow {
+  transform: rotate(180deg);
+}
+#displayViewport {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+  transition: height 180ms ease;
+}
+#displayTrack {
+  display: flex;
+  align-items: flex-start;
+  width: 200%;
+  transition: transform 180ms ease;
+}
+#displayRow[data-mode="graph"] #displayTrack {
+  transform: translateX(-50%);
+}
+#compiled, #graph {
+  flex: 0 0 50%;
+  width: 50%;
+  min-width: 0;
+}
+#compiled {
+  display: flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+  min-height: 38px;
+  padding: 7px;
+  background: var(--soft);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+#docsPanel {
+  overflow: auto;
+}
+.docs-body {
+  display: grid;
+  gap: 18px;
+  padding-right: 0;
+}
+.docs-body h2, .docs-body h3, .docs-body p {
+  margin: 0;
+  font: inherit;
+}
+.docs-body h2 { font-size: 22px; }
+.docs-body h3 { color: var(--muted); }
+.docs-grid {
+  display: grid;
+}
+.docs-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 120px 190px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 10px 5px;
+}
+.docs-row + .docs-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5px;
+  right: 5px;
+  border-top: 1px solid #b9b9b4;
+}
+.docs-key {
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.docs-tokens {
+  --token-box: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  min-height: 68px;
+  max-width: 100%;
+  padding-top: 12px;
+  overflow: auto;
+  scrollbar-width: none;
+  font-size: 11px;
+}
+.docs-tokens .node-head { font-size: 11px; }
+.docs-tokens .flow { margin-top: 16px; font-size: 13px; }
+.docs-tokens::-webkit-scrollbar { display: none; }
+#compiled::-webkit-scrollbar { display: none; }
+#compiled > .token { flex: 0 0 auto; }
+.token, .alt {
+  min-width: 30px;
+  padding: 3px 6px;
+  border: 1px solid var(--line);
+  background: var(--color, #fff);
+  text-align: center;
+}
+.token.branch { display: grid; gap: 8px; padding: 0; border: 0; background: transparent; }
+.token.sequence { padding: 0; }
+.token.sequence.marker {
+  padding: 1px;
+  border: 0;
+  background: transparent;
+}
+.mini-node {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border: 1px solid var(--line);
+  background: var(--color, #fff);
+}
+.mini-head {
+  padding: 2px 6px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.15;
+}
+.mini-body {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  justify-content: center;
+  min-height: 39px;
+}
+.mini-node.marker {
+  padding: 1px;
+  border: 0;
+  background: transparent;
+}
+.mini-node.marker .mini-head {
+  min-height: calc(1.15em + 4px);
+  border-bottom: 0;
+}
+.mini-node.marker .alt {
+  color: var(--muted);
+}
+.token.active { outline: 3px solid #111; outline-offset: 1px; }
+#graph {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 10px;
+}
+.branch-connectors {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+.branch-connectors path {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 2px;
+  stroke-linejoin: miter;
+  stroke-linecap: square;
+}
+.flow {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  margin: 22px -1px 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1;
+}
+.node {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--color, #fff);
+}
+.node.skip, .mini-node.skip {
+  border-style: dashed;
+}
+.node.skip > .node-head, .mini-node.skip > .mini-head {
+  border-bottom-style: dashed;
+}
+.repeat-group, .group-box {
+  flex: 0 0 auto;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--line);
+}
+.repeat-group.optional {
+  border-style: dashed;
+}
+.group-box.skip {
+  border-style: dashed;
+}
+.repeat-group.repeat, .group-box.repeat, .group-box.negate {
+  border: 0;
+  padding: 12px;
+}
+.symbol-border {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  --tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='4' cy='4' r='2' fill='none' stroke='%231f1f1f' stroke-width='1'/%3E%3C/svg%3E");
+}
+.symbol-border.negate {
+  --tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2 2l4 4M6 2L2 6' stroke='%23a25f5b' stroke-width='1.2' stroke-linecap='square'/%3E%3C/svg%3E");
+}
+.symbol-border span {
+  position: absolute;
+  background-image: var(--tile);
+  background-size: 8px 8px;
+}
+.symbol-border .top, .symbol-border .bottom { left: 8px; right: 8px; height: 8px; background-repeat: repeat-x; }
+.symbol-border .left, .symbol-border .right { top: 8px; bottom: 8px; width: 8px; background-repeat: repeat-y; }
+.symbol-border .top, .symbol-border .tl, .symbol-border .tr { top: 0; }
+.symbol-border .bottom, .symbol-border .bl, .symbol-border .br { bottom: 0; }
+.symbol-border .left, .symbol-border .tl, .symbol-border .bl { left: 0; }
+.symbol-border .right, .symbol-border .tr, .symbol-border .br { right: 0; }
+.symbol-border .tl, .symbol-border .tr, .symbol-border .bl, .symbol-border .br {
+  width: 8px;
+  height: 8px;
+  background-repeat: no-repeat;
+}
+.group-body {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  align-items: flex-start;
+  gap: 4px;
+  max-height: calc(var(--token-box) * 5.5 + 20px);
+  overflow: auto;
+  scrollbar-width: none;
+}
+.group-body::-webkit-scrollbar { display: none; }
+.repeat-group.repeat::after, .group-box.repeat::after, .node.repeat::after, .mini-node.repeat::after {
+  content: "↺";
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  z-index: 2;
+  color: var(--line);
+  background: transparent;
+  padding: 0 2px;
+  font-size: 15px;
+  line-height: 1;
+  transform: rotate(-135deg);
+}
+.repeat-group.repeat::after {
+  top: -9px;
+  right: -9px;
+}
+.group-box.repeat::after {
+  top: -9px;
+  right: -9px;
+}
+.node-head {
+  padding: 2px 6px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.15;
+  text-align: center;
+}
+.alts {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 2px;
+  padding: 5px;
+  max-height: calc(var(--token-box) * 5.5 + 20px);
+  overflow: auto;
+  scrollbar-width: none;
+}
+.alts::-webkit-scrollbar { display: none; }
+.alts.sequence {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  max-height: none;
+  overflow: visible;
+}
+.alt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--token-box);
+  height: var(--token-box);
+  padding: 0;
+  background: rgba(255, 255, 255, 0.58);
+}
+.branch-node { display: grid; flex: 0 0 auto; gap: 12px; position: relative; z-index: 1; }
+.branch-row { display: flex; align-items: flex-start; gap: 4px; }
+.branch-row > .flow {
+  align-self: center;
+  margin: 0 0 0 2px;
+}
+#status {
+  min-height: 28px;
+  padding: 6px 0;
+  color: var(--muted);
+}
+#status.error {
+  color: #7d1810;
+}
+#corpus {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 14px;
+  border: 2px solid var(--line);
+  background: #fff;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  overflow: auto;
+  outline: none;
+}
+#corpus:focus { background: #fffffb; }
+.match {
+  background: var(--hit);
+  border-bottom: 2px solid #c27a35;
+  cursor: pointer;
+}
+.match.selected { background: transparent; }
+.char {
+  background: var(--color, #fff);
+  box-shadow: inset 0 -2px #111;
+}
+#matchView {
+  height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  border: 0 solid var(--line);
+  background: var(--soft);
+  transition: height 180ms ease, margin-top 180ms ease, border-width 180ms ease;
+}
+#matchView.open {
+  margin-top: 8px;
+  border-width: 1px;
+}
+#matchTrack {
+  --token-box: 24px;
+  display: flex;
+  gap: 6px;
+  padding: 7px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+#matchTrack::-webkit-scrollbar { display: none; }
+#matchTrack .mini-head { font-size: 12px; }
+#matchTrack .mini-body {
+  min-height: 32px;
+  padding: 4px;
+}
+@media (max-width: 700px) {
+  main { padding: 10px; }
+  #regex { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div id="regexBar">
+    <div id="regex" contenteditable="true" spellcheck="false" role="textbox" aria-label="regex">date</div>
+  </div>
+  <div id="displayRow" data-mode="linear">
+    <div id="displayControls">
+      <button id="viewToggle" type="button" aria-pressed="false">linear <span id="viewArrow">&lt;</span> graph</button>
+      <div id="displayActions">
+        <button id="docsButton" class="plain-button" type="button" aria-label="docs" aria-expanded="false">docs</button>
+        <button id="settingsButton" class="plain-button" type="button" aria-label="shortcuts" aria-expanded="false">shortcuts</button>
+      </div>
+    </div>
+    <div id="displayViewport">
+      <div id="displayTrack">
+        <div id="compiled"></div>
+        <div id="graph"></div>
+      </div>
+    </div>
+  </div>
+  <div id="matchView" aria-hidden="true"><div id="matchTrack"></div></div>
+  <div id="status"></div>
+  <div id="corpus" contenteditable="true" spellcheck="false">This browser demo runs the C regex engine through WebAssembly.
+
+Try date to find the fate and feta of this token, or daata feata feate for grouped branches.
+Try 2026-05-03 for a date-shaped value.
+Try regex|wasm to see alternatives in the compiled graph.
+Try [0123456789][0123456789][0123456789][0123456789] to mark a year.</div>
+</main>
+<section id="docsPanel" class="overlay" hidden>
+  <div class="docs-body">
+    <h2>tlux-regex</h2>
+    <p>Patterns search through the current text; use \^ for the start and \$ for the end.</p>
+    <div class="docs-grid">
+      <div class="docs-row"><div class="docs-key">abc</div><div>literal characters match themselves in order</div><div class="docs-tokens" data-regex="abc"></div></div>
+      <div class="docs-row"><div class="docs-key">a.d</div><div>dot matches any one character</div><div class="docs-tokens" data-regex="a.d"></div></div>
+      <div class="docs-row"><div class="docs-key">ab|cd</div><div>the branch applies to neighboring tokens, then rejoins the sequence</div><div class="docs-tokens" data-regex="ab|cd"></div></div>
+      <div class="docs-row"><div class="docs-key">a[bc]d</div><div>shorthand for branches between a collection of single tokens</div><div class="docs-tokens" data-regex="a[bc]d"></div></div>
+      <div class="docs-row"><div class="docs-key">a(bc)d</div><div>parentheses group a sequence so controls can apply to it</div><div class="docs-tokens" data-regex="a(bc)d"></div></div>
+      <div class="docs-row"><div class="docs-key">a{bc}d</div><div>braces negate a grouped expression</div><div class="docs-tokens" data-regex="a{bc}d"></div></div>
+      <div class="docs-row"><div class="docs-key">x?</div><div>the preceding token or token group may be skipped</div><div class="docs-tokens" data-regex="x?"></div></div>
+      <div class="docs-row"><div class="docs-key">x*</div><div>the preceding token or token group may appear zero or many times</div><div class="docs-tokens" data-regex="x*"></div></div>
+      <div class="docs-row"><div class="docs-key">\^abc</div><div>leading start-of-text marker</div><div class="docs-tokens" data-regex="\^abc"></div></div>
+      <div class="docs-row"><div class="docs-key">abc\$</div><div>match only at the end of the text</div><div class="docs-tokens" data-regex="abc\$"></div></div>
+      <div class="docs-row"><div class="docs-key">\shortcut</div><div>inject a saved shortcut as one grouped expression</div><div class="docs-tokens" data-regex="\letters"></div></div>
+    </div>
+  </div>
+</section>
+<section id="settingsPanel" class="overlay" hidden>
+  <div id="settingsHead">
+    <button id="saveShortcuts" type="button">save</button>
+  </div>
+  <div id="shortcutRows"></div>
+</section>
+<script type="module">
+import createRegex from "./regex.mjs?v=23";
+
+const palette = ["#dbeafe", "#dcfce7", "#fef3c7", "#ffe4e6", "#fae8ff", "#e0f2fe", "#ede9fe", "#ccfbf1", "#f5e8c7", "#e5e7eb"];
+const SHORTCUT_KEY = "regex-demo-shortcuts";
+const SHORTCUT_NAME = /^([A-Za-z_-]+|[$^])$/;
+const SHORTCUT_USE = /\\([A-Za-z_-]+|[$^])/g;
+const LETTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const DIGITS = "0123456789";
+const SET_TOKEN_BODY = 1;
+const SET_TOKEN_LAST = 2;
+const START_ANCHOR = 3;
+const utf8 = new TextEncoder();
+const DEFAULT_SHORTCUTS = [
+  { name: "^", tokens: "{.}" },
+  { name: "$", tokens: "{.}" },
+  { name: "s", tokens: "[ \\t\\n\\v\\f\\r]" },
+  { name: "d", tokens: `[${DIGITS}]` },
+  { name: "a", tokens: `[${LETTERS}]` },
+  { name: "w", tokens: `[_${DIGITS}${LETTERS}]` },
+  { name: "letters", tokens: `[${LETTERS}]` },
+];
+const regexInput = document.querySelector("#regex");
+const docsButton = document.querySelector("#docsButton");
+const docsPanel = document.querySelector("#docsPanel");
+const settingsButton = document.querySelector("#settingsButton");
+const settingsPanel = document.querySelector("#settingsPanel");
+const saveShortcutsButton = document.querySelector("#saveShortcuts");
+const shortcutRowsEl = document.querySelector("#shortcutRows");
+const displayRow = document.querySelector("#displayRow");
+const displayViewport = document.querySelector("#displayViewport");
+const viewToggle = document.querySelector("#viewToggle");
+const compiledEl = document.querySelector("#compiled");
+const graphEl = document.querySelector("#graph");
+const matchView = document.querySelector("#matchView");
+const matchTrack = document.querySelector("#matchTrack");
+const statusEl = document.querySelector("#status");
+const corpusEl = document.querySelector("#corpus");
+let engine, selected = -1, matches = [], lastCompile = null, tokenColors = new Map(), displayMode = "linear", shortcutTimer = 0, renderingShortcuts = false, shortcuts = [];
+
+try {
+  shortcuts = await loadShortcuts();
+  engine = await createRegex({ locateFile: file => file == "regex_wasm.wasm" ? "./build/regex_wasm.wasm?v=23" : file });
+  normalizeShortcuts();
+  drawDocs();
+} catch (error) {
+  fail("Run ./build.sh and serve js/ from localhost.");
+}
+
+regexInput.addEventListener("input", () => { clearSelection(false); update(true, null, caretOffsetIn(regexInput)); });
+regexInput.addEventListener("keydown", event => { if (event.key == "Enter") event.preventDefault(); });
+docsButton.addEventListener("click", () => togglePanel(docsPanel, docsButton));
+settingsButton.addEventListener("click", () => togglePanel(settingsPanel, settingsButton));
+viewToggle.addEventListener("click", () => {
+  displayMode = displayMode == "linear" ? "graph" : "linear";
+  displayRow.dataset.mode = displayMode;
+  viewToggle.setAttribute("aria-pressed", String(displayMode == "graph"));
+  syncDisplayHeight();
+  scheduleBranchConnectors();
+});
+shortcutRowsEl.addEventListener("input", event => {
+  const field = event.target.closest("[name], [data-name]");
+  const row = field?.closest(".shortcut-row");
+  if (!row) return;
+  const index = Number(row.dataset.index);
+  const name = field.name || field.dataset.name;
+  const value = fieldValue(field);
+  shortcuts[index][name] = value;
+  if (name == "tokens") {
+    const caret = caretOffsetIn(field);
+    drawShortcutText(field, value);
+    setCaretOffsetIn(field, caret);
+  }
+  saveShortcuts();
+  clearSelection(false);
+  update();
+  if (index == shortcuts.length - 1 && completeShortcut(shortcuts[index], index)) scheduleShortcuts();
+});
+shortcutRowsEl.addEventListener("click", event => {
+  const button = event.target.closest(".shortcut-delete");
+  if (!button || button.classList.contains("hidden")) return;
+  shortcuts.splice(Number(button.closest(".shortcut-row").dataset.index), 1);
+  normalizeShortcuts();
+});
+shortcutRowsEl.addEventListener("keydown", event => { if (event.target.closest(".shortcut-token") && event.key == "Enter") event.preventDefault(); });
+saveShortcutsButton.addEventListener("click", () => saveShortcutsFile().catch(error => fail(error.message || String(error))));
+shortcutRowsEl.addEventListener("focusout", event => {
+  if (renderingShortcuts) return;
+  const row = event.target.closest(".shortcut-row");
+  if (row && event.relatedTarget?.closest?.(".shortcut-row") == row) return;
+  if (row) shortcuts[row.dataset.index].touched = true;
+  clearTimeout(shortcutTimer);
+  normalizeShortcuts();
+});
+corpusEl.addEventListener("input", () => { clearSelection(false); update(true, caretOffset()); });
+corpusEl.addEventListener("keydown", event => {
+  if (event.key != "Enter") return;
+  event.preventDefault();
+  insertAtCaret("\n");
+  clearSelection(false);
+  update(true, caretOffset());
+});
+corpusEl.addEventListener("blur", () => update());
+corpusEl.addEventListener("pointerdown", event => { if (event.target.closest(".match")) event.preventDefault(); });
+corpusEl.addEventListener("click", event => {
+  const hit = event.target.closest(".match");
+  if (!hit) return clearSelection(true);
+  event.preventDefault();
+  selected = Number(hit.dataset.index);
+  document.activeElement?.blur?.();
+  drawCorpus(corpusEl.textContent);
+  drawMatchView(corpusEl.textContent);
+  getSelection().removeAllRanges();
+});
+graphEl.addEventListener("wheel", chainGraphScroll, { passive: false });
+graphEl.addEventListener("scroll", scheduleBranchConnectors, true);
+window.addEventListener("resize", scheduleBranchConnectors);
+
+async function loadShortcuts() {
+  const rows = [];
+  const add = items => Array.isArray(items) && items.forEach(row => {
+    const item = { name: row.name || "", tokens: printableTokens(row.tokens || ""), touched: false };
+    const index = rows.findIndex(saved => saved.name && saved.name == item.name);
+    index < 0 ? rows.push(item) : rows[index] = item;
+  });
+  try {
+    const response = await fetch("shortcuts.json", { cache: "no-store" });
+    if (response.ok) add(await response.json());
+  } catch (_) {}
+  try {
+    add(JSON.parse(localStorage.getItem(SHORTCUT_KEY) || "null"));
+  } catch (_) {}
+  return rows.length ? rows : DEFAULT_SHORTCUTS.map(row => ({ ...row }));
+}
+
+function normalizeShortcuts() {
+  const active = document.activeElement;
+  const field = active?.closest?.("[name], [data-name]");
+  const row = field?.closest?.(".shortcut-row");
+  const focus = row ? { index: Number(row.dataset.index), name: field.name || field.dataset.name, start: fieldCaret(field), end: fieldCaret(field) } : null;
+  while (shortcuts.length > 1 && emptyShortcut(shortcuts.at(-1)) && emptyShortcut(shortcuts.at(-2))) shortcuts.pop();
+  if (!shortcuts.length || completeShortcut(shortcuts.at(-1), shortcuts.length - 1)) shortcuts.push({ name: "", tokens: "", touched: false });
+  saveShortcuts();
+  renderShortcuts(focus);
+  clearSelection(false);
+  update();
+}
+
+function scheduleShortcuts() {
+  clearTimeout(shortcutTimer);
+  shortcutTimer = setTimeout(normalizeShortcuts, 50);
+}
+
+function togglePanel(panel, button) {
+  const open = panel.hidden;
+  docsPanel.hidden = true;
+  settingsPanel.hidden = true;
+  docsButton.setAttribute("aria-expanded", "false");
+  settingsButton.setAttribute("aria-expanded", "false");
+  panel.hidden = !open;
+  button.setAttribute("aria-expanded", String(open));
+  document.body.classList.toggle("panel-open", open);
+}
+
+function renderShortcuts(focus = null) {
+  renderingShortcuts = true;
+  let input = null;
+  try {
+    shortcutRowsEl.replaceChildren(...shortcuts.map((row, index) => {
+      const item = el("div", `shortcut-row${invalidShortcut(row, index) ? " invalid" : ""}`);
+      item.dataset.index = index;
+      item.append(shortcutInput("name", row.name, "name"), shortcutInput("tokens", row.tokens, "tokens"), deleteShortcutButton(row));
+      return item;
+    }));
+    if (!focus) return;
+    input = shortcutRowsEl.querySelector(`[data-index="${focus.index}"] ${focus.name == "tokens" ? "[data-name=tokens]" : `[name="${focus.name}"]`}`);
+  } finally {
+    renderingShortcuts = false;
+  }
+  if (input) requestAnimationFrame(() => {
+    if (!input.isConnected) return;
+    input.focus();
+    input.isContentEditable ? setCaretOffsetIn(input, focus.start) : input.setSelectionRange(focus.start, focus.end);
+  });
+}
+
+function deleteShortcutButton(row) {
+  const button = el("button", `shortcut-delete${emptyShortcut(row) ? " hidden" : ""}`, "×");
+  button.type = "button";
+  button.setAttribute("aria-label", "delete shortcut");
+  return button;
+}
+
+function drawDocs() {
+  const colors = tokenColors;
+  document.querySelectorAll(".docs-tokens").forEach(node => {
+    try {
+      const compiled = engine.compile(expandShortcuts(node.dataset.regex, [], false));
+      tokenColors = colorMap(compiled);
+      node.replaceChildren(...renderUnits(graphUnits(compiled, groupModel(compiled)), compiled));
+    } catch (_) {
+      node.replaceChildren();
+    }
+  });
+  tokenColors = colors;
+}
+
+function shortcutInput(name, value, label) {
+  if (name == "tokens") {
+    const input = el("div", "shortcut-token");
+    input.dataset.name = name;
+    input.dataset.placeholder = label;
+    input.contentEditable = "true";
+    input.spellcheck = false;
+    input.setAttribute("role", "textbox");
+    input.setAttribute("aria-label", label);
+    drawShortcutText(input, value);
+    return input;
+  }
+  const input = document.createElement("input");
+  input.name = name;
+  input.value = value;
+  input.placeholder = label;
+  input.spellcheck = false;
+  input.autocomplete = "off";
+  return input;
+}
+
+function saveShortcuts() {
+  localStorage.setItem(SHORTCUT_KEY, JSON.stringify(shortcutData()));
+  if (engine) drawDocs();
+}
+
+async function saveShortcutsFile() {
+  const text = JSON.stringify(shortcutData(), null, 2) + "\n";
+  if (window.showSaveFilePicker) {
+    try {
+      const handle = await showSaveFilePicker({
+        suggestedName: "shortcuts.json",
+        types: [{ description: "JSON", accept: { "application/json": [".json"] } }],
+      });
+      const file = await handle.createWritable();
+      await file.write(text);
+      await file.close();
+      note("saved shortcuts.json");
+      return;
+    } catch (error) {
+      if (error.name == "AbortError") return;
+    }
+  }
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(new Blob([text], { type: "application/json" }));
+  link.download = "shortcuts.json";
+  link.click();
+  URL.revokeObjectURL(link.href);
+  note("downloaded shortcuts.json");
+}
+
+function shortcutData() {
+  return shortcuts.filter(row => !emptyShortcut(row)).map(({ name, tokens }) => ({ name, tokens }));
+}
+
+function expandShortcuts(regex, stack = [], requireComplete = true) {
+  return regex.replace(SHORTCUT_USE, (token, name) => {
+    const index = shortcuts.findIndex(row => row.name == name);
+    const row = shortcuts[index];
+    if (!row || !validShortcutName(row, index) || !row.tokens.trim()) return token;
+    if (requireComplete && !completeShortcut(row, index)) return token;
+    if (stack.includes(name)) throw new Error(`Shortcut cycle: ${[...stack, name].join(" -> ")}`);
+    const expanded = matchEscapes(expandShortcuts(row.tokens, [...stack, name], requireComplete));
+    return rawShortcut(name) ? expanded : groupShortcut(expanded);
+  });
+}
+
+function matchEscapes(value) {
+  const map = { t: "\t", n: "\n", v: "\v", f: "\f", r: "\r" };
+  return value.replace(/\\([tnvfr])/g, (_, key) => map[key]);
+}
+
+function printableTokens(value) {
+  return value.replaceAll("\t", "\\t")
+              .replaceAll("\n", "\\n")
+              .replaceAll("\v", "\\v")
+              .replaceAll("\f", "\\f")
+              .replaceAll("\r", "\\r");
+}
+
+function usesShortcut(value) {
+  return Array.from(value.matchAll(SHORTCUT_USE)).some(match => isShortcutName(match[1]));
+}
+
+function isShortcutName(name) {
+  return shortcuts.some(row => row.name == name);
+}
+
+function drawShortcutText(node, text = "") {
+  const parts = [];
+  let cursor = 0;
+  text.replace(SHORTCUT_USE, (token, name, offset) => {
+    if (!isShortcutName(name)) return token;
+    if (offset > cursor) parts.push(document.createTextNode(text.slice(cursor, offset)));
+    parts.push(el("span", "shortcut-use", token));
+    cursor = offset + token.length;
+    return token;
+  });
+  if (cursor < text.length) parts.push(document.createTextNode(text.slice(cursor)));
+  node.replaceChildren(...parts);
+}
+
+function completeShortcut(row, index) {
+  return validShortcutName(row, index) && validShortcutTokens(row);
+}
+
+function invalidShortcut(row, index) {
+  return !completeShortcut(row, index) && (row.touched || !emptyShortcut(row));
+}
+
+function emptyShortcut(row) {
+  return !row.name.trim() && !row.tokens.trim();
+}
+
+function validShortcutName(row, index) {
+  return SHORTCUT_NAME.test(row.name) && shortcuts.findIndex(other => other.name == row.name) == index;
+}
+
+function validShortcutTokens(row) {
+  if (!row.tokens.trim() || !engine) return false;
+  try {
+    const tokens = expandShortcuts(row.tokens, [row.name], false);
+    engine.compile(rawShortcut(row.name) ? tokens : groupShortcut(tokens));
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
+
+function rawShortcut(name) {
+  return name == "^" || name == "$";
+}
+
+function groupShortcut(tokens) {
+  const value = tokens.trim();
+  return outerGroup(value) ? value : `(${value})`;
+}
+
+function outerGroup(value) {
+  if (!value.startsWith("(") || !value.endsWith(")")) return false;
+  let depth = 0, inSet = false;
+  for (let i = 0; i < value.length; i++) {
+    const c = value[i];
+    if (c == "[" && !inSet) inSet = true;
+    else if (c == "]" && inSet) inSet = false;
+    else if (!inSet && c == "(") depth++;
+    else if (!inSet && c == ")" && --depth == 0 && i < value.length - 1) return false;
+  }
+  return depth == 0;
+}
+
+function update(paintCorpus = true, caret = null, regexCaret = null) {
+  if (!engine) return;
+  try {
+    const rawRegex = regexInput.textContent;
+    regexCaret ??= document.activeElement == regexInput ? caretOffsetIn(regexInput) : null;
+    drawShortcutText(regexInput, rawRegex);
+    if (regexCaret != null) setCaretOffsetIn(regexInput, regexCaret);
+    const regex = expandShortcuts(rawRegex);
+    const text = corpusEl.textContent;
+    lastCompile = engine.compile(regex);
+    tokenColors = colorMap(lastCompile);
+    matches = normalize(zip(...engine.matcha(regex, text)));
+    drawCompiled(lastCompile);
+    drawGraph(lastCompile);
+    if (selected >= matches.length) selected = -1;
+    scheduleBranchConnectors();
+    syncDisplayHeight();
+    if (paintCorpus) drawCorpus(text);
+    selected >= 0 ? drawMatchView(text) : hideMatchView();
+    if (caret != null) setCaretOffset(Math.min(caret, corpusEl.textContent.length));
+    note(`${matches.length} match${matches.length == 1 ? "" : "es"}`);
+  } catch (error) {
+    compiledEl.replaceChildren();
+    graphEl.replaceChildren();
+    fail(error.message || String(error));
+  }
+}
+
+function syncDisplayHeight() {
+  requestAnimationFrame(() => {
+    const active = displayMode == "linear" ? compiledEl : graphEl;
+    displayViewport.style.height = `${active.scrollHeight}px`;
+  });
+}
+
+function chainGraphScroll(event) {
+  const delta = event.deltaY;
+  if (!delta) return;
+  let top = delta;
+  const chain = [];
+  for (let node = event.target.closest(".group-body"); node; node = node.parentElement?.closest(".group-body")) chain.push(node);
+  for (const node of chain.filter(Boolean)) {
+    const max = node.scrollHeight - node.clientHeight;
+    if (max <= 0) continue;
+    const before = node.scrollTop;
+    node.scrollTop = Math.max(0, Math.min(max, before + top));
+    top -= node.scrollTop - before;
+    if (Math.abs(top) < 0.5) break;
+  }
+  if (top != delta) {
+    event.preventDefault();
+    scheduleBranchConnectors();
+  }
+}
+
+function drawCompiled(compiled) {
+  const model = groupModel(compiled);
+  compiledEl.replaceChildren(...linearUnits(compiled, model).map(unit => unit.marker
+    ? groupMarkerBox(unit.group, unit.marker)
+    : sequenceBox(unit.tokens, compiled)));
+}
+
+function drawGraph(compiled) {
+  graphEl.replaceChildren(...renderUnits(graphUnits(compiled, groupModel(compiled)), compiled));
+}
+
+function scheduleBranchConnectors() {
+  requestAnimationFrame(drawBranchConnectors);
+}
+
+function drawBranchConnectors() {
+  graphEl.querySelector(".branch-connectors")?.remove();
+  if (displayMode != "graph") return;
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.classList.add("branch-connectors");
+  graphEl.prepend(svg);
+  const graphBox = graphEl.getBoundingClientRect();
+  svg.setAttribute("width", graphEl.scrollWidth);
+  svg.setAttribute("height", graphEl.scrollHeight);
+  graphEl.querySelectorAll(".branch-node[data-branch-source]").forEach(branch => {
+    const source = graphEl.querySelector(`[data-token="${branch.dataset.branchSource}"]`);
+    const target = branch.querySelectorAll(".branch-row")[1]?.querySelector(".branch-enter");
+    if (!source || !target) return;
+    const sourceBox = source.getBoundingClientRect();
+    const targetBox = target.getBoundingClientRect();
+    const x1 = sourceBox.left + sourceBox.width / 2 - graphBox.left + graphEl.scrollLeft;
+    const y1 = sourceBox.bottom + 6 - graphBox.top + graphEl.scrollTop;
+    const x2 = targetBox.left - 12 - graphBox.left + graphEl.scrollLeft;
+    const y2 = targetBox.top + targetBox.height / 2 + 0.5 - graphBox.top + graphEl.scrollTop;
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", `M${x1} ${y1}V${y2}H${x2}`);
+    svg.append(path);
+  });
+}
+
+function renderUnits(units, compiled) {
+  const parts = [];
+  units.forEach((unit, i) => {
+    parts.push(renderUnit(unit, compiled));
+    if (i < units.length - 1 && !unit.branch && !units[i + 1].branch) parts.push(el("div", "flow", "→"));
+  });
+  return parts;
+}
+
+function renderUnit(unit, compiled) {
+  if (unit.group) {
+    const node = el("div", `group-box${unit.negate ? " negate" : ""}${unit.skip ? " skip" : ""}${unit.repeat ? " repeat" : ""}`);
+    const body = el("div", "group-body");
+    body.append(...renderUnits(unit.units, compiled));
+    node.append(...symbolBorder(unit.negate ? "negate" : unit.repeat ? "repeat" : ""), body);
+    return node;
+  }
+  if (unit.wrapper) {
+    const node = el("div", `repeat-group${unit.repeat ? " repeat" : " optional"}`);
+    node.append(...renderUnits(unit.units, compiled));
+    if (unit.repeat) node.prepend(...symbolBorder("repeat"));
+    return node;
+  }
+  return unit.branch ? branchNode(unit, compiled) : normalNode(unit, compiled, unit.sequence);
+}
+
+function symbolBorder(kind) {
+  if (!kind) return [];
+  const node = el("div", `symbol-border ${kind}`);
+  node.append(...["top", "right", "bottom", "left", "tl", "tr", "br", "bl"].map(name => el("span", name)));
+  return [node];
+}
+
+function normalNode(unit, compiled, sequence) {
+  const row = unit.rows[0];
+  const node = el("div", `node${unit.skip ? " skip" : ""}${unit.repeat ? " repeat" : ""}`);
+  const head = el("div", "node-head", unit.label);
+  const alts = el("div", sequence ? "alts sequence" : "alts");
+  alts.append(...row.map(i => tokenEl(compiled, i)));
+  node.append(head, alts);
+  if (!unit.control) node.style.setProperty("--color", color(row[0]));
+  node.dataset.token = row[0];
+  return node;
+}
+
+function branchNode(unit, compiled) {
+  const node = el("div", "branch-node");
+  node.dataset.branchSource = unit.source;
+  node.append(...unit.rows.map(row => {
+    const item = el("div", "branch-row");
+    item.append(el("div", "flow branch-enter", "→"));
+    item.append(...renderUnits(row, compiled));
+    item.append(el("div", "flow branch-exit", "→"));
+    return item;
+  }));
+  return node;
+}
+
+function graphUnits(compiled, model) {
+  return graphUnitsIn(compiled, model, 0, compiled.tokens.length, null);
+}
+
+function graphUnitsIn(compiled, model, start, end, parent) {
+  const units = [];
+  const children = model.children.get(parent) || [];
+  for (let i = start; i < end;) {
+    const child = children.find(group => group.pos == i);
+    if (child) {
+      if (child.control != null) units.push({ control: true, branch: false, label: `${child.control}`, tokens: [child.control], rows: [[child.control]] });
+      units.push({ group: true, negate: child.kind == "{", skip: child.mod == "?", repeat: child.mod == "*", units: graphUnitsIn(compiled, model, child.start, child.end, child.id) });
+      i = child.end;
+      continue;
+    }
+    if (isControl(compiled, i)) {
+      units.push({ control: true, branch: false, label: `${i}`, tokens: [i], rows: [[i]] });
+      if (compiled.tokens[i].text == "|") {
+        const left = branchPath(compiled, compiled.jumps[i], compiled.jumpf[i]);
+        const join = setStart(compiled, Math.min(left.end == compiled.jumpf[i] ? end : left.end, end));
+        const right = pathTo(compiled, compiled.jumpf[i], join);
+        left.tokens = left.tokens.filter(token => token < join);
+        right.tokens = right.tokens.filter(token => token < join);
+        const tokens = [...left.tokens, ...right.tokens];
+        units.push({ branch: true, source: i, label: `${label(left.tokens)}|${label(right.tokens)}`, tokens, rows: [
+          graphPathUnits(compiled, model, left.tokens, parent),
+          graphPathUnits(compiled, model, right.tokens, parent),
+        ] });
+        i = join;
+      } else {
+        const affected = affectedGroup(compiled, model, i, parent);
+        units.push(affected);
+        i = affected.end;
+      }
+    } else {
+      const set = collectSet(compiled, i);
+      units.push({ branch: false, label: label(set), tokens: set, rows: [set] });
+      i = set.at(-1) + 1;
+    }
+  }
+  return units;
+}
+
+function affectedGroup(compiled, model, control, parent) {
+  const start = compiled.jumps[control];
+  const end = compiled.jumpf[control];
+  return { wrapper: true, repeat: compiled.tokens[control].text == "*", units: graphUnitsIn(compiled, model, start, end, parent), end };
+}
+
+function graphPathUnits(compiled, model, tokens, parent) {
+  const allowed = new Set(tokens), children = model.children.get(parent) || [], units = [];
+  for (let i = 0; i < tokens.length;) {
+    const index = tokens[i];
+    const child = children.find(group => group.pos == index && groupTokenList(group).every(token => allowed.has(token)));
+    if (child) {
+      if (child.control != null) units.push({ control: true, branch: false, label: `${child.control}`, tokens: [child.control], rows: [[child.control]] });
+      units.push({ group: true, negate: child.kind == "{", skip: child.mod == "?", repeat: child.mod == "*", units: graphUnitsIn(compiled, model, child.start, child.end, child.id) });
+      i += groupTokenList(child).length;
+    } else {
+      units.push({ branch: false, label: `${index}`, tokens: [index], rows: [[index]], control: isControl(compiled, index) });
+      i++;
+    }
+  }
+  return units;
+}
+
+function groupTokenList(group) {
+  const tokens = [];
+  if (group.control != null) tokens.push(group.control);
+  for (let i = group.start; i < group.end; i++) tokens.push(i);
+  return tokens;
+}
+
+function groupModel(compiled) {
+  const parsed = parseGroups(compiled.regex);
+  markGroupTokens(compiled.regex, parsed, compiled.tokens.length);
+  const groups = parsed.filter(group => group.start < group.end && !startAnchorGroup(compiled, group));
+  const byId = new Map(groups.map(group => [group.id, group]));
+  groups.forEach(group => {
+    group.parent = nearestExplicit(parsed, group.parent);
+    group.depth = depthOf(group, byId);
+    group.pos = group.control ?? group.start;
+  });
+  const children = new Map([[null, []]]);
+  groups.forEach(group => {
+    if (!children.has(group.parent)) children.set(group.parent, []);
+    children.get(group.parent).push(group);
+  });
+  children.forEach(items => items.sort((a, b) => a.pos - b.pos || a.id - b.id));
+  return { groups, children };
+}
+
+function startAnchorGroup(compiled, group) {
+  return group.kind == "{" && group.end == group.start + 1 && compiled.jumpi[group.start] == START_ANCHOR;
+}
+
+function parseGroups(regex) {
+  const groups = [], byOpen = new Map();
+  const stack = [];
+  for (let i = 0; i < regex.length; i++) {
+    const c = regex[i], top = stack.at(-1);
+    if (c == "[") {
+      i = regex.indexOf("]", i + 1);
+    } else if ("({".includes(c)) {
+      const group = { id: groups.length, kind: c, open: i, parent: nearestExplicit(groups, top?.id ?? null), mod: " ", control: null, start: 0, end: 0 };
+      groups.push(group);
+      byOpen.set(i, group);
+      stack.push(group);
+    } else if (top && closes(top.kind, c)) {
+      top.close = i;
+      top.mod = regex[i + 1] || " ";
+      stack.pop();
+    }
+  }
+  groups.byOpen = byOpen;
+  return groups;
+}
+
+function markGroupTokens(regex, groups, limit) {
+  const byClose = new Map(groups.map(group => [group.close, group]));
+  const stack = [];
+  let token = 0;
+  for (let i = 0; i < regex.length; i++) {
+    const c = regex[i], group = groups.byOpen.get(i);
+    if (group) {
+      if ("*?|".includes(group.mod)) group.control = token++;
+      group.start = token;
+      stack.push(group);
+    } else if (byClose.has(i)) {
+      const done = byClose.get(i);
+      done.end = token;
+      stack.pop();
+      if ("*?|".includes(done.mod)) i++;
+    } else if (c == "[") {
+      const close = regex.indexOf("]", i + 1);
+      if ("*?|".includes(regex[close + 1] || "")) token++;
+      token += Math.max(0, close - i - 1);
+      i = close + ("*?|".includes(regex[close + 1] || "") ? 1 : 0);
+    } else if (!"*?".includes(c)) {
+      if ("*?|".includes(regex[i + 1] || "")) token++;
+      token++;
+      if ("*?|".includes(regex[i + 1] || "")) i++;
+    }
+  }
+}
+
+function nearestExplicit(groups, id) {
+  for (let group = groups.find(item => item.id == id); group; group = groups.find(item => item.id == group.parent)) {
+    return group.id;
+  }
+  return null;
+}
+
+function depthOf(group, byId) {
+  let depth = 0;
+  for (let parent = byId.get(group.parent); parent; parent = byId.get(parent.parent)) depth++;
+  return depth;
+}
+
+function groupMarkers(model) {
+  const start = new Map(), end = new Map();
+  model.groups.forEach(group => {
+    if (!start.has(group.start)) start.set(group.start, []);
+    if (!end.has(group.end)) end.set(group.end, []);
+    start.get(group.start).push(group);
+    end.get(group.end).push(group);
+  });
+  start.forEach(items => items.sort((a, b) => a.depth - b.depth || a.id - b.id));
+  end.forEach(items => items.sort((a, b) => b.depth - a.depth || b.id - a.id));
+  return { start, end };
+}
+
+function linearUnits(compiled, model = groupModel(compiled)) {
+  const units = [];
+  const markers = groupMarkers(model);
+  for (let i = 0; i < compiled.tokens.length;) {
+    units.push(...(markers.start.get(i) || []).map(group => ({ marker: group.kind, group })));
+    if (isControl(compiled, i)) {
+      units.push({ control: true, tokens: [i] });
+      i++;
+    } else {
+      const set = collectSet(compiled, i);
+      units.push({ tokens: set });
+      i = set.at(-1) + 1;
+    }
+    units.push(...(markers.end.get(i) || []).map(group => ({ marker: group.kind == "{" ? "}" : ")", group })));
+  }
+  return units;
+}
+
+function isControl(compiled, index) {
+  return compiled.jumpi[index] == START_ANCHOR || (!compiled.tokens[index].set && "*?|".includes(compiled.tokens[index].text));
+}
+
+function closes(start, end) {
+  return (start == "(" && end == ")") || (start == "[" && end == "]") || (start == "{" && end == "}");
+}
+
+function label(row) {
+  return row.length == 1 ? `${row[0]}` : `${row[0]}-${row.at(-1)}`;
+}
+
+function pathTo(compiled, start, end) {
+  const tokens = [];
+  for (let i = start; i >= 0 && i < end;) {
+    tokens.push(i);
+    const next = compiled.jumps[i];
+    if (next <= i || next < 0) break;
+    i = next;
+  }
+  return { tokens, end };
+}
+
+function branchPath(compiled, start, otherStart) {
+  const tokens = [];
+  let end = otherStart;
+  for (let i = start; i >= 0 && i < compiled.tokens.length;) {
+    tokens.push(i);
+    const next = compiled.jumps[i];
+    if (next >= otherStart) {
+      end = next;
+      break;
+    }
+    if (next <= i || next < 0) break;
+    i = next;
+  }
+  return { tokens, end };
+}
+
+function drawCorpus(text) {
+  const map = byteMap(text);
+  const selectedMatch = matches[selected];
+  const labels = selectedMatch ? labelsFor(text, selectedMatch) : null;
+  const parts = [];
+  let cursor = 0;
+  matches.forEach(([start, end], index) => {
+    const jsStart = map.start[start] ?? text.length;
+    const jsEnd = map.end[end] ?? text.length;
+    if (jsStart > cursor) parts.push(document.createTextNode(text.slice(cursor, jsStart)));
+    cursor = jsStart;
+    const span = el("span", `match${index == selected ? " selected" : ""}`, "", null);
+    span.dataset.index = index;
+    Array.from(text.slice(jsStart, jsEnd)).forEach(char => {
+      const token = labels && index == selected ? labels[map.byte[cursor] - start] : -1;
+      const child = document.createElement("span");
+      child.textContent = char;
+      if (token >= 0) {
+        child.className = "char";
+        child.style.setProperty("--color", color(token));
+      }
+      span.append(child);
+      cursor += char.length;
+    });
+    parts.push(span);
+    cursor = jsEnd;
+  });
+  if (cursor < text.length) parts.push(document.createTextNode(text.slice(cursor)));
+  corpusEl.replaceChildren(...parts);
+}
+
+function labelsFor(text, [start, end]) {
+  const map = byteMap(text);
+  const window = text.slice(map.start[start], map.end[end]);
+  const labeled = engine.label(lastCompile.regex, window, { caseSensitive: true });
+  if (labeled) return labeled.labels;
+  return Array.from({ length: end - start }, () => -1);
+}
+
+function byteMap(text) {
+  const start = [], end = [], byte = [];
+  let b = 0, j = 0;
+  start[0] = end[0] = byte[0] = 0;
+  for (const char of text) {
+    const n = utf8.encode(char).length;
+    for (let i = 0; i < n; i++) start[b + i] = j;
+    for (let i = 1; i <= n; i++) end[b + i] = j + char.length;
+    for (let i = 0; i < char.length; i++) byte[j + i] = b;
+    b += n;
+    j += char.length;
+    start[b] = end[b] = j;
+    byte[j] = b;
+  }
+  return { start, end, byte };
+}
+
+function drawMatchView(text) {
+  const match = matches[selected];
+  if (!match) return hideMatchView();
+  const [start, end] = match;
+  const map = byteMap(text);
+  const labels = labelsFor(text, match);
+  matchTrack.replaceChildren(...matchChars(text, map, start, end).map(item => matchBox(labelRange(labels, item.start - start, item.end - start), item.char, labels[item.start - start])));
+  matchView.classList.add("open");
+  matchView.setAttribute("aria-hidden", "false");
+  requestAnimationFrame(() => { matchView.style.height = `${matchTrack.scrollHeight + 2}px`; });
+}
+
+function matchChars(text, map, start, end) {
+  const items = [];
+  for (let j = map.start[start]; j < map.end[end];) {
+    const char = Array.from(text.slice(j))[0];
+    const b = map.byte[j], n = utf8.encode(char).length;
+    items.push({ char, start: Math.max(start, b), end: Math.min(end, b + n) });
+    j += char.length;
+  }
+  return items;
+}
+
+function labelRange(labels, start, end) {
+  const row = labels.slice(start, end);
+  return row.length == 1 || row[0] == row.at(-1) ? `${row[0]}` : `${row[0]}-${row.at(-1)}`;
+}
+
+function matchBox(label, char, token) {
+  const item = el("div", "token sequence", "");
+  const node = el("div", "mini-node");
+  const head = el("div", "mini-head", label);
+  const body = el("div", "mini-body");
+  body.append(el("span", `alt${char == " " ? " space-token" : ""}`, char == " " ? "" : char));
+  node.append(head, body);
+  if (token >= 0) node.style.setProperty("--color", color(token));
+  item.append(node);
+  return item;
+}
+
+function clearSelection(paint = false) {
+  if (selected < 0) return;
+  selected = -1;
+  hideMatchView();
+  if (paint) drawCorpus(corpusEl.textContent);
+}
+
+function hideMatchView() {
+  matchView.classList.remove("open");
+  matchView.setAttribute("aria-hidden", "true");
+  matchView.style.height = "0px";
+  matchTrack.replaceChildren();
+}
+
+function collectSet(compiled, index) {
+  if (!compiled.jumpi[index]) return [index];
+  const set = [index];
+  while (compiled.jumpi[set.at(-1)] == 1) set.push(set.at(-1) + 1);
+  return set;
+}
+
+function setStart(compiled, index) {
+  while (index > 0 && setToken(compiled, index) && setToken(compiled, index - 1)) index--;
+  return index;
+}
+
+function setToken(compiled, index) {
+  return compiled.jumpi[index] == SET_TOKEN_BODY || compiled.jumpi[index] == SET_TOKEN_LAST;
+}
+
+function sequenceBox(row, compiled) {
+  const item = el("div", "token sequence", "");
+  const node = el("div", "mini-node");
+  const head = el("div", "mini-head", label(row));
+  const body = el("div", "mini-body");
+  body.append(...row.map(index => tokenEl(compiled, index, "span")));
+  node.append(head, body);
+  if (!isControl(compiled, row[0])) node.style.setProperty("--color", color(row[0]));
+  item.append(node);
+  return item;
+}
+
+function groupMarkerBox(group, marker) {
+  return markerBox(`g${group.id}`, marker);
+}
+
+function markerBox(label, marker) {
+  const item = el("div", "token sequence marker", "");
+  const node = el("div", "mini-node marker");
+  const head = el("div", "mini-head", label);
+  const body = el("div", "mini-body");
+  body.append(el("span", "alt", marker));
+  node.append(head, body);
+  item.append(node);
+  return item;
+}
+
+function tokenEl(compiled, index, tag = "div") {
+  const token = compiled.tokens[index];
+  const text = compiled.jumpi[index] == START_ANCHOR ? "^" : token.byte == 32 ? "" : token.byte < 128 ? token.text : token.byte.toString(16).padStart(2, "0");
+  const node = el(tag, `alt${token.text == " " ? " space-token" : ""}`, text, index);
+  if (compiled.tokens[index].text == " ") node.title = "space";
+  return node;
+}
+
+function el(tag, className, text = "", token = null) {
+  const node = document.createElement(tag);
+  node.className = className;
+  node.textContent = text;
+  if (token != null) node.style.setProperty("--color", color(token));
+  return node;
+}
+
+function color(index) {
+  return tokenColors.get(index) || "#fff";
+}
+
+function colorMap(compiled) {
+  const colors = new Map();
+  let i = 0;
+  linearUnits(compiled).forEach(unit => {
+    if (unit.marker || unit.control) return;
+    const color = palette[i++ % palette.length];
+    unit.tokens.forEach(token => colors.set(token, color));
+  });
+  return colors;
+}
+
+function zip(starts, ends) {
+  return starts.map((start, i) => [start, ends[i]]);
+}
+
+function normalize(items) {
+  const out = [];
+  let end = 0;
+  for (const item of items) {
+    if (item[0] >= end && item[1] > item[0]) {
+      out.push(item);
+      end = item[1];
+    }
+  }
+  return out;
+}
+
+function note(message) {
+  statusEl.className = "";
+  statusEl.textContent = message;
+}
+
+function fail(message) {
+  statusEl.className = "error";
+  statusEl.textContent = message;
+}
+
+function caretOffset() {
+  return caretOffsetIn(corpusEl);
+}
+
+function setCaretOffset(offset) {
+  setCaretOffsetIn(corpusEl, offset);
+}
+
+function insertAtCaret(text) {
+  const selection = window.getSelection();
+  if (!selection.rangeCount) return;
+  const range = selection.getRangeAt(0);
+  if (!corpusEl.contains(range.commonAncestorContainer)) return;
+  range.deleteContents();
+  const node = document.createTextNode(text);
+  range.insertNode(node);
+  range.setStartAfter(node);
+  range.collapse(true);
+  selection.removeAllRanges();
+  selection.addRange(range);
+}
+
+function fieldValue(field) {
+  return field.isContentEditable ? field.textContent : field.value;
+}
+
+function fieldCaret(field) {
+  return field.isContentEditable ? caretOffsetIn(field) : field.selectionStart;
+}
+
+function caretOffsetIn(root) {
+  const selection = getSelection();
+  if (!selection.rangeCount || !root.contains(selection.anchorNode)) return null;
+  const range = selection.getRangeAt(0).cloneRange();
+  const prefix = range.cloneRange();
+  prefix.selectNodeContents(root);
+  prefix.setEnd(range.endContainer, range.endOffset);
+  return prefix.toString().length;
+}
+
+function setCaretOffsetIn(root, offset) {
+  if (offset == null) return;
+  const selection = getSelection();
+  const range = document.createRange();
+  let left = offset;
+  for (const node of textNodes(root)) {
+    if (left <= node.length) {
+      range.setStart(node, left);
+      range.collapse(true);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      return;
+    }
+    left -= node.length;
+  }
+  range.selectNodeContents(root);
+  range.collapse(false);
+  selection.removeAllRanges();
+  selection.addRange(range);
+}
+
+function textNodes(root) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  for (let node; node = walker.nextNode();) nodes.push(node);
+  return nodes;
+}
+</script>
+</body>
+</html>

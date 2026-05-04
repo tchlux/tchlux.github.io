@@ -60,6 +60,7 @@ projects:
     month: "October"
     year: "2020"
     code: "https://github.com/tchlux/regex"
+    demo: "https://tchlux.github.io/regex/"
 
   - id: "lux2020sync"
     title: "`sync` Lightweight Cross-Device File Synchronization Utility"
