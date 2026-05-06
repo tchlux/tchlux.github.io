@@ -1322,8 +1322,9 @@ function label(row) {
 function pathTo(compiled, start, end) {
   const tokens = [];
   for (let i = start; i >= 0 && i < end;) {
-    tokens.push(i);
-    const next = compiled.jumps[i];
+    const unit = setToken(compiled, i) ? collectSet(compiled, setStart(compiled, i)) : [i];
+    tokens.push(...unit.filter(token => token < end));
+    const next = pathNext(compiled, unit);
     if (next <= i || next < 0) break;
     i = next;
   }
@@ -1334,8 +1335,9 @@ function branchPath(compiled, start, otherStart) {
   const tokens = [];
   let end = otherStart;
   for (let i = start; i >= 0 && i < compiled.tokens.length;) {
-    tokens.push(i);
-    const next = compiled.jumps[i];
+    const unit = setToken(compiled, i) ? collectSet(compiled, setStart(compiled, i)) : [i];
+    tokens.push(...unit);
+    const next = pathNext(compiled, unit);
     if (next >= otherStart) {
       end = next;
       break;
@@ -1344,6 +1346,11 @@ function branchPath(compiled, start, otherStart) {
     i = next;
   }
   return { tokens, end };
+}
+
+function pathNext(compiled, unit) {
+  const last = unit.at(-1);
+  return setToken(compiled, last) && compiled.jumps[last] <= last ? compiled.jumpf[last] : compiled.jumps[last];
 }
 
 function drawCorpus(text) {
@@ -1464,7 +1471,7 @@ function collectSet(compiled, index) {
 }
 
 function setStart(compiled, index) {
-  while (index > 0 && setToken(compiled, index) && setToken(compiled, index - 1)) index--;
+  while (index > 0 && setToken(compiled, index) && compiled.jumpi[index - 1] == SET_TOKEN_BODY) index--;
   return index;
 }
 
