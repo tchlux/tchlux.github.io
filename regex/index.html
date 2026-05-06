@@ -613,6 +613,7 @@ const palette = ["#dbeafe", "#dcfce7", "#fef3c7", "#ffe4e6", "#fae8ff", "#e0f2fe
 const SHORTCUT_KEY = "regex-demo-shortcuts";
 const SHORTCUT_NAME = /^([A-Za-z_-]+|[$^])$/;
 const SHORTCUT_USE = /\\([A-Za-z_-]+|[$^])/g;
+const URL_REGEX_PARAM = "regex";
 const LETTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const DIGITS = "0123456789";
 const SET_TOKEN_BODY = 1;
@@ -647,6 +648,8 @@ const corpusEl = document.querySelector("#corpus");
 let engine, selected = -1, matches = [], lastCompile = null, tokenColors = new Map(), displayMode = "linear", shortcutTimer = 0, renderingShortcuts = false, shortcuts = [];
 
 try {
+  const urlRegex = regexFromUrl();
+  if (urlRegex != null) regexInput.textContent = urlRegex;
   shortcuts = await loadShortcuts();
   engine = await createRegex({ locateFile: file => file == "regex_wasm.wasm" ? "./build/regex_wasm.wasm?v=23" : file });
   normalizeShortcuts();
@@ -655,7 +658,7 @@ try {
   fail("Run ./build.sh and serve js/ from localhost.");
 }
 
-regexInput.addEventListener("input", () => { clearSelection(false); update(true, null, caretOffsetIn(regexInput)); });
+regexInput.addEventListener("input", () => { clearSelection(false); syncRegexUrl(regexInput.textContent); update(true, null, caretOffsetIn(regexInput)); });
 regexInput.addEventListener("keydown", event => { if (event.key == "Enter") event.preventDefault(); });
 docsButton.addEventListener("click", () => togglePanel(docsPanel, docsButton));
 settingsButton.addEventListener("click", () => togglePanel(settingsPanel, settingsButton));
@@ -752,6 +755,35 @@ function normalizeShortcuts() {
   renderShortcuts(focus);
   clearSelection(false);
   update();
+}
+
+function regexFromUrl() {
+  const params = new URLSearchParams(location.search);
+  if (params.has(URL_REGEX_PARAM)) return params.get(URL_REGEX_PARAM);
+  if (params.has("re")) return params.get("re");
+  const raw = location.search.slice(1);
+  return raw && !raw.includes("=") ? decodeURIComponent(raw.replace(/\+/g, "%20")) : null;
+}
+
+function syncRegexUrl(regex) {
+  const path = location.pathname.split("/").map(encodeURIComponent).join("/");
+  const query = regex ? `?${URL_REGEX_PARAM}=${readableQuery(regex)}` : "";
+  history.replaceState(null, "", `${path}${query}${location.hash}`);
+}
+
+function readableQuery(value) {
+  return encodeURIComponent(value)
+    .replace(/%5B/gi, "[")
+    .replace(/%5D/gi, "]")
+    .replace(/%7B/gi, "{")
+    .replace(/%7D/gi, "}")
+    .replace(/%5C/gi, "\\")
+    .replace(/%7C/gi, "|")
+    .replace(/%28/gi, "(")
+    .replace(/%29/gi, ")")
+    .replace(/%2A/gi, "*")
+    .replace(/%3F/gi, "?")
+    .replace(/%5E/gi, "^");
 }
 
 function scheduleShortcuts() {
