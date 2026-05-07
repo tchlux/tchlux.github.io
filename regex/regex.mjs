@@ -3,13 +3,17 @@ const LABEL_NO_MATCH_ERROR = -5;
 const SET_TOKEN_BODY = 1;
 const SET_TOKEN_LAST = 2;
 const DEFAULT_GROUP_MOD = " ".charCodeAt(0);
+const WASM_VERSION = 24;
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 
 export class RegexError extends Error {}
 
 export async function createRegex(options = {}) {
-  const { default: createWasm } = await import("./build/regex_wasm.js?v=23");
+  const { default: createWasm } = await import(`./build/regex_wasm.js?v=${WASM_VERSION}`);
+  if (!options.locateFile) {
+    options = { ...options, locateFile: path => new URL(`build/${path}?v=${WASM_VERSION}`, import.meta.url).href };
+  }
   return new Regex(await createWasm(options));
 }
 
@@ -41,6 +45,7 @@ export class Regex {
   }
 
   matcha(regex, string, options = {}) {
+    const { maxMatches = 1024 } = options;
     const pattern = this.translate(regex, options);
     return this.#withStrings(pattern, string, (re, text) => {
       const nPtr = this.module._malloc(4);
@@ -48,6 +53,7 @@ export class Regex {
       const endsPtr = this.module._malloc(4);
       let n, starts, ends;
       try {
+        this.module.HEAP32[nPtr >> 2] = maxMatches;
         this.module._matcha(re, text, nPtr, startsPtr, endsPtr);
         n = this.#i32(nPtr);
         starts = this.#i32(startsPtr);

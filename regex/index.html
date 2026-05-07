@@ -607,7 +607,7 @@ Try [0123456789][0123456789][0123456789][0123456789] to mark a year.</div>
   <div id="shortcutRows"></div>
 </section>
 <script type="module">
-import createRegex from "./regex.mjs?v=23";
+import createRegex from "./regex.mjs?v=24";
 
 const palette = ["#dbeafe", "#dcfce7", "#fef3c7", "#ffe4e6", "#fae8ff", "#e0f2fe", "#ede9fe", "#ccfbf1", "#f5e8c7", "#e5e7eb"];
 const SHORTCUT_KEY = "regex-demo-shortcuts";
@@ -651,7 +651,7 @@ try {
   const urlRegex = regexFromUrl();
   if (urlRegex != null) regexInput.textContent = urlRegex;
   shortcuts = await loadShortcuts();
-  engine = await createRegex({ locateFile: file => file == "regex_wasm.wasm" ? "./build/regex_wasm.wasm?v=23" : file });
+  engine = await createRegex({ locateFile: file => file == "regex_wasm.wasm" ? "./build/regex_wasm.wasm?v=24" : file });
   normalizeShortcuts();
   drawDocs();
 } catch (error) {
@@ -714,10 +714,12 @@ corpusEl.addEventListener("keydown", event => {
 corpusEl.addEventListener("blur", () => update());
 corpusEl.addEventListener("pointerdown", event => { if (event.target.closest(".match")) event.preventDefault(); });
 corpusEl.addEventListener("click", event => {
-  const hit = event.target.closest(".match");
-  if (!hit) return clearSelection(true);
+  if (!event.target.closest(".match")) return clearSelection(true);
+  const range = clickByteRange(event);
+  if (!range) return clearSelection(true);
   event.preventDefault();
-  selected = Number(hit.dataset.index);
+  selected = coveringMatch(range[0], range[1]);
+  if (selected < 0) return clearSelection(true);
   document.activeElement?.blur?.();
   drawCorpus(corpusEl.textContent);
   drawMatchView(corpusEl.textContent);
@@ -1390,30 +1392,90 @@ function drawCorpus(text) {
   const selectedMatch = matches[selected];
   const labels = selectedMatch ? labelsFor(text, selectedMatch) : null;
   const parts = [];
-  let cursor = 0;
-  matches.forEach(([start, end], index) => {
-    const jsStart = map.start[start] ?? text.length;
-    const jsEnd = map.end[end] ?? text.length;
-    if (jsStart > cursor) parts.push(document.createTextNode(text.slice(cursor, jsStart)));
-    cursor = jsStart;
-    const span = el("span", `match${index == selected ? " selected" : ""}`, "", null);
-    span.dataset.index = index;
-    Array.from(text.slice(jsStart, jsEnd)).forEach(char => {
-      const token = labels && index == selected ? labels[map.byte[cursor] - start] : -1;
+  let run = null;
+  const flush = () => { if (run) parts.push(run); run = null; };
+  for (let j = 0; j < text.length;) {
+    const char = Array.from(text.slice(j))[0];
+    const byteStart = map.byte[j], byteEnd = map.byte[j + char.length];
+    const hit = coveringMatch(byteStart, byteEnd);
+    const inSelected = !!(selectedMatch && covers(selectedMatch, byteStart, byteEnd));
+    if (hit < 0) {
+      flush();
+      parts.push(document.createTextNode(char));
+    } else {
+      if (!run || run.classList.contains("selected") != inSelected) {
+        flush();
+        run = el("span", `match${inSelected ? " selected" : ""}`, "", null);
+      }
       const child = document.createElement("span");
       child.textContent = char;
+      child.dataset.byteStart = byteStart;
+      child.dataset.byteEnd = byteEnd;
+      const token = labels && inSelected ? labels[byteStart - selectedMatch[0]] : -1;
       if (token >= 0) {
         child.className = "char";
         child.style.setProperty("--color", color(token));
       }
-      span.append(child);
-      cursor += char.length;
-    });
-    parts.push(span);
-    cursor = jsEnd;
-  });
-  if (cursor < text.length) parts.push(document.createTextNode(text.slice(cursor)));
+      run.append(child);
+    }
+    j += char.length;
+  }
+  flush();
   corpusEl.replaceChildren(...parts);
+}
+
+function clickByteRange(event) {
+  const hit = markedAtPoint(event);
+  if (hit) return [Number(hit.dataset.byteStart), Number(hit.dataset.byteEnd)];
+  const point = document.caretPositionFromPoint?.(event.clientX, event.clientY);
+  const range = point || document.caretRangeFromPoint?.(event.clientX, event.clientY);
+  const node = point?.offsetNode || range?.startContainer;
+  const offset = point?.offset ?? range?.startOffset;
+  const marked = (node?.nodeType == Node.TEXT_NODE ? node.parentElement : node)?.closest?.("[data-byte-start]");
+  if (marked && corpusEl.contains(marked)) return [Number(marked.dataset.byteStart), Number(marked.dataset.byteEnd)];
+  const text = corpusEl.textContent;
+  const clicked = corpusOffset(node, offset);
+  if (clicked < 0) return null;
+  const j = Math.min(text.length - 1, clicked);
+  const char = Array.from(text.slice(j))[0];
+  if (!char) return null;
+  const map = byteMap(text);
+  return [map.byte[j], map.byte[j + char.length]];
+}
+
+function markedAtPoint(event) {
+  for (const node of corpusEl.querySelectorAll(".match [data-byte-start]")) {
+    for (const rect of node.getClientRects()) {
+      if (event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom) return node;
+    }
+  }
+  return null;
+}
+
+function corpusOffset(node, offset) {
+  if (!node || !corpusEl.contains(node)) return -1;
+  const range = document.createRange();
+  range.setStart(corpusEl, 0);
+  range.setEnd(node, offset);
+  return range.toString().length;
+}
+
+function covers([start, end], byteStart, byteEnd) {
+  return start < byteEnd && end > byteStart;
+}
+
+function coveringMatch(byteStart, byteEnd) {
+  let choice = -1, bestStart = -1, bestEnd = -1;
+  matches.forEach((match, index) => {
+    const [start, end] = match;
+    if (!covers(match, byteStart, byteEnd)) return;
+    if (start > bestStart || (start == bestStart && end > bestEnd)) {
+      choice = index;
+      bestStart = start;
+      bestEnd = end;
+    }
+  });
+  return choice;
 }
 
 function labelsFor(text, [start, end]) {
@@ -1574,15 +1636,7 @@ function zip(starts, ends) {
 }
 
 function normalize(items) {
-  const out = [];
-  let end = 0;
-  for (const item of items) {
-    if (item[0] >= end && item[1] > item[0]) {
-      out.push(item);
-      end = item[1];
-    }
-  }
-  return out;
+  return items.filter(item => item[1] > item[0]).sort((a, b) => a[0] - b[0] || a[1] - b[1]);
 }
 
 function note(message) {
