@@ -489,7 +489,14 @@ body.panel-open #displayActions {
   align-self: center;
   margin: 0 0 0 2px;
 }
+#statusRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+}
 #status {
+  flex: 1 1 auto;
   min-height: 28px;
   padding: 6px 0;
   color: var(--muted);
@@ -497,8 +504,21 @@ body.panel-open #displayActions {
 #status.error {
   color: #7d1810;
 }
+#matchesToggle {
+  min-width: 118px;
+  height: 32px;
+}
+#corpusArea {
+  flex: 1 1 auto;
+  display: flex;
+  gap: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+#corpusArea.matches-open { gap: 8px; }
 #corpus {
   flex: 1 1 auto;
+  min-width: 0;
   min-height: 0;
   padding: 14px;
   border: 2px solid var(--line);
@@ -509,6 +529,57 @@ body.panel-open #displayActions {
   outline: none;
 }
 #corpus:focus { background: #fffffb; }
+#matchListPanel {
+  flex: 0 0 0;
+  min-width: 0;
+  overflow: hidden;
+  border: 0 solid var(--line);
+  background: var(--soft);
+  transition: flex-basis 180ms ease, border-width 180ms ease;
+}
+#corpusArea.matches-open #matchListPanel {
+  flex-basis: clamp(240px, 32vw, 320px);
+  border-width: 2px;
+}
+#matchList {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  height: 100%;
+  padding: 7px;
+  overflow: auto;
+  scrollbar-width: none;
+}
+#matchList::-webkit-scrollbar { display: none; }
+.match-list-row {
+  display: block;
+  width: 100%;
+  padding: 4px 6px;
+  border: 0;
+  border-bottom: 1px solid #b9b9b4;
+  border-radius: 0;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.match-list-row:hover, .match-list-row.active { background: #fffffb; }
+.match-list-track {
+  display: block;
+  width: 100%;
+  min-height: 1.45em;
+  line-height: 1.45;
+  white-space: pre;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.match-list-track::-webkit-scrollbar { display: none; }
+.match-list-char {
+  background: var(--color, transparent);
+  box-shadow: inset 0 -2px #111;
+}
 .match {
   background: var(--hit);
   border-bottom: 2px solid #c27a35;
@@ -519,7 +590,12 @@ body.panel-open #displayActions {
   background: var(--color, #fff);
   box-shadow: inset 0 -2px #111;
 }
+.context-char {
+  background: #e5e7eb;
+  box-shadow: inset 0 -2px #777;
+}
 #matchView {
+  flex: 0 0 auto;
   height: 0;
   margin-top: 0;
   overflow: hidden;
@@ -541,6 +617,9 @@ body.panel-open #displayActions {
   scrollbar-width: none;
 }
 #matchTrack::-webkit-scrollbar { display: none; }
+#matchTrack > .token.sequence {
+  flex: 0 0 auto;
+}
 #matchTrack .mini-head { font-size: 12px; }
 #matchTrack .mini-body {
   min-height: 32px;
@@ -573,30 +652,36 @@ body.panel-open #displayActions {
     </div>
   </div>
   <div id="matchView" aria-hidden="true"><div id="matchTrack"></div></div>
-  <div id="status"></div>
-  <div id="corpus" contenteditable="true" spellcheck="false">This browser demo runs the C regex engine through WebAssembly.
+  <div id="statusRow">
+    <div id="status"></div>
+    <button id="matchesToggle" class="plain-button" type="button" aria-expanded="false" aria-controls="matchListPanel">show matches</button>
+  </div>
+  <div id="corpusArea">
+    <div id="corpus" contenteditable="true" spellcheck="false">This browser demo runs the C regex engine through WebAssembly.
 
 Try date to find the fate and feta of this token, or daata feata feate for grouped branches.
 Try 2026-05-03 for a date-shaped value.
 Try regex|wasm to see alternatives in the compiled graph.
 Try [0123456789][0123456789][0123456789][0123456789] to mark a year.</div>
+    <aside id="matchListPanel" aria-hidden="true"><div id="matchList"></div></aside>
+  </div>
 </main>
 <section id="docsPanel" class="overlay" hidden>
   <div class="docs-body">
     <h2>tlux-regex</h2>
-    <p>Patterns search through the current text; use \^ for the start and \$ for the end.</p>
+    <p>Patterns search through the current text; use {.} at the beginning or end to match file boundaries.</p>
     <div class="docs-grid">
-      <div class="docs-row"><div class="docs-key">abc</div><div>literal characters match themselves in order</div><div class="docs-tokens" data-regex="abc"></div></div>
-      <div class="docs-row"><div class="docs-key">a.d</div><div>dot matches any one character</div><div class="docs-tokens" data-regex="a.d"></div></div>
+      <div class="docs-row"><div class="docs-key">abc</div><div>literal bytes match themselves in order</div><div class="docs-tokens" data-regex="abc"></div></div>
+      <div class="docs-row"><div class="docs-key">a.d</div><div>dot matches any one byte</div><div class="docs-tokens" data-regex="a.d"></div></div>
       <div class="docs-row"><div class="docs-key">ab|cd</div><div>the branch applies to neighboring tokens, then rejoins the sequence</div><div class="docs-tokens" data-regex="ab|cd"></div></div>
       <div class="docs-row"><div class="docs-key">a[bc]d</div><div>shorthand for branches between a collection of single tokens</div><div class="docs-tokens" data-regex="a[bc]d"></div></div>
       <div class="docs-row"><div class="docs-key">a(bc)d</div><div>parentheses group a sequence so controls can apply to it</div><div class="docs-tokens" data-regex="a(bc)d"></div></div>
-      <div class="docs-row"><div class="docs-key">a{bc}d</div><div>braces negate a grouped expression</div><div class="docs-tokens" data-regex="a{bc}d"></div></div>
+      <div class="docs-row"><div class="docs-key">a{bc}d</div><div>braces negate a token or grouped expression</div><div class="docs-tokens" data-regex="a{bc}d"></div></div>
       <div class="docs-row"><div class="docs-key">x?</div><div>the preceding token or token group may be skipped</div><div class="docs-tokens" data-regex="x?"></div></div>
       <div class="docs-row"><div class="docs-key">x*</div><div>the preceding token or token group may appear zero or many times</div><div class="docs-tokens" data-regex="x*"></div></div>
-      <div class="docs-row"><div class="docs-key">\^abc</div><div>leading start-of-text marker</div><div class="docs-tokens" data-regex="\^abc"></div></div>
-      <div class="docs-row"><div class="docs-key">abc\$</div><div>match only at the end of the text</div><div class="docs-tokens" data-regex="abc\$"></div></div>
-      <div class="docs-row"><div class="docs-key">\shortcut</div><div>inject a saved shortcut as one grouped expression</div><div class="docs-tokens" data-regex="\letters"></div></div>
+      <div class="docs-row"><div class="docs-key">{.}abc</div><div>match only at the beginning of a file</div><div class="docs-tokens" data-regex="{.}abc"></div></div>
+      <div class="docs-row"><div class="docs-key">abc{.}</div><div>match only at the end of a file</div><div class="docs-tokens" data-regex="abc{.}"></div></div>
+      <div class="docs-row"><div class="docs-key">\letter</div><div>saved shortcuts inject one grouped expression</div><div class="docs-tokens" data-regex="\letter"></div></div>
     </div>
   </div>
 </section>
@@ -627,7 +712,7 @@ const DEFAULT_SHORTCUTS = [
   { name: "d", tokens: `[${DIGITS}]` },
   { name: "a", tokens: `[${LETTERS}]` },
   { name: "w", tokens: `[_${DIGITS}${LETTERS}]` },
-  { name: "letters", tokens: `[${LETTERS}]` },
+  { name: "letter", tokens: `[${LETTERS}]` },
 ];
 const regexInput = document.querySelector("#regex");
 const docsButton = document.querySelector("#docsButton");
@@ -644,8 +729,12 @@ const graphEl = document.querySelector("#graph");
 const matchView = document.querySelector("#matchView");
 const matchTrack = document.querySelector("#matchTrack");
 const statusEl = document.querySelector("#status");
+const corpusArea = document.querySelector("#corpusArea");
 const corpusEl = document.querySelector("#corpus");
-let engine, selected = -1, matches = [], lastCompile = null, tokenColors = new Map(), displayMode = "linear", shortcutTimer = 0, renderingShortcuts = false, shortcuts = [];
+const matchesToggle = document.querySelector("#matchesToggle");
+const matchListPanel = document.querySelector("#matchListPanel");
+const matchList = document.querySelector("#matchList");
+let engine, selected = -1, hovered = -1, matchesOpen = false, matches = [], lastCompile = null, tokenColors = new Map(), displayMode = "linear", shortcutTimer = 0, renderingShortcuts = false, shortcuts = [];
 
 try {
   const urlRegex = regexFromUrl();
@@ -668,6 +757,24 @@ viewToggle.addEventListener("click", () => {
   viewToggle.setAttribute("aria-pressed", String(displayMode == "graph"));
   syncDisplayHeight();
   scheduleBranchConnectors();
+});
+matchesToggle.addEventListener("click", () => setMatchesOpen(!matchesOpen));
+matchList.addEventListener("pointerover", previewMatch);
+matchList.addEventListener("mouseover", previewMatch);
+matchList.addEventListener("pointerleave", () => {
+  if (hovered < 0) return;
+  hovered = -1;
+  drawCorpus(corpusEl.textContent);
+});
+matchList.addEventListener("click", event => {
+  const row = event.target.closest(".match-list-row");
+  if (!row) return;
+  selected = Number(row.dataset.index);
+  hovered = -1;
+  drawCorpus(corpusEl.textContent);
+  drawMatchList(corpusEl.textContent);
+  drawMatchView(corpusEl.textContent);
+  requestAnimationFrame(() => corpusEl.querySelector(".match.selected")?.scrollIntoView({ block: "nearest", inline: "nearest" }));
 });
 shortcutRowsEl.addEventListener("input", event => {
   const field = event.target.closest("[name], [data-name]");
@@ -714,7 +821,12 @@ corpusEl.addEventListener("keydown", event => {
 corpusEl.addEventListener("blur", () => update());
 corpusEl.addEventListener("pointerdown", event => { if (event.target.closest(".match")) event.preventDefault(); });
 corpusEl.addEventListener("click", event => {
-  if (!event.target.closest(".match")) return clearSelection(true);
+  if (!event.target.closest(".match")) {
+    const offset = clickTextOffset(event);
+    clearSelection(true);
+    if (offset >= 0) setCaretOffset(offset);
+    return;
+  }
   const range = clickByteRange(event);
   if (!range) return clearSelection(true);
   event.preventDefault();
@@ -722,6 +834,7 @@ corpusEl.addEventListener("click", event => {
   if (selected < 0) return clearSelection(true);
   document.activeElement?.blur?.();
   drawCorpus(corpusEl.textContent);
+  drawMatchList(corpusEl.textContent);
   drawMatchView(corpusEl.textContent);
   getSelection().removeAllRanges();
 });
@@ -835,16 +948,22 @@ function deleteShortcutButton(row) {
 
 function drawDocs() {
   const colors = tokenColors;
-  document.querySelectorAll(".docs-tokens").forEach(node => {
-    try {
-      const compiled = engine.compile(expandShortcuts(node.dataset.regex, [], false));
-      tokenColors = colorMap(compiled);
-      node.replaceChildren(...renderUnits(graphUnits(compiled, groupModel(compiled)), compiled));
-    } catch (_) {
-      node.replaceChildren();
-    }
-  });
-  tokenColors = colors;
+  const savedShortcuts = shortcuts;
+  shortcuts = DEFAULT_SHORTCUTS.map(row => ({ ...row }));
+  try {
+    document.querySelectorAll(".docs-tokens").forEach(node => {
+      try {
+        const compiled = engine.compile(expandShortcuts(node.dataset.regex, [], false));
+        tokenColors = colorMap(compiled);
+        node.replaceChildren(...renderUnits(graphUnits(compiled, groupModel(compiled)), compiled));
+      } catch (_) {
+        node.replaceChildren();
+      }
+    });
+  } finally {
+    tokenColors = colors;
+    shortcuts = savedShortcuts;
+  }
 }
 
 function shortcutInput(name, value, label) {
@@ -1013,6 +1132,8 @@ function update(paintCorpus = true, caret = null, regexCaret = null) {
     drawCompiled(lastCompile);
     drawGraph(lastCompile);
     if (selected >= matches.length) selected = -1;
+    if (hovered >= matches.length) hovered = -1;
+    drawMatchList(text);
     scheduleBranchConnectors();
     syncDisplayHeight();
     if (paintCorpus) drawCorpus(text);
@@ -1020,8 +1141,12 @@ function update(paintCorpus = true, caret = null, regexCaret = null) {
     if (caret != null) setCaretOffset(Math.min(caret, corpusEl.textContent.length));
     note(`${matches.length} match${matches.length == 1 ? "" : "es"}`);
   } catch (error) {
+    selected = hovered = -1;
+    matches = [];
     compiledEl.replaceChildren();
     graphEl.replaceChildren();
+    matchList.replaceChildren();
+    hideMatchView();
     fail(error.message || String(error));
   }
 }
@@ -1069,24 +1194,24 @@ function scheduleBranchConnectors() {
 }
 
 function drawBranchConnectors() {
-  graphEl.querySelector(".branch-connectors")?.remove();
+  graphEl.querySelectorAll(".branch-connectors").forEach(node => node.remove());
   if (displayMode != "graph") return;
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.classList.add("branch-connectors");
-  graphEl.prepend(svg);
-  const graphBox = graphEl.getBoundingClientRect();
-  svg.setAttribute("width", graphEl.scrollWidth);
-  svg.setAttribute("height", graphEl.scrollHeight);
   graphEl.querySelectorAll(".branch-node[data-branch-source]").forEach(branch => {
     const source = graphEl.querySelector(`[data-token="${branch.dataset.branchSource}"]`);
     const target = branch.querySelectorAll(".branch-row")[1]?.querySelector(".branch-enter");
     if (!source || !target) return;
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.classList.add("branch-connectors");
+    branch.prepend(svg);
+    const branchBox = branch.getBoundingClientRect();
     const sourceBox = source.getBoundingClientRect();
     const targetBox = target.getBoundingClientRect();
-    const x1 = sourceBox.left + sourceBox.width / 2 - graphBox.left + graphEl.scrollLeft;
-    const y1 = sourceBox.bottom + 6 - graphBox.top + graphEl.scrollTop;
-    const x2 = targetBox.left - 12 - graphBox.left + graphEl.scrollLeft;
-    const y2 = targetBox.top + targetBox.height / 2 + 0.5 - graphBox.top + graphEl.scrollTop;
+    const clipBox = (branch.closest(".group-body") || graphEl).getBoundingClientRect();
+    const x1 = sourceBox.left + sourceBox.width / 2 - branchBox.left;
+    const y1 = sourceBox.bottom + 6 - branchBox.top;
+    const x2 = targetBox.left - 12 - branchBox.left;
+    const y2 = Math.min(targetBox.top + targetBox.height / 2 + 0.5, clipBox.bottom - 8) - branchBox.top;
+    if (y2 <= y1) return;
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("d", `M${x1} ${y1}V${y2}H${x2}`);
     svg.append(path);
@@ -1160,6 +1285,21 @@ function graphUnitsIn(compiled, model, start, end, parent) {
   const children = model.children.get(parent) || [];
   for (let i = start; i < end;) {
     const child = children.find(group => group.pos == i);
+    if (isControl(compiled, i) && compiled.tokens[i].text == "|" && !(child && child.mod != "|")) {
+      units.push({ control: true, branch: false, label: `${i}`, tokens: [i], rows: [[i]] });
+      const left = branchPath(compiled, compiled.jumps[i], compiled.jumpf[i]);
+      const join = setStart(compiled, Math.min(left.end == compiled.jumpf[i] ? end : left.end, end));
+      const right = pathTo(compiled, compiled.jumpf[i], join);
+      left.tokens = left.tokens.filter(token => token < join);
+      right.tokens = right.tokens.filter(token => token < join);
+      const tokens = [...left.tokens, ...right.tokens];
+      units.push({ branch: true, source: i, label: `${label(left.tokens)}|${label(right.tokens)}`, tokens, rows: [
+        graphPathUnits(compiled, model, left.tokens, parent),
+        graphPathUnits(compiled, model, right.tokens, parent),
+      ] });
+      i = join;
+      continue;
+    }
     if (child) {
       if (child.control != null) units.push({ control: true, branch: false, label: `${child.control}`, tokens: [child.control], rows: [[child.control]] });
       units.push({ group: true, negate: child.kind == "{", skip: child.mod == "?", repeat: child.mod == "*", units: graphUnitsIn(compiled, model, child.start, child.end, child.id) });
@@ -1168,18 +1308,8 @@ function graphUnitsIn(compiled, model, start, end, parent) {
     }
     if (isControl(compiled, i)) {
       units.push({ control: true, branch: false, label: `${i}`, tokens: [i], rows: [[i]] });
-      if (compiled.tokens[i].text == "|") {
-        const left = branchPath(compiled, compiled.jumps[i], compiled.jumpf[i]);
-        const join = setStart(compiled, Math.min(left.end == compiled.jumpf[i] ? end : left.end, end));
-        const right = pathTo(compiled, compiled.jumpf[i], join);
-        left.tokens = left.tokens.filter(token => token < join);
-        right.tokens = right.tokens.filter(token => token < join);
-        const tokens = [...left.tokens, ...right.tokens];
-        units.push({ branch: true, source: i, label: `${label(left.tokens)}|${label(right.tokens)}`, tokens, rows: [
-          graphPathUnits(compiled, model, left.tokens, parent),
-          graphPathUnits(compiled, model, right.tokens, parent),
-        ] });
-        i = join;
+      if (compiled.jumpi[i] == START_ANCHOR) {
+        i++;
       } else {
         const affected = affectedGroup(compiled, model, i, parent);
         units.push(affected);
@@ -1204,10 +1334,15 @@ function graphPathUnits(compiled, model, tokens, parent) {
   const allowed = new Set(tokens), children = model.children.get(parent) || [], units = [];
   for (let i = 0; i < tokens.length;) {
     const index = tokens[i];
-    const child = children.find(group => group.pos == index && groupTokenList(group).every(token => allowed.has(token)));
+    let shifted = 0;
+    const child = children.find(group => group.pos == index && groupTokenList(group).every(token => allowed.has(token)))
+      || children.find(group => {
+        shifted = index - group.start;
+        return shifted > 0 && groupTokenList(group).every(token => allowed.has(token + shifted));
+      });
     if (child) {
       if (child.control != null) units.push({ control: true, branch: false, label: `${child.control}`, tokens: [child.control], rows: [[child.control]] });
-      units.push({ group: true, negate: child.kind == "{", skip: child.mod == "?", repeat: child.mod == "*", units: graphUnitsIn(compiled, model, child.start, child.end, child.id) });
+      units.push({ group: true, negate: child.kind == "{", skip: child.mod == "?", repeat: child.mod == "*", units: graphUnitsIn(compiled, model, child.start + shifted, child.end + shifted, child.id) });
       i += groupTokenList(child).length;
     } else {
       units.push({ branch: false, label: `${index}`, tokens: [index], rows: [[index]], control: isControl(compiled, index) });
@@ -1227,7 +1362,7 @@ function groupTokenList(group) {
 function groupModel(compiled) {
   const parsed = parseGroups(compiled.regex);
   markGroupTokens(compiled.regex, parsed, compiled.tokens.length);
-  const groups = parsed.filter(group => group.start < group.end && !startAnchorGroup(compiled, group));
+  const groups = parsed.filter(group => group.start < group.end);
   const byId = new Map(groups.map(group => [group.id, group]));
   groups.forEach(group => {
     group.parent = nearestExplicit(parsed, group.parent);
@@ -1241,10 +1376,6 @@ function groupModel(compiled) {
   });
   children.forEach(items => items.sort((a, b) => a.pos - b.pos || a.id - b.id));
   return { groups, children };
-}
-
-function startAnchorGroup(compiled, group) {
-  return group.kind == "{" && group.end == group.start + 1 && compiled.jumpi[group.start] == START_ANCHOR;
 }
 
 function parseGroups(regex) {
@@ -1276,14 +1407,14 @@ function markGroupTokens(regex, groups, limit) {
   for (let i = 0; i < regex.length; i++) {
     const c = regex[i], group = groups.byOpen.get(i);
     if (group) {
-      if ("*?|".includes(group.mod)) group.control = token++;
+      if ("*?".includes(group.mod)) group.control = token++;
       group.start = token;
       stack.push(group);
     } else if (byClose.has(i)) {
       const done = byClose.get(i);
       done.end = token;
       stack.pop();
-      if ("*?|".includes(done.mod)) i++;
+      if ("*?".includes(done.mod)) i++;
     } else if (c == "[") {
       const close = regex.indexOf("]", i + 1);
       if ("*?|".includes(regex[close + 1] || "")) token++;
@@ -1389,8 +1520,10 @@ function pathNext(compiled, unit) {
 
 function drawCorpus(text) {
   const map = byteMap(text);
-  const selectedMatch = matches[selected];
+  const active = hovered >= 0 ? hovered : selected;
+  const selectedMatch = matches[active];
   const labels = selectedMatch ? labelsFor(text, selectedMatch) : null;
+  const context = selectedMatch && matchChars(text, map, selectedMatch[0], selectedMatch[1]).some(item => invisibleMatchChar(item.char));
   const parts = [];
   let run = null;
   const flush = () => { if (run) parts.push(run); run = null; };
@@ -1399,9 +1532,10 @@ function drawCorpus(text) {
     const byteStart = map.byte[j], byteEnd = map.byte[j + char.length];
     const hit = coveringMatch(byteStart, byteEnd);
     const inSelected = !!(selectedMatch && covers(selectedMatch, byteStart, byteEnd));
+    const inContext = !!(context && !inSelected && (byteEnd == selectedMatch[0] || byteStart == selectedMatch[1]));
     if (hit < 0) {
       flush();
-      parts.push(document.createTextNode(char));
+      parts.push(inContext ? el("span", "context-char", char) : document.createTextNode(char));
     } else {
       if (!run || run.classList.contains("selected") != inSelected) {
         flush();
@@ -1416,6 +1550,7 @@ function drawCorpus(text) {
         child.className = "char";
         child.style.setProperty("--color", color(token));
       }
+      if (inContext) child.classList.add("context-char");
       run.append(child);
     }
     j += char.length;
@@ -1424,23 +1559,50 @@ function drawCorpus(text) {
   corpusEl.replaceChildren(...parts);
 }
 
+function drawMatchList(text) {
+  if (!matchesOpen) return matchList.replaceChildren();
+  const map = byteMap(text);
+  matchList.replaceChildren(...matches.map((match, index) => {
+    const row = el("div", `match-list-row${index == selected ? " active" : ""}`);
+    row.tabIndex = 0;
+    row.setAttribute("role", "button");
+    row.dataset.index = index;
+    const track = el("span", "match-list-track");
+    const labels = labelsFor(text, match);
+    track.append(...matchChars(text, map, match[0], match[1]).map(item => matchListChar(item.char, labels[item.start - match[0]])));
+    row.append(track);
+    return row;
+  }));
+}
+
+function previewMatch(event) {
+  const row = event.target.closest(".match-list-row");
+  if (!row || Number(row.dataset.index) == hovered) return;
+  hovered = Number(row.dataset.index);
+  drawCorpus(corpusEl.textContent);
+}
+
 function clickByteRange(event) {
   const hit = markedAtPoint(event);
   if (hit) return [Number(hit.dataset.byteStart), Number(hit.dataset.byteEnd)];
-  const point = document.caretPositionFromPoint?.(event.clientX, event.clientY);
-  const range = point || document.caretRangeFromPoint?.(event.clientX, event.clientY);
-  const node = point?.offsetNode || range?.startContainer;
-  const offset = point?.offset ?? range?.startOffset;
-  const marked = (node?.nodeType == Node.TEXT_NODE ? node.parentElement : node)?.closest?.("[data-byte-start]");
-  if (marked && corpusEl.contains(marked)) return [Number(marked.dataset.byteStart), Number(marked.dataset.byteEnd)];
-  const text = corpusEl.textContent;
-  const clicked = corpusOffset(node, offset);
+  const clicked = clickTextOffset(event);
   if (clicked < 0) return null;
+  const text = corpusEl.textContent;
   const j = Math.min(text.length - 1, clicked);
   const char = Array.from(text.slice(j))[0];
   if (!char) return null;
   const map = byteMap(text);
   return [map.byte[j], map.byte[j + char.length]];
+}
+
+function clickTextOffset(event) {
+  const point = document.caretPositionFromPoint?.(event.clientX, event.clientY);
+  const range = point || document.caretRangeFromPoint?.(event.clientX, event.clientY);
+  const node = point?.offsetNode || range?.startContainer;
+  const offset = point?.offset ?? range?.startOffset;
+  const marked = (node?.nodeType == Node.TEXT_NODE ? node.parentElement : node)?.closest?.("[data-byte-start]");
+  if (marked && corpusEl.contains(marked)) return byteMap(corpusEl.textContent).start[Number(marked.dataset.byteStart)] ?? -1;
+  return corpusOffset(node, offset);
 }
 
 function markedAtPoint(event) {
@@ -1480,9 +1642,14 @@ function coveringMatch(byteStart, byteEnd) {
 
 function labelsFor(text, [start, end]) {
   const map = byteMap(text);
-  const window = text.slice(map.start[start], map.end[end]);
+  const textBytes = map.byte[text.length];
+  const window = text.slice(map.start[Math.min(start, textBytes)], map.end[Math.min(end, textBytes)]);
   const labeled = engine.label(lastCompile.regex, window, { caseSensitive: true });
   if (labeled) return labeled.labels;
+  if (end > textBytes) {
+    const sentinel = engine.label(lastCompile.regex, window + " ", { caseSensitive: true });
+    if (sentinel) return sentinel.labels.slice(0, end - start);
+  }
   return Array.from({ length: end - start }, () => -1);
 }
 
@@ -1515,14 +1682,25 @@ function drawMatchView(text) {
   requestAnimationFrame(() => { matchView.style.height = `${matchTrack.scrollHeight + 2}px`; });
 }
 
+function setMatchesOpen(open) {
+  matchesOpen = open;
+  corpusArea.classList.toggle("matches-open", open);
+  matchListPanel.setAttribute("aria-hidden", String(!open));
+  matchesToggle.setAttribute("aria-expanded", String(open));
+  matchesToggle.textContent = open ? "hide matches" : "show matches";
+  drawMatchList(corpusEl.textContent);
+}
+
 function matchChars(text, map, start, end) {
   const items = [];
-  for (let j = map.start[start]; j < map.end[end];) {
+  const textBytes = map.byte[text.length];
+  for (let j = map.start[Math.min(start, textBytes)]; j < map.end[Math.min(end, textBytes)];) {
     const char = Array.from(text.slice(j))[0];
     const b = map.byte[j], n = utf8.encode(char).length;
     items.push({ char, start: Math.max(start, b), end: Math.min(end, b + n) });
     j += char.length;
   }
+  for (let b = Math.max(start, textBytes); b < end; b++) items.push({ char: "\\0", start: b, end: b + 1 });
   return items;
 }
 
@@ -1532,21 +1710,42 @@ function labelRange(labels, start, end) {
 }
 
 function matchBox(label, char, token) {
+  const shown = matchDisplay(char);
   const item = el("div", "token sequence", "");
   const node = el("div", "mini-node");
   const head = el("div", "mini-head", label);
   const body = el("div", "mini-body");
-  body.append(el("span", `alt${char == " " ? " space-token" : ""}`, char == " " ? "" : char));
+  body.append(el("span", `alt${shown.space ? " space-token" : ""}`, shown.text));
   node.append(head, body);
   if (token >= 0) node.style.setProperty("--color", color(token));
   item.append(node);
   return item;
 }
 
+function matchListChar(char, token) {
+  const node = el("span", "match-list-char", matchDisplay(char).text);
+  if (token >= 0) node.style.setProperty("--color", color(token));
+  return node;
+}
+
+function matchDisplay(char) {
+  const escapes = { "\n": "\\n", "\t": "\\t", "\r": "\\r", "\v": "\\v", "\f": "\\f", "\\0": "\\0" };
+  if (char == " ") return { text: "", space: true };
+  if (escapes[char]) return { text: escapes[char], space: false };
+  const byte = utf8.encode(char)[0];
+  return byte >= 32 && byte < 127 ? { text: char, space: false } : { text: byte.toString(16).padStart(2, "0"), space: false };
+}
+
+function invisibleMatchChar(char) {
+  return char != " " && matchDisplay(char).text != char;
+}
+
 function clearSelection(paint = false) {
-  if (selected < 0) return;
+  if (selected < 0 && hovered < 0) return;
   selected = -1;
+  hovered = -1;
   hideMatchView();
+  drawMatchList(corpusEl.textContent);
   if (paint) drawCorpus(corpusEl.textContent);
 }
 
@@ -1602,7 +1801,7 @@ function markerBox(label, marker) {
 
 function tokenEl(compiled, index, tag = "div") {
   const token = compiled.tokens[index];
-  const text = compiled.jumpi[index] == START_ANCHOR ? "^" : token.byte == 32 ? "" : token.byte < 128 ? token.text : token.byte.toString(16).padStart(2, "0");
+  const text = compiled.jumpi[index] == START_ANCHOR ? "." : token.byte == 32 ? "" : token.byte < 128 ? token.text : token.byte.toString(16).padStart(2, "0");
   const node = el(tag, `alt${token.text == " " ? " space-token" : ""}`, text, index);
   if (compiled.tokens[index].text == " ") node.title = "space";
   return node;
