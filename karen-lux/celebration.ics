@@ -8,22 +8,22 @@ REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:karen-lux-celebration-20261004@tchlux.github.io
-DTSTAMP:20260911T154256Z
-LAST-MODIFIED:20260911T154256Z
-SEQUENCE:0
+DTSTAMP:20260911T155830Z
+LAST-MODIFIED:20260911T155830Z
+SEQUENCE:1
 DTSTART:20261004T160000Z
 DTEND:20261004T190000Z
 SUMMARY:Celebration of Life for Karen Holm Lux
 LOCATION:James A. Buzzard River Education Center\, 2825 Dock Street\, Rich
  mond\, VA 23223
-DESCRIPTION:Join family and friends to celebrate Karen with speakers\, a c
- atered lunch\, music\, and photographs.\n\nNoon-3 p.m. Eastern on Sunday\,
-  October 4\, 2026. The agenda is being planned.\n\nParking at the center i
- s limited\; please save the closest spaces for guests who need them. Addit
- ional parking at the Virginia Holocaust Museum lower lot (2000 Dock Street
- ) and a shuttle are being finalized.\n\nCheck the celebration page before 
- traveling for the latest agenda and parking details: https://tchlux.github
- .io/karen-lux/
+DESCRIPTION:Join family and friends to celebrate Karen with a catered lunc
+ h\, music\, and photographs.\n\nNoon-3 p.m. Eastern on Sunday\, October 4\
+ , 2026. The agenda is being planned.\n\nParking at the center is limited\;
+  please save the closest spaces for guests who need them. Additional parki
+ ng at the Virginia Holocaust Museum lower lot (2000 Dock Street) and a shu
+ ttle are being finalized.\n\nCheck the celebration page before traveling f
+ or the latest agenda and parking details: https://tchlux.github.io/karen-l
+ ux/
 URL:https://tchlux.github.io/karen-lux/
 STATUS:CONFIRMED
 END:VEVENT

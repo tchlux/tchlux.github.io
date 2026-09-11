@@ -19,7 +19,6 @@
     .label, footer { font-family: system-ui, sans-serif; }
     h1 { margin: 0; font-size: clamp(42px, 7vw, 64px); font-weight: 400; line-height: 1.1; }
     .name { margin: 18px 0 10px; font-size: 30px; }
-    .obituary { font-size: 16px; }
     .portrait { display: block; width: 100%; height: auto; border: 8px solid #fffefb; border-bottom-width: 20px; border-radius: 4px; transform: rotate(2deg); box-shadow: 1px 2px 0 #d7d1c6, 3px 5px 0 #e5dfd4, 6px 12px 18px #293c3626, 14px 26px 42px #293c3624; }
     section { border-top: 1px solid var(--line); padding: 32px 0; }
     h2 { font-size: 30px; font-weight: 400; line-height: 1.25; margin: 0 0 20px; }
@@ -33,20 +32,27 @@
     .details p { margin: 0; }
     .note { background: #edf0e8; border-left: 3px solid #829780; padding: 18px 22px; margin-top: 24px; font-size: 17px; }
     .calendar-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
-    .calendar-links a { display: inline-flex; align-items: center; min-height: 46px; padding: 10px 16px; border: 1px solid #829780; border-radius: 5px; font: 15px/1.4 system-ui, sans-serif; text-decoration: none; }
+    .action, .calendar-links a { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; padding: 10px 16px; border: 1px solid #829780; border-radius: 5px; background: #fffefb; font: 500 15px/1.4 system-ui, sans-serif; text-decoration: none; }
+    .action span { font-size: 21px; line-height: 1; }
     .calendar-links a:first-child { background: #315a48; border-color: #315a48; color: white; }
-    .calendar-links a:hover { box-shadow: 0 2px 6px #293c3626; }
+    .action:hover, .calendar-links a:hover { box-shadow: 0 2px 6px #293c3626; }
     .calendar-help { font: 14px/1.6 system-ui, sans-serif; color: var(--muted); }
     details { margin-top: 12px; font: 15px/1.6 system-ui, sans-serif; }
     summary { cursor: pointer; color: #315a48; text-decoration: underline; text-underline-offset: 4px; }
     details p { margin-top: 12px; }
     .feed-url { display: block; overflow-wrap: anywhere; }
+    .venue-views { display: grid; grid-template-columns: 1fr 1.15fr; gap: 20px; margin: 24px 0 32px; }
+    .venue-views figure { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #fffefb; box-shadow: 0 6px 20px #293c3612; }
+    .venue-views img, .venue-views iframe { display: block; width: 100%; height: 300px; border: 0; object-fit: cover; }
+    .venue-views figcaption { padding: 14px 16px; font: 14px/1.6 system-ui, sans-serif; }
+    .venue-views figcaption span { display: block; color: var(--muted); }
     footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: 14px; }
     @media (max-width: 560px) {
       main { padding: 36px 24px 16px; }
       header { grid-template-columns: 1fr; gap: 28px; padding-bottom: 32px; }
       .portrait { width: 180px; grid-row: 1; }
       .details { grid-template-columns: 1fr; gap: 20px; }
+      .venue-views { grid-template-columns: 1fr; }
       h1 { font-size: 44px; }
     }
     @media print { main { padding: 0; } body { font-size: 12pt; } section { break-inside: avoid; } }
@@ -58,14 +64,14 @@
       <div>
         <h1>Celebration of life</h1>
         <p class="name">Karen Holm Lux</p>
-        <a class="obituary" href="https://www.faulknerfuneralhcs.com/obituaries/karen-lux">Read Karen’s obituary</a>
+        <a class="action" href="https://www.faulknerfuneralhcs.com/obituaries/karen-lux">Read Karen’s obituary <span aria-hidden="true">↗</span></a>
       </div>
       <img class="portrait" src="karen-lux.png" width="819" height="1024" alt="Karen Holm Lux">
     </header>
 
     <section aria-labelledby="celebration">
       <h2 id="celebration">Join us to celebrate Karen</h2>
-      <p>Please join family and friends to remember Karen and celebrate her life, with speakers, a catered lunch, music, and a display of photographs and personal mementos.</p>
+      <p>Please join family and friends to remember Karen and celebrate her life with a catered lunch, music, and a display of photographs and personal mementos.</p>
       <div class="details">
         <div>
           <span class="label">When</span>
@@ -79,7 +85,7 @@
       </div>
       <nav class="calendar-links" aria-label="Add the celebration to your calendar">
         <a href="webcal://tchlux.github.io/karen-lux/celebration.ics">Subscribe for updates</a>
-        <a id="google-calendar" href="https://calendar.google.com/calendar/r/eventedit?action=TEMPLATE&amp;text=Celebration+of+Life+for+Karen+Holm+Lux&amp;dates=20261004T160000Z%2F20261004T190000Z&amp;stz=America%2FNew_York&amp;etz=America%2FNew_York&amp;details=Join+family+and+friends+to+celebrate+Karen+with+speakers%2C+a+catered+lunch%2C+music%2C+and+photographs.%0A%0ANoon-3+p.m.+Eastern+on+Sunday%2C+October+4%2C+2026.+The+agenda+is+being+planned.%0A%0AParking+at+the+center+is+limited%3B+please+save+the+closest+spaces+for+guests+who+need+them.+Additional+parking+at+the+Virginia+Holocaust+Museum+lower+lot+%282000+Dock+Street%29+and+a+shuttle+are+being+finalized.%0A%0ACheck+the+celebration+page+before+traveling+for+the+latest+agenda+and+parking+details%3A+https%3A%2F%2Ftchlux.github.io%2Fkaren-lux%2F&amp;location=James+A.+Buzzard+River+Education+Center%2C+2825+Dock+Street%2C+Richmond%2C+VA+23223">Add to Google Calendar</a>
+        <a id="google-calendar" href="https://calendar.google.com/calendar/r/eventedit?action=TEMPLATE&amp;text=Celebration+of+Life+for+Karen+Holm+Lux&amp;dates=20261004T160000Z%2F20261004T190000Z&amp;stz=America%2FNew_York&amp;etz=America%2FNew_York&amp;details=Join+family+and+friends+to+celebrate+Karen+with+a+catered+lunch%2C+music%2C+and+photographs.%0A%0ANoon-3+p.m.+Eastern+on+Sunday%2C+October+4%2C+2026.+The+agenda+is+being+planned.%0A%0AParking+at+the+center+is+limited%3B+please+save+the+closest+spaces+for+guests+who+need+them.+Additional+parking+at+the+Virginia+Holocaust+Museum+lower+lot+%282000+Dock+Street%29+and+a+shuttle+are+being+finalized.%0A%0ACheck+the+celebration+page+before+traveling+for+the+latest+agenda+and+parking+details%3A+https%3A%2F%2Ftchlux.github.io%2Fkaren-lux%2F&amp;location=James+A.+Buzzard+River+Education+Center%2C+2825+Dock+Street%2C+Richmond%2C+VA+23223">Add to Google Calendar</a>
         <a href="celebration.ics" download="karen-lux-celebration.ics">Download ICS</a>
       </nav>
       <p class="calendar-help">Subscribe to receive future changes in your calendar app; updates may take time to appear. The Google Calendar button and ICS download save a copy that won’t update automatically.</p>
@@ -94,16 +100,26 @@
 
     <section aria-labelledby="parking">
       <h2 id="parking">Parking &amp; getting there</h2>
+      <div class="venue-views">
+        <figure>
+          <img src="buzzard-center.png" width="768" height="768" loading="lazy" alt="The center’s bright gathering room, with windows and a deck overlooking the James River">
+          <figcaption>Inside the James A. Buzzard River Education Center<span>Photo: <a href="https://thejamesriver.org/james-a-buzzard-river-education-center-event-rentals/">James River Association</a></span></figcaption>
+        </figure>
+        <figure>
+          <iframe title="Google Maps: James A. Buzzard River Education Center" src="https://www.google.com/maps?q=James+A.+Buzzard+River+Education+Center%2C+2825+Dock+Street%2C+Richmond%2C+VA+23223&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <figcaption>2825 Dock Street · Richmond, Virginia<span><a href="https://www.google.com/maps/search/?api=1&amp;query=James+A.+Buzzard+River+Education+Center+2825+Dock+Street+Richmond+VA+23223">Open in Google Maps →</a></span></figcaption>
+        </figure>
+      </div>
       <p>Parking at the center is limited. Please help keep the closest spaces available for guests who need them and are unable to walk several blocks.</p>
       <p>Additional parking is being arranged at the Virginia Holocaust Museum’s lower lot on Dock Street, <strong>2000 Dock Street, Richmond, VA 23223</strong>. It is about a 10-minute walk to the center along the Capital Trail and Low Line.</p>
       <p>A shuttle from the museum is planned. Lot availability and shuttle details are still being finalized and will be posted here when confirmed.</p>
-      <p><a href="https://thejamesriver.org/wp-content/uploads/2025/12/How-to-get-to-JRAs-Jim-Buzzard-Center_external.pdf">View the center’s general parking and arrival guide (PDF)</a></p>
+      <p><a class="action" href="https://thejamesriver.org/wp-content/uploads/2025/12/How-to-get-to-JRAs-Jim-Buzzard-Center_external.pdf">Parking &amp; arrival guide (PDF) <span aria-hidden="true">↗</span></a></p>
     </section>
 
     <section aria-labelledby="giving">
       <h2 id="giving">In Karen’s memory</h2>
       <p>In lieu of flowers, the family suggests memorial donations to the American Cancer Society.</p>
-      <p><a href="https://donate.cancer.org/?campaign=honormemorialmedia">Make a memorial gift to the American Cancer Society</a></p>
+      <p><a class="action" href="https://donate.cancer.org/?campaign=honormemorialmedia">Make a memorial gift <span aria-hidden="true">♡</span></a></p>
     </section>
 
     <footer>
