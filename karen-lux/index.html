@@ -11,68 +11,65 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tchlux.github.io/karen-lux/">
   <style>
-    :root { color-scheme: light; --paper: #faf8f3; --ink: #293c36; --muted: #59655e; --line: #d9ded4; }
+    :root { color-scheme: light; --paper: #faf8f3; --ink: #303e49; --muted: #65717b; --line: #d8dee1; --accent: #4c657b; --accent-border: #94a3ae; }
     * { box-sizing: border-box; }
     body { position: relative; isolation: isolate; margin: 0; background: radial-gradient(ellipse at 15% 15%, #fffdf74d, transparent 60%), var(--paper); color: var(--ink); font: 18px/1.7 Georgia, "Times New Roman", serif; }
     body::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .13; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.76' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.3' filter='url(%23paper)'/%3E%3C/svg%3E"); }
-    main { position: relative; max-width: 860px; margin: auto; padding: 88px 32px 120px; }
-    .flowers { position: absolute; width: clamp(95px, 14vw, 175px); height: auto; pointer-events: none; user-select: none; opacity: .78; }
-    .flowers.top-left, .flowers.top-right { width: clamp(48px, 7vw, 88px); top: 0; }
-    .flowers.top-left { left: 8px; transform: rotate(-12deg); }
-    .flowers.top-right { right: 8px; transform: scaleX(-1) rotate(-12deg); }
-    .flowers.bottom-left { bottom: 18px; left: 24px; transform: rotate(78deg); }
-    .flowers.bottom-right { bottom: 18px; right: 24px; transform: scaleX(-1) rotate(78deg); }
+    main { position: relative; max-width: 860px; margin: auto; padding: 88px 32px 24px; }
+    .flowers { position: absolute; width: clamp(67px, 9.8vw, 123px); height: auto; pointer-events: none; user-select: none; opacity: .78; }
+    .flowers.top-left, .flowers.top-right { top: 0; }
+    .flowers.top-left { left: 12px; transform: rotate(-12deg); }
+    .flowers.top-right { right: 12px; transform: scaleX(-1) rotate(-12deg); }
     header { display: grid; grid-template-columns: 1fr 220px; gap: 40px; align-items: center; padding-bottom: 48px; }
     .label, footer { font-family: system-ui, sans-serif; }
     h1 { margin: 0; font-size: clamp(42px, 7vw, 64px); font-weight: 400; line-height: 1.1; }
     .name { margin: 18px 0 10px; font-size: 30px; }
     .header-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 20px; }
-    .portrait { display: block; width: 100%; height: auto; border: 8px solid #fffefb; border-bottom-width: 20px; border-radius: 4px; transform: rotate(2deg); box-shadow: 1px 2px 0 #d7d1c6, 3px 5px 0 #e5dfd4, 6px 12px 18px #293c3626, 14px 26px 42px #293c3624; }
+    .portrait { display: block; width: 100%; height: auto; border: 8px solid #fffefb; border-bottom-width: 20px; border-radius: 4px; transform: rotate(2deg); box-shadow: 1px 2px 0 #d7d1c6, 3px 5px 0 #e5dfd4, 6px 12px 18px #303e4926, 14px 26px 42px #303e4924; }
     section { border-top: 1px solid var(--line); padding: 32px 0; }
     h2 { font-size: 30px; font-weight: 400; line-height: 1.25; margin: 0 0 20px; }
     p { margin: 0 0 16px; }
     p:last-child { margin-bottom: 0; }
-    a { color: #315a48; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-    a:hover { color: #142e21; }
+    a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+    a:hover { color: #30475c; }
     a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
     .details { display: grid; grid-template-columns: 1fr 1.3fr; gap: 28px; margin: 24px 0; }
     .label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
     .details p { margin: 0; }
-    .note { background: #edf0e8; border-left: 3px solid #829780; padding: 18px 22px; margin-top: 24px; font-size: 17px; }
+    .note { background: #eaf0f3; border-left: 3px solid var(--accent-border); padding: 18px 22px; margin-top: 24px; font-size: 17px; }
     .calendar-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
-    .action, .calendar-links a { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; padding: 10px 16px; border: 1px solid #829780; border-radius: 5px; background: #fffefb; font: 500 15px/1.4 system-ui, sans-serif; text-decoration: none; }
+    .action, .calendar-links a { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; padding: 10px 16px; border: 1px solid var(--accent-border); border-radius: 5px; background: #fffefb; font: 500 15px/1.4 system-ui, sans-serif; text-decoration: none; }
     .action span { font-size: 21px; line-height: 1; }
-    .calendar-links a:first-child { background: #315a48; border-color: #315a48; color: white; }
-    .action:hover, .calendar-links a:hover { box-shadow: 0 2px 6px #293c3626; }
+    .calendar-links a:first-child { background: var(--accent); border-color: var(--accent); color: white; }
+    .action:hover, .calendar-links a:hover { box-shadow: 0 2px 6px #303e4926; }
     .calendar-help { font: 14px/1.6 system-ui, sans-serif; color: var(--muted); }
     details { margin-top: 12px; font: 15px/1.6 system-ui, sans-serif; }
-    summary { cursor: pointer; color: #315a48; text-decoration: underline; text-underline-offset: 4px; }
+    summary { cursor: pointer; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
     details p { margin-top: 12px; }
     .feed-url { display: block; overflow-wrap: anywhere; }
     .venue-views { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0 32px; }
-    .venue-views figure { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #fffefb; box-shadow: 0 6px 20px #293c3612; }
+    .venue-views figure { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #fffefb; box-shadow: 0 6px 20px #303e4912; }
     .venue-views img, .venue-views iframe { display: block; width: 100%; height: auto; border: 0; }
     .venue-views iframe { aspect-ratio: 4 / 3; min-height: 280px; }
     .venue-views figcaption { padding: 14px 16px; font: 14px/1.6 system-ui, sans-serif; }
     .venue-views figcaption span { display: block; color: var(--muted); }
+    .bouquet { display: block; width: 180px; height: auto; margin: 28px auto 0; opacity: .88; pointer-events: none; }
     footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: 14px; }
     @media (max-width: 560px) {
-      main { padding: 104px 24px 106px; }
+      main { padding: 86px 24px 16px; }
       header { grid-template-columns: 1fr; gap: 28px; padding-bottom: 32px; }
       .portrait { width: 180px; grid-row: 1; }
       .details { grid-template-columns: 1fr; gap: 20px; }
       .venue-views { grid-template-columns: 1fr; }
       h1 { font-size: 44px; }
     }
-    @media (min-width: 561px) and (max-width: 1160px) { main { padding-top: 140px; } }
-    @media print { main { padding: 0; } body { font-size: 12pt; } .flowers { display: none; } section { break-inside: avoid; } }
+    @media (min-width: 561px) and (max-width: 1160px) { main { padding-top: 110px; } }
+    @media print { main { padding: 0; } body { font-size: 12pt; } .flowers, .bouquet { display: none; } section { break-inside: avoid; } }
   </style>
 </head>
 <body>
   <img class="flowers top-left" src="watercolor-flowers.png" width="1024" height="1024" alt="" aria-hidden="true">
   <img class="flowers top-right" src="watercolor-flowers.png" width="1024" height="1024" alt="" aria-hidden="true">
-  <img class="flowers bottom-left" src="watercolor-flowers.png" width="1024" height="1024" alt="" aria-hidden="true">
-  <img class="flowers bottom-right" src="watercolor-flowers.png" width="1024" height="1024" alt="" aria-hidden="true">
   <main>
     <header>
       <div>
@@ -141,6 +138,7 @@
     <footer>
       <p>With love and gratitude, Karen’s family.</p>
       <p>Last updated <time datetime="2026-09-11">September 11, 2026</time>.</p>
+      <img class="bouquet" src="watercolor-blue-bouquet.png" width="1024" height="1024" alt="" aria-hidden="true">
     </footer>
   </main>
 </body>
