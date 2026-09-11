@@ -20,6 +20,9 @@
     .flowers.top-left, .flowers.top-right { top: 0; }
     .flowers.top-left { left: 12px; transform: rotate(-12deg); }
     .flowers.top-right { right: 12px; transform: scaleX(-1) rotate(-12deg); }
+    .flowers.bottom-left, .flowers.bottom-right { width: clamp(95px, 14vw, 175px); bottom: 18px; }
+    .flowers.bottom-left { left: 24px; transform: rotate(78deg); }
+    .flowers.bottom-right { right: 24px; transform: scaleX(-1) rotate(78deg); }
     header { display: grid; grid-template-columns: 1fr 220px; gap: 40px; align-items: center; padding-bottom: 48px; }
     .label, footer { font-family: system-ui, sans-serif; }
     h1 { margin: 0; font-size: clamp(42px, 7vw, 64px); font-weight: 400; line-height: 1.1; }
@@ -70,6 +73,8 @@
 <body>
   <img class="flowers top-left" src="watercolor-flowers.png" width="1024" height="1024" alt="" aria-hidden="true">
   <img class="flowers top-right" src="watercolor-flowers.png" width="1024" height="1024" alt="" aria-hidden="true">
+  <img class="flowers bottom-left" src="watercolor-flowers.png" width="1024" height="1024" alt="" aria-hidden="true">
+  <img class="flowers bottom-right" src="watercolor-flowers.png" width="1024" height="1024" alt="" aria-hidden="true">
   <main>
     <header>
       <div>
