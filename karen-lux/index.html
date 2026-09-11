@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Karen Holm Lux | Celebration of Life</title>
-  <meta name="description" content="Karen Holm Lux’s celebration of life: Saturday, October 17, 2026, noon–3 p.m. at the James A. Buzzard River Education Center in Richmond, Virginia. Event details, parking, and calendar updates.">
+  <meta name="description" content="Karen Holm Lux’s celebration of life: Saturday, October 17, 2026, 11:30 a.m.–3 p.m. at the James A. Buzzard River Education Center in Richmond, Virginia. Event details, parking, and calendar updates.">
   <link rel="canonical" href="https://tchlux.github.io/karen-lux/">
   <meta property="og:title" content="Karen Holm Lux | Celebration of Life">
-  <meta property="og:description" content="Saturday, October 17, 2026 · Noon–3 p.m. · Richmond, Virginia. Celebration details, parking, and calendar updates.">
+  <meta property="og:description" content="Saturday, October 17, 2026 · 11:30 a.m.–3 p.m. · Richmond, Virginia. Celebration details, parking, and calendar updates.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tchlux.github.io/karen-lux/">
   <style>
@@ -39,7 +39,12 @@
     .details { display: grid; grid-template-columns: 1fr 1.3fr; gap: 28px; margin: 24px 0; }
     .label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
     .details p { margin: 0; }
-    .note { background: #eaf0f3; border-left: 3px solid var(--accent-border); padding: 18px 22px; margin-top: 24px; font-size: 17px; }
+    .agenda { list-style: none; margin: 24px 0 0 5px; padding: 0; }
+    .agenda li { position: relative; display: grid; grid-template-columns: 180px 1fr; gap: 24px; border-left: 1px solid var(--accent-border); padding: 0 0 28px 24px; }
+    .agenda li:last-child { padding-bottom: 0; border-color: transparent; }
+    .agenda li::before { content: ""; position: absolute; top: 9px; left: -5px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--paper); }
+    .agenda-time { padding-top: 3px; color: var(--accent); font: 500 15px/1.6 system-ui, sans-serif; }
+    .agenda-event { font-size: 20px; line-height: 1.5; }
     .calendar-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
     .action, .calendar-links a { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; padding: 10px 16px; border: 1px solid var(--accent-border); border-radius: 5px; background: #fffefb; font: 500 15px/1.4 system-ui, sans-serif; text-decoration: none; }
     .action span { font-size: 21px; line-height: 1; }
@@ -61,9 +66,10 @@
     @media (max-width: 560px) {
       main { padding: 86px 24px 16px; }
       header { grid-template-columns: 1fr; gap: 28px; padding-bottom: 32px; }
-      .portrait { width: 180px; grid-row: 1; }
+      .portrait { width: 180px; grid-row: 1; justify-self: center; }
       .details { grid-template-columns: 1fr; gap: 20px; }
       .venue-views { grid-template-columns: 1fr; }
+      .agenda li { grid-template-columns: 1fr; gap: 3px; }
       h1 { font-size: 44px; }
     }
     @media (min-width: 561px) and (max-width: 1160px) { main { padding-top: 110px; } }
@@ -93,7 +99,7 @@
       <div class="details">
         <div>
           <span class="label">When</span>
-          <p><time datetime="2026-10-17">Saturday, October 17, 2026</time><br><time datetime="2026-10-17T12:00:00-04:00">Noon</time>–<time datetime="2026-10-17T15:00:00-04:00">3 p.m.</time> Eastern</p>
+          <p><time datetime="2026-10-17">Saturday, October 17, 2026</time><br><time datetime="2026-10-17T11:30:00-04:00">11:30 a.m.</time>–<time datetime="2026-10-17T15:00:00-04:00">3 p.m.</time> Eastern<br>Welcome and toasts at noon</p>
         </div>
         <div>
           <span class="label">Where</span>
@@ -111,7 +117,29 @@
         <p><a class="feed-url" href="https://tchlux.github.io/karen-lux/celebration.ics">https://tchlux.github.io/karen-lux/celebration.ics</a></p>
         <p><a href="https://support.google.com/calendar/answer/37100?hl=en">Google Calendar subscription help</a></p>
       </details>
-      <p class="note">The agenda is still being planned and will be shared here when it is ready. Please check back before traveling for the latest celebration and parking details.</p>
+    </section>
+
+    <section aria-labelledby="agenda">
+      <h2 id="agenda">Tentative agenda</h2>
+      <p class="calendar-help">All times Eastern. The schedule may shift as plans are finalized.</p>
+      <ol class="agenda">
+        <li>
+          <span class="agenda-time"><time datetime="2026-10-17T11:30:00-04:00">11:30 a.m.</time>–<time datetime="2026-10-17T12:00:00-04:00">noon</time></span>
+          <span class="agenda-event">Arrival and mingling</span>
+        </li>
+        <li>
+          <span class="agenda-time"><time datetime="2026-10-17T12:00:00-04:00">Noon</time></span>
+          <span class="agenda-event">Welcome and toasts</span>
+        </li>
+        <li>
+          <span class="agenda-time"><time datetime="2026-10-17T12:30:00-04:00">12:30 p.m.</time></span>
+          <span class="agenda-event">Lunch</span>
+        </li>
+        <li>
+          <span class="agenda-time"><time datetime="2026-10-17T13:30:00-04:00">1:30</time>–<time datetime="2026-10-17T15:00:00-04:00">3 p.m.</time></span>
+          <span class="agenda-event">Dessert, drinks, conversation, memories</span>
+        </li>
+      </ol>
     </section>
 
     <section aria-labelledby="parking">
