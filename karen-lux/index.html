@@ -17,8 +17,9 @@
     body::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .13; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.76' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.3' filter='url(%23paper)'/%3E%3C/svg%3E"); }
     main { position: relative; max-width: 860px; margin: auto; padding: 88px 32px 120px; }
     .flowers { position: absolute; width: clamp(95px, 14vw, 175px); height: auto; pointer-events: none; user-select: none; opacity: .78; }
-    .flowers.top-left { top: 10px; left: 24px; transform: rotate(-12deg); }
-    .flowers.top-right { top: 10px; right: 24px; transform: scaleX(-1) rotate(-12deg); }
+    .flowers.top-left, .flowers.top-right { width: clamp(48px, 7vw, 88px); top: 0; }
+    .flowers.top-left { left: 8px; transform: rotate(-12deg); }
+    .flowers.top-right { right: 8px; transform: scaleX(-1) rotate(-12deg); }
     .flowers.bottom-left { bottom: 18px; left: 24px; transform: rotate(78deg); }
     .flowers.bottom-right { bottom: 18px; right: 24px; transform: scaleX(-1) rotate(78deg); }
     header { display: grid; grid-template-columns: 1fr 220px; gap: 40px; align-items: center; padding-bottom: 48px; }
@@ -79,7 +80,6 @@
         <p class="name">Karen Holm Lux</p>
         <div class="header-actions">
           <a class="action" href="https://www.faulknerfuneralhcs.com/obituaries/karen-lux">Read Karen’s obituary <span aria-hidden="true">↗</span></a>
-          <a class="action" href="https://donate.cancer.org/?campaign=honormemorialmedia">Donate to American Cancer Society <span aria-hidden="true">♡</span></a>
         </div>
       </div>
       <img class="portrait" src="karen-lux.png" width="819" height="1024" alt="Karen Holm Lux">
