@@ -8,25 +8,25 @@ REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:karen-lux-celebration-20261004@tchlux.github.io
-DTSTAMP:20260922T171614Z
-LAST-MODIFIED:20260922T171614Z
-SEQUENCE:4
+DTSTAMP:20261006T235713Z
+LAST-MODIFIED:20261006T235713Z
+SEQUENCE:5
 DTSTART:20261108T163000Z
 DTEND:20261108T200000Z
 SUMMARY:Celebration of Life for Karen Holm Lux
 LOCATION:James A. Buzzard River Education Center\, 2825 Dock Street\, Rich
  mond\, VA 23223
-DESCRIPTION:Join family and friends to celebrate Karen with a catered lunc
- h\, music\, and photographs.\n\nSunday\, November 8\, 2026. Arrival begins
-  at 11:30 a.m. Eastern\; welcome and toasts at noon. Ends at 3 p.m.\n\nTEN
- TATIVE AGENDA (all times Eastern)\n11:30 a.m.-noon: Arrival and mingling\n
- Noon: Welcome and toasts\n12:30 p.m.: Lunch\n1:30-3 p.m.: Dessert\, drinks
- \, conversation\, memories\nThe schedule may shift as plans are finalized.
- \n\nParking at the center is limited\; please save the closest spaces for 
- guests who need them. Additional parking at the Virginia Holocaust Museum 
- lower lot (2000 Dock Street) and a shuttle are being finalized.\n\nCheck t
- he celebration page before traveling for the latest agenda and parking det
- ails: https://tchlux.github.io/karen-lux/
+DESCRIPTION:Join family and friends to celebrate Karen with food\, drinks\
+ , conversation\, music\, and photographs.\n\nSunday\, November 8\, 2026. A
+ rrival begins at 11:30 a.m. Eastern\; welcome and toasts at noon. Ends at 
+ 3 p.m.\n\nTENTATIVE AGENDA (all times Eastern)\n11:30 a.m.-noon: Arrival a
+ nd mingling\nNoon: Welcome and toasts\n12:30-3 p.m.: Small bites\, dessert
+ s\, drinks\, and shared memories\nThe schedule may shift as plans are fina
+ lized.\n\nParking at the center is limited\; please save the closest space
+ s for guests who need them. Additional parking at the Virginia Holocaust M
+ useum lower lot (2000 Dock Street) and a shuttle are being finalized.\n\nC
+ heck the celebration page before traveling for the latest agenda and parki
+ ng details: https://tchlux.github.io/karen-lux/
 URL:https://tchlux.github.io/karen-lux/
 STATUS:CONFIRMED
 END:VEVENT
