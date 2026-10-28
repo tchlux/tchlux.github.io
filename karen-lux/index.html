@@ -35,7 +35,16 @@
     p:last-child { margin-bottom: 0; }
     a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
     a:hover { color: #30475c; }
-    a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+    body.album-open { overflow: hidden; }
+    .album-dialog { position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 64px 28px; border: 0; background: var(--paper); color: var(--ink); overflow-y: auto; }
+    .album-dialog[open] { display: flex; align-items: center; justify-content: center; }
+    .album-invitation { width: 100%; max-width: 520px; margin: auto; text-align: center; }
+    .album-invitation > img { display: block; width: 100px; height: auto; margin: 0 auto 24px; opacity: .8; }
+    .album-invitation h2 { font-size: clamp(32px, 6vw, 44px); }
+    .album-invitation p { color: var(--muted); }
+    .album-invitation .action { margin-top: 12px; background: var(--accent); color: white; }
+    .album-close { position: absolute; top: 20px; right: 24px; width: 44px; height: 44px; border: 0; background: transparent; color: var(--accent); font: 32px/1 system-ui, sans-serif; cursor: pointer; }
     .details { display: grid; grid-template-columns: 1fr 1.3fr; gap: 28px; margin: 24px 0; }
     .label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
     .details p { margin: 0; }
@@ -87,6 +96,7 @@
         <h1>Celebration of life</h1>
         <p class="name">Karen Holm Lux</p>
         <div class="header-actions">
+          <a class="action" id="album-link" href="https://photos.icloud.com/shared/album/0dd_UfSHG4MyKuweqec0DmFcQ">Shared Photo Album <span aria-hidden="true">▧</span></a>
           <a class="action" href="https://www.faulknerfuneralhcs.com/obituaries/karen-lux">Read Karen’s obituary <span aria-hidden="true">↗</span></a>
         </div>
       </div>
@@ -164,9 +174,32 @@
 
     <footer>
       <p>With love and gratitude, Karen’s family.</p>
-      <p>Last updated <time datetime="2026-10-06">October 6, 2026</time>.</p>
+      <p>Last updated <time datetime="2026-10-28">October 28, 2026</time>.</p>
       <img class="bouquet" src="watercolor-blue-bouquet.png" width="1024" height="1024" alt="" aria-hidden="true">
     </footer>
   </main>
+  <dialog class="album-dialog" id="album-dialog" aria-labelledby="album-title" aria-describedby="album-invite album-visibility">
+    <form method="dialog"><button class="album-close" aria-label="Close photo album invitation">×</button></form>
+    <div class="album-invitation">
+      <img src="watercolor-flowers.png" width="1024" height="1024" alt="">
+      <h2 id="album-title">Photos of Karen</h2>
+      <p id="album-invite">Please share any photos you have of Karen. We’d love to see the moments you remember.</p>
+      <p id="album-visibility">This is a shared album. Any photos you add will be visible to everyone with access to the album.</p>
+      <a class="action" href="https://photos.icloud.com/shared/album/0dd_UfSHG4MyKuweqec0DmFcQ">Continue to the album <span aria-hidden="true">↗</span></a>
+    </div>
+  </dialog>
+  <script>
+    const albumDialog = document.getElementById('album-dialog');
+    document.getElementById('album-link').addEventListener('click', (event) => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      albumDialog.showModal();
+      document.body.classList.add('album-open');
+    });
+    albumDialog.addEventListener('close', () => document.body.classList.remove('album-open'));
+    window.addEventListener('pageshow', () => {
+      if (albumDialog.open) albumDialog.close();
+    });
+  </script>
 </body>
 </html>
