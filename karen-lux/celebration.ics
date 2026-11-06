@@ -1,32 +1,35 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Karen Lux Family//Celebration of Life//EN
+PRODID:-//Karen H Lux Family//Celebration of Life//EN
 CALSCALE:GREGORIAN
-X-WR-CALNAME:Karen Lux - Celebration of Life
+X-WR-CALNAME:Karen H Lux - Celebration of Life
 X-WR-TIMEZONE:America/New_York
 REFRESH-INTERVAL;VALUE=DURATION:PT1H
 X-PUBLISHED-TTL:PT1H
 BEGIN:VEVENT
 UID:karen-lux-celebration-20261004@tchlux.github.io
-DTSTAMP:20261006T235713Z
-LAST-MODIFIED:20261006T235713Z
-SEQUENCE:5
+DTSTAMP:20261106T204518Z
+LAST-MODIFIED:20261106T204518Z
+SEQUENCE:6
 DTSTART:20261108T163000Z
 DTEND:20261108T200000Z
-SUMMARY:Celebration of Life for Karen Holm Lux
-LOCATION:James A. Buzzard River Education Center\, 2825 Dock Street\, Rich
- mond\, VA 23223
-DESCRIPTION:Join family and friends to celebrate Karen with food\, drinks\
- , conversation\, music\, and photographs.\n\nSunday\, November 8\, 2026. A
- rrival begins at 11:30 a.m. Eastern\; welcome and toasts at noon. Ends at 
- 3 p.m.\n\nTENTATIVE AGENDA (all times Eastern)\n11:30 a.m.-noon: Arrival a
- nd mingling\nNoon: Welcome and toasts\n12:30-3 p.m.: Small bites\, dessert
- s\, drinks\, and shared memories\nThe schedule may shift as plans are fina
- lized.\n\nParking at the center is limited\; please save the closest space
- s for guests who need them. Additional parking at the Virginia Holocaust M
- useum lower lot (2000 Dock Street) and a shuttle are being finalized.\n\nC
- heck the celebration page before traveling for the latest agenda and parki
- ng details: https://tchlux.github.io/karen-lux/
+SUMMARY:Celebration of Life for Karen H Lux
+LOCATION:James A. Buzzard River Education Center\, 2825 Dock Street\, Richm
+ ond\, VA 23223
+DESCRIPTION:Join family and friends to celebrate Karen with food\, drinks\,
+  conversation\, music\, and photographs.\n\nSunday\, November 8\, 2026. Ar
+ rival begins at 11:30 a.m. Eastern\; welcome and toasts at noon. Ends at 3
+  p.m. Casual attire.\n\nVENUE\nJames A. Buzzard River Education Center\n28
+ 25 Dock Street\, Richmond\, VA 23223\n\nEVENT PARKING & SHUTTLE\nVirginia
+  Holocaust Museum lower lot\n2000 Dock Street\, Richmond\, VA 23223\nLook
+  for signs for Karen’s celebration of life. A James Limousine Service sh
+ uttle will take guests between the lot and the center. You can also walk i
+ n about 10 minutes along the Capital Trail and Low Line. Limited parking n
+ ext to the event center is reserved for guests who need it.\n\nTENTATIVE A
+ GENDA (all times Eastern)\n11:30 a.m.-noon: Arrival and mingling\nNoon: We
+ lcome and toasts\n12:30-3 p.m.: Small bites\, desserts\, drinks\, and shar
+ ed memories\nThe schedule may shift as plans are finalized.\n\nLatest cele
+ bration details and map links: https://tchlux.github.io/karen-lux/
 URL:https://tchlux.github.io/karen-lux/
 STATUS:CONFIRMED
 END:VEVENT

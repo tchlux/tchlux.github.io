@@ -57,6 +57,8 @@
     .details { display: grid; grid-template-columns: 1fr 1.3fr; gap: 28px; margin: 24px 0; }
     .label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
     .details p { margin: 0; }
+    .address { user-select: all; }
+    .map-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 8px 0 16px; font: 15px/1.6 system-ui, sans-serif; }
     .agenda { list-style: none; margin: 24px 0 0 5px; padding: 0; }
     .agenda li { position: relative; display: grid; grid-template-columns: 180px 1fr; gap: 24px; border-left: 1px solid var(--accent-border); padding: 0 0 28px 24px; }
     .agenda li:last-child { padding-bottom: 0; border-color: transparent; }
@@ -79,6 +81,9 @@
     .venue-views iframe { aspect-ratio: 4 / 3; min-height: 280px; }
     .venue-views figcaption { padding: 14px 16px; font: 14px/1.6 system-ui, sans-serif; }
     .venue-views figcaption span { display: block; color: var(--muted); }
+    .shuttle-photo { max-width: 480px; margin: 24px 0; }
+    .shuttle-photo img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+    .shuttle-photo figcaption { margin-top: 8px; color: var(--muted); font: 14px/1.6 system-ui, sans-serif; }
     .bouquet { display: block; width: 180px; height: auto; margin: 28px auto 0; opacity: .88; pointer-events: none; }
     footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: 14px; }
     @media (max-width: 560px) {
@@ -115,6 +120,7 @@
     <section aria-labelledby="celebration">
       <h2 id="celebration">Join us to celebrate Karen</h2>
       <p>Please join family and friends to remember Karen and celebrate her life with food, drinks, conversation, music, and a display of photographs and personal mementos.</p>
+      <p>Casual attire.</p>
       <div class="details">
         <div>
           <span class="label">When</span>
@@ -122,8 +128,11 @@
         </div>
         <div>
           <span class="label">Where</span>
-          <p>James A. Buzzard River Education Center<br>2825 Dock Street<br>Richmond, VA 23223</p>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=James+A.+Buzzard+River+Education+Center+2825+Dock+Street+Richmond+VA+23223">Directions to the celebration</a>
+          <p>James A. Buzzard River Education Center<br><span class="address">2825 Dock Street, Richmond, VA 23223</span></p>
+          <nav class="map-links" aria-label="Directions to the celebration">
+            <a href="https://maps.apple.com/?daddr=2825+Dock+Street%2C+Richmond%2C+VA+23223">Apple Maps ↗</a>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=2825+Dock+Street%2C+Richmond%2C+VA+23223">Google Maps ↗</a>
+          </nav>
         </div>
       </div>
       <nav class="calendar-links" aria-label="Add the celebration to your calendar">
@@ -166,12 +175,20 @@
         </figure>
         <figure>
           <iframe title="Google Maps: James A. Buzzard River Education Center" src="https://www.google.com/maps?q=James+A.+Buzzard+River+Education+Center%2C+2825+Dock+Street%2C+Richmond%2C+VA+23223&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-          <figcaption>2825 Dock Street · Richmond, Virginia<span><a href="https://www.google.com/maps/search/?api=1&amp;query=James+A.+Buzzard+River+Education+Center+2825+Dock+Street+Richmond+VA+23223">Open in Google Maps →</a></span></figcaption>
+          <figcaption><span class="address">2825 Dock Street, Richmond, VA 23223</span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=2825+Dock+Street%2C+Richmond%2C+VA+23223">Open in Google Maps →</a></figcaption>
         </figure>
       </div>
-      <p>Parking at the center is limited. Please help keep the closest spaces available for guests who need them and are unable to walk several blocks.</p>
-      <p>Additional parking is being arranged at the Virginia Holocaust Museum’s lower lot on Dock Street, <strong>2000 Dock Street, Richmond, VA 23223</strong>. It is about a 10-minute walk to the center along the Capital Trail and Low Line.</p>
-      <p>A shuttle from the museum is planned. Lot availability and shuttle details are still being finalized and will be posted here when confirmed.</p>
+      <p>Event parking is at the Virginia Holocaust Museum’s lower lot, <strong class="address">2000 Dock Street, Richmond, VA 23223</strong>. Look for signs for Karen’s celebration of life.</p>
+      <nav class="map-links" aria-label="Directions to the museum parking lot">
+        <a href="https://maps.apple.com/?daddr=2000+Dock+Street%2C+Richmond%2C+VA+23223">Apple Maps ↗</a>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=2000+Dock+Street%2C+Richmond%2C+VA+23223">Google Maps ↗</a>
+      </nav>
+      <p>Limited parking next to the event center is reserved for guests who need it.</p>
+      <p>A James Limousine Service shuttle will take guests between the lot and the center. You can also walk to the center in about 10 minutes along the Capital Trail and Low Line.</p>
+      <figure class="shuttle-photo">
+        <img src="james-limousine-van.jpg" width="488" height="200" loading="lazy" alt="A black Mercedes-Benz Sprinter passenger van from the James Limousine Service fleet">
+        <figcaption><a href="https://www.jameslimousine.com/our_fleet/executive-van/">James Limousine Service</a> · Fleet photo; the shuttle vehicle may differ.</figcaption>
+      </figure>
       <p><a class="action" href="https://thejamesriver.org/wp-content/uploads/2025/12/How-to-get-to-JRAs-Jim-Buzzard-Center_external.pdf">Parking &amp; arrival guide (PDF) <span aria-hidden="true">↗</span></a></p>
     </section>
 
@@ -183,7 +200,7 @@
 
     <footer>
       <p>With love and gratitude, Karen’s family.</p>
-      <p>Last updated <time datetime="2026-10-28">October 28, 2026</time>.</p>
+      <p>Last updated <time datetime="2026-11-06">November 6, 2026</time>.</p>
       <img class="bouquet" src="watercolor-blue-bouquet.png" width="1024" height="1024" alt="" aria-hidden="true">
     </footer>
   </main>
