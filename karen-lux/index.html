@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Karen Holm Hansen Lux | Celebration of Life</title>
-  <meta name="description" content="Karen Holm Hansen Lux’s celebration of life: Sunday, November 8, 2026, 11:30 a.m.–3 p.m. at the James A. Buzzard River Education Center in Richmond, Virginia. Event details, parking, and calendar updates.">
+  <meta name="description" content="Remembering Karen Holm Hansen Lux. Watch Flimsy Words from her celebration of life, share photographs, and find details from the gathering.">
   <link rel="canonical" href="https://tchlux.github.io/karen-lux/">
   <meta property="og:title" content="Karen Holm Hansen Lux | Celebration of Life">
-  <meta property="og:description" content="Sunday, November 8, 2026 · 11:30 a.m.–3 p.m. · Richmond, Virginia. Celebration details, parking, and calendar updates.">
+  <meta property="og:description" content="With gratitude to everyone who celebrated Karen’s life with us. Watch Flimsy Words from the gathering and share your photographs and memories.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tchlux.github.io/karen-lux/">
   <meta property="og:image" content="https://tchlux.github.io/karen-lux/link-preview-years.png">
@@ -84,6 +84,12 @@
     .shuttle-photo { max-width: 480px; margin: 24px 0; }
     .shuttle-photo img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
     .shuttle-photo figcaption { margin-top: 8px; color: var(--muted); font: 14px/1.6 system-ui, sans-serif; }
+    .recording { margin: 24px auto 0; max-width: 400px; }
+    .recording-stage { position: relative; }
+    .recording video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; background: #202a31; border-radius: 8px; box-shadow: 0 6px 20px #303e4912; }
+    .recording-play { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 8px; background: transparent; cursor: pointer; color: var(--accent); }
+    .recording-play span { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); white-space: nowrap; padding: 14px 20px; border: 1px solid var(--accent-border); border-radius: 5px; background: #faf8f3f2; box-shadow: 0 3px 14px #303e4933; font: 500 17px/1.4 system-ui, sans-serif; }
+    .recording figcaption { margin-top: 10px; text-align: center; color: var(--muted); font: 14px/1.6 system-ui, sans-serif; }
     .bouquet { display: block; width: 180px; height: auto; margin: 28px auto 0; opacity: .88; pointer-events: none; }
     footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: 14px; }
     @media (max-width: 560px) {
@@ -116,6 +122,21 @@
       </div>
       <img class="portrait" src="karen-lux.png" width="819" height="1024" alt="Karen Holm Hansen Lux">
     </header>
+
+    <section aria-labelledby="flimsy-words">
+      <h2 id="flimsy-words">Flimsy Words</h2>
+      <p>Thank you to everyone who joined us to remember Karen and celebrate her life. We’re grateful for your love and support. For those who couldn’t be there, we’ve shared this recording from the day.</p>
+      <figure class="recording">
+        <div class="recording-stage">
+          <video id="flimsy-words-video" controls playsinline preload="none" poster="flimsy-words/poster.jpg" aria-label="Flimsy Words, recorded at Karen’s celebration of life" aria-describedby="recording-caption">
+            <source src="flimsy-words/recording.mp4" type="video/mp4">
+          </video>
+          <button id="recording-play" class="recording-play" type="button" aria-label="Play Flimsy Words" hidden><span>▶ &nbsp;Play video</span></button>
+        </div>
+        <figcaption id="recording-caption">November 8, 2026 · 11 minutes</figcaption>
+      </figure>
+      <p id="recording-error" class="calendar-help" hidden>Having trouble playing? <a href="flimsy-words/recording.mp4">Open the video directly</a>.</p>
+    </section>
 
     <section aria-labelledby="celebration">
       <h2 id="celebration">Join us to celebrate Karen</h2>
@@ -200,7 +221,7 @@
 
     <footer>
       <p>With love and gratitude, Karen’s family.</p>
-      <p>Last updated <time datetime="2026-11-06">November 6, 2026</time>.</p>
+      <p>Last updated <time datetime="2026-11-10">November 10, 2026</time>.</p>
       <img class="bouquet" src="watercolor-blue-bouquet.png" width="1024" height="1024" alt="" aria-hidden="true">
     </footer>
   </main>
@@ -214,6 +235,8 @@
       <a class="action" href="photo.album/">Continue to the album <span aria-hidden="true">↗</span></a>
     </div>
   </dialog>
+  <script src="flimsy-words/hls.light.min.js" defer></script>
+  <script src="flimsy-words/player.js" defer></script>
   <script>
     const albumDialog = document.getElementById('album-dialog');
     document.getElementById('album-link').addEventListener('click', (event) => {
