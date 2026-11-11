@@ -12,7 +12,7 @@ recordingPlay.addEventListener('click', () => {
   if (nativeHls && 'ManagedMediaSource' in window) {
     recording.src = recordingSource;
   } else if (window.Hls && Hls.isSupported()) {
-    const stream = new Hls({ maxBufferLength: 18 });
+    const stream = new Hls({ maxBufferLength: 18, maxMaxBufferLength: 30, backBufferLength: 30 });
     stream.loadSource(recordingSource);
     stream.attachMedia(recording);
     stream.on(Hls.Events.ERROR, (event, data) => {
