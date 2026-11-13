@@ -16,9 +16,35 @@
 </head>
 <body>
   <header class="toolbar">
-    <a class="back" href="../#flimsy-words">← Celebration</a>
+    <a class="back" href="../#flimsy-words" aria-label="Back to the celebration">← <span>Celebration</span></a>
     <span class="toolbar-title">Flimsy Words</span>
-    <a id="open-page" href="./" target="_top" hidden>Open as a page ↗</a>
+    <div class="soundtrack" aria-label="Cold Bud soundtrack">
+      <button id="sound-play" class="sound-play" type="button" aria-label="Play Cold Bud soundtrack" hidden>▶</button>
+      <details id="cold-bud">
+        <summary id="sound-story">Cold Bud <span aria-hidden="true">ⓘ</span></summary>
+        <aside class="sound-story" aria-labelledby="cold-bud-title">
+          <button id="sound-story-close" type="button" aria-label="Close Cold Bud story">×</button>
+          <div class="sound-scenes">
+            <img src="../cold-bud/house-pastel.png" width="1448" height="1086" alt="A pastel of the house at Cold Bud, with its wooden porch, pig weather vane and hanging wind chimes" loading="lazy">
+            <img src="../cold-bud/morning-pastel.png" width="1448" height="1086" alt="A pastel of the grassy easement at Cold Bud, bordered by trees in the morning light" loading="lazy">
+          </div>
+          <nav class="scene-tabs" aria-label="Views of Cold Bud">
+            <button type="button" aria-pressed="true">House &amp; chimes</button>
+            <button type="button" aria-pressed="false">The easement</button>
+          </nav>
+          <div class="sound-story-copy">
+            <h2 id="cold-bud-title">A little of home</h2>
+            <p>Thomas recorded these sounds at Cold Bud as the sun rose on May 18, 2026, to bring a little of home to Karen in the hospital.</p>
+            <p>First, wind chimes by the front of the house; then crickets, recorded from a golf cart in the easement at the lower edge of the property.</p>
+            <a class="sound-download" href="../cold-bud/morning-soundtrack.m4a" download="Cold Bud - Morning Soundtrack.m4a"><span aria-hidden="true">↓</span> Download the soundtrack <small>M4A · 9:47</small></a>
+            <noscript><audio controls loop preload="none" src="../cold-bud/morning-soundtrack.m4a">Download the soundtrack to listen.</audio></noscript>
+          </div>
+        </aside>
+      </details>
+      <label class="sound-volume" hidden><span class="visually-hidden">Soundtrack volume</span><input id="sound-volume" type="range" min="0" max="1" step="0.05" value="0.55"></label>
+      <span id="sound-status" class="visually-hidden" role="status"></span>
+    </div>
+    <a id="open-page" href="./" target="_top" aria-label="Open as a page" hidden><span>Open as a page </span>↗</a>
   </header>
   <nav class="contents" aria-label="Sections of Flimsy Words">
     <span class="contents-label">In these words</span>

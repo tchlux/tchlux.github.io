@@ -3,13 +3,37 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 19px/1.85 Georgia, "Times New Roman", serif; }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+[hidden] { display: none !important; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 .toolbar { position: sticky; top: 0; z-index: 3; height: 64px; display: flex; align-items: center; gap: 24px; padding: 0 28px; border-bottom: 1px solid var(--line); background: var(--paper); font: 14px/1.5 system-ui, sans-serif; }
 .toolbar a { text-decoration: none; }
-.toolbar-title { margin-left: auto; color: var(--muted); }
+.toolbar-title { margin-right: auto; color: var(--muted); }
 .embedded .toolbar { padding-right: 80px; }
 .embedded .back { display: none; }
 .embedded .toolbar-title { margin-left: 0; margin-right: auto; }
+.soundtrack { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.soundtrack button, #sound-story { min-height: 36px; padding: 4px 6px; border: 0; background: none; color: var(--accent); font: inherit; white-space: nowrap; cursor: pointer; }
+#sound-story { display: flex; align-items: center; gap: 5px; list-style: none; }
+#sound-story::-webkit-details-marker { display: none; }
+#sound-story:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.sound-play { width: 36px; font-size: 16px !important; }
+.soundtrack button:hover, #sound-story:hover { background: #4c657b0a; border-radius: 4px; }
+.sound-volume { display: flex; align-items: center; }
+.sound-volume input { width: 84px; height: 32px; margin: 0; accent-color: var(--accent); cursor: pointer; }
+.sound-story { position: fixed; inset: 76px 24px auto auto; width: min(420px, calc(100vw - 32px)); max-height: calc(100dvh - 96px); margin: 0; padding: 0; overflow: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); box-shadow: 0 12px 50px #303e4926; font: 16px/1.65 Georgia, serif; }
+.sound-scenes { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+.sound-scenes img { display: block; flex: 0 0 100%; width: 100%; height: auto; align-self: flex-start; scroll-snap-align: start; }
+.scene-tabs { display: flex; padding: 0 24px; border-bottom: 1px solid var(--line); }
+.scene-tabs button { flex: 1; padding: 10px 0; border-radius: 0; white-space: normal; color: var(--muted); font: 12px/1.5 system-ui, sans-serif; }
+.scene-tabs button[aria-pressed="true"] { border-bottom: 1px solid var(--accent); color: var(--ink); }
+.soundtrack #sound-story-close { position: absolute; z-index: 1; top: 8px; right: 8px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: #faf8f3e6; color: var(--accent); font: 26px/1 system-ui, sans-serif; cursor: pointer; }
+.sound-story-copy { padding: 14px 24px 24px; }
+.sound-story h2 { position: static; margin: 0 0 14px; padding: 0; border: 0; font-size: 27px; }
+.sound-story p { margin-bottom: 14px; }
+.sound-download { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; margin-top: 20px; padding: 11px 14px; border: 1px solid #94a3ae; border-radius: 5px; text-decoration: none; font: 14px/1.5 system-ui, sans-serif; }
+.sound-download small { margin-left: auto; color: var(--muted); font-size: 12px; }
+.sound-story audio { width: 100%; margin-top: 18px; }
 .contents { position: fixed; top: 154px; left: max(24px, calc((100vw - 1280px) / 2)); width: 158px; font: 14px/1.5 system-ui, sans-serif; }
 .contents-label { display: block; margin: 0 0 14px 12px; color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
 .contents ol { list-style: none; margin: 0; padding: 0; }
@@ -44,6 +68,10 @@ footer a { display: inline-block; margin-top: 10px; font: 14px/1.6 system-ui, sa
   body { font-size: 18px; line-height: 1.8; }
   main { padding-right: 24px; padding-left: 24px; }
   .toolbar { padding: 0 20px; gap: 12px; font-size: 13px; }
+  .toolbar-title, .back span, #open-page span { display: none; }
+  .soundtrack { gap: 6px; }
+  .sound-volume input { width: 68px; }
+  .sound-story { top: 72px; right: 16px; max-height: calc(100dvh - 88px); }
   .embedded .toolbar { padding-right: 68px; }
   .contents { padding-left: 12px; }
   .title-page { margin-bottom: 38px; }
@@ -53,7 +81,7 @@ footer a { display: inline-block; margin-top: 10px; font: 14px/1.6 system-ui, sa
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
-  .toolbar, .contents { display: none; }
+  .toolbar, .contents, .sound-story { display: none; }
   main { max-width: none; padding: 0; }
   h2 { position: static; break-after: avoid; }
   body { font-size: 12pt; }
