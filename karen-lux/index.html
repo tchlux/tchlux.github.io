@@ -45,7 +45,11 @@
     a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
     a:hover { color: #30475c; }
     a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
-    body.album-open { overflow: hidden; }
+    body.album-open, body.reading-open { overflow: hidden; }
+    .reading-dialog { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: var(--paper); }
+    .reading-dialog iframe { display: block; width: 100%; height: 100%; border: 0; }
+    .reading-close { position: absolute; z-index: 2; top: 10px; right: 16px; }
+    .reading-close button { width: 44px; height: 44px; border: 0; background: transparent; color: var(--accent); font: 32px/1 system-ui, sans-serif; cursor: pointer; }
     .album-dialog { position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 64px 28px; border: 0; background: var(--paper); color: var(--ink); overflow-y: auto; }
     .album-dialog[open] { display: flex; align-items: center; justify-content: center; }
     .album-invitation { width: 100%; max-width: 520px; margin: auto; text-align: center; }
@@ -125,7 +129,7 @@
 
     <section aria-labelledby="flimsy-words">
       <h2 id="flimsy-words">Flimsy Words</h2>
-      <p>Thank you to everyone who joined us to remember Karen and celebrate her life. We’re grateful for your love and support. For those who couldn’t be there, we’ve shared this recording from the day.</p>
+      <p>Thank you to everyone who joined us to remember Karen and celebrate her life. We’re grateful for your love and support. For those who couldn’t be there, we’ve shared this recording from the day. <a id="written-talk-link" href="flimsy-words/">Read John’s written words.</a></p>
       <figure class="recording">
         <div class="recording-stage">
           <video id="flimsy-words-video" controls playsinline preload="none" poster="flimsy-words/poster.jpg" aria-label="Flimsy Words, recorded at Karen’s celebration of life" aria-describedby="recording-caption">
@@ -221,7 +225,7 @@
 
     <footer>
       <p>With love and gratitude, Karen’s family.</p>
-      <p>Last updated <time datetime="2026-11-10">November 10, 2026</time>.</p>
+      <p>Last updated <time datetime="2026-11-13">November 13, 2026</time>.</p>
       <img class="bouquet" src="watercolor-blue-bouquet.png" width="1024" height="1024" alt="" aria-hidden="true">
     </footer>
   </main>
@@ -235,6 +239,11 @@
       <a class="action" href="photo.album/">Continue to the album <span aria-hidden="true">↗</span></a>
     </div>
   </dialog>
+  <dialog id="reading-dialog" class="reading-dialog" aria-label="Flimsy Words, written by John Lux">
+    <form method="dialog" class="reading-close"><button aria-label="Close written talk">×</button></form>
+    <iframe id="reading-frame" title="Flimsy Words — John Lux’s written talk"></iframe>
+  </dialog>
+  <script src="flimsy-words/reading-overlay.js" defer></script>
   <script src="flimsy-words/hls.light.min.js" defer></script>
   <script src="flimsy-words/player.js" defer></script>
   <script>
